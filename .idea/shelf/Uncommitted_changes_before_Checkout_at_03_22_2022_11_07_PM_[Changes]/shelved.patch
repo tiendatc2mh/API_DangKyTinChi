@@ -1,0 +1,79 @@
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_17\" default=\"true\" project-jdk-name=\"openjdk-17\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	
++++ b/.idea/misc.xml	
+@@ -1,4 +1,14 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="openjdk-17" project-jdk-type="JavaSDK" />
++  <component name="MavenProjectsManager">
++    <option name="originalFiles">
++      <list>
++        <option value="$PROJECT_DIR$/pom.xml" />
++      </list>
++    </option>
++  </component>
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
++  <component name="ProjectType">
++    <option name="id" value="jpab" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/com/ptit/dangkytinchi/repository/SinhVienRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ptit.dangkytinchi.repository;\r\n\r\nimport com.ptit.dangkytinchi.DTO.SinhVienDTO;\r\nimport com.ptit.dangkytinchi.model.SinhVien;\r\nimport org.springframework.data.jpa.repository.JpaRepository;\r\nimport org.springframework.stereotype.Repository;\r\n\r\n@Repository\r\npublic interface SinhVienRepository extends JpaRepository<SinhVien, String> {\r\n    SinhVien findOneByTaiKhoanAndMatKhau(String taiKhoan, String matKhau);\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/ptit/dangkytinchi/repository/SinhVienRepository.java b/src/main/java/com/ptit/dangkytinchi/repository/SinhVienRepository.java
+--- a/src/main/java/com/ptit/dangkytinchi/repository/SinhVienRepository.java	
++++ b/src/main/java/com/ptit/dangkytinchi/repository/SinhVienRepository.java	
+@@ -8,5 +8,4 @@
+ @Repository
+ public interface SinhVienRepository extends JpaRepository<SinhVien, String> {
+     SinhVien findOneByTaiKhoanAndMatKhau(String taiKhoan, String matKhau);
+-
+ }
+Index: src/main/java/com/ptit/dangkytinchi/repository/DangKyHocRrpository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ptit.dangkytinchi.repository;\r\n\r\npublic interface DangKyHocRrpository {\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/ptit/dangkytinchi/repository/DangKyHocRrpository.java b/src/main/java/com/ptit/dangkytinchi/repository/DangKyHocRrpository.java
+--- a/src/main/java/com/ptit/dangkytinchi/repository/DangKyHocRrpository.java	
++++ b/src/main/java/com/ptit/dangkytinchi/repository/DangKyHocRrpository.java	
+@@ -1,4 +1,10 @@
+ package com.ptit.dangkytinchi.repository;
+ 
+-public interface DangKyHocRrpository {
++import com.ptit.dangkytinchi.model.DangKyHoc;
++import com.ptit.dangkytinchi.model.TuanHoc;
++import org.springframework.data.jpa.repository.JpaRepository;
++import org.springframework.stereotype.Repository;
++
++@Repository
++public interface DangKyHocRrpository extends JpaRepository<DangKyHoc, String> {
+ }
+Index: src/main/java/com/ptit/dangkytinchi/repository/BoMonRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ptit.dangkytinchi.repository;\r\n\r\npublic interface BoMonRepository {\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/com/ptit/dangkytinchi/repository/BoMonRepository.java b/src/main/java/com/ptit/dangkytinchi/repository/BoMonRepository.java
+--- a/src/main/java/com/ptit/dangkytinchi/repository/BoMonRepository.java	
++++ b/src/main/java/com/ptit/dangkytinchi/repository/BoMonRepository.java	
+@@ -1,4 +1,10 @@
+ package com.ptit.dangkytinchi.repository;
+ 
+-public interface BoMonRepository {
++import com.ptit.dangkytinchi.model.BoMon;
++import com.ptit.dangkytinchi.model.TuanHoc;
++import org.springframework.data.jpa.repository.JpaRepository;
++import org.springframework.stereotype.Repository;
++
++@Repository
++public interface BoMonRepository extends JpaRepository<BoMon, String> {
+ }
