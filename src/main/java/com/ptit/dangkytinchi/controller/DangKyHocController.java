@@ -88,6 +88,21 @@ public class DangKyHocController {
         res.setData(dsDangKyHocDTO);
         return res;
     }
-
-
+    @PostMapping("luudangky/{maSinhVien}")
+    public ResponeAPI xoaDangKyHoc(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien){
+        ResponeAPI res = new ResponeAPI();
+        ArrayList<String> dsmaLopHocPhan = new ArrayList<String>();
+        object.forEach(obj -> {
+            dsmaLopHocPhan.add(obj.get("maLopHocPhan").toString().trim());
+        });
+        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
+        ArrayList<DangKyHocDTO> dsDangKyHocDTO = new ArrayList<DangKyHocDTO>();
+        ArrayList<DangKyHoc> dsDangKyHoc = new ArrayList<DangKyHoc>();
+        dsmaLopHocPhan.forEach(maLopHocPhan ->{
+            DangKyHoc temp =  dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoaAndLAndLopHocPhan_MaLopHocPhan(sinhVienKhoa.getMaSinhVienKhoa(), maLopHocPhan);
+            dangKyHocRepository.delete(temp);
+        } );
+        res.setData("Xóa đăng ký thành công!");
+        return res;
+    }
 }
