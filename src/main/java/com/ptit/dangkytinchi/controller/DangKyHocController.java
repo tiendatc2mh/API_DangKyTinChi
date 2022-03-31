@@ -88,7 +88,7 @@ public class DangKyHocController {
         res.setData(dsDangKyHocDTO);
         return res;
     }
-    @PostMapping("luudangky/{maSinhVien}")
+    @PostMapping("xoadangky/{maSinhVien}")
     public ResponeAPI xoaDangKyHoc(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien){
         ResponeAPI res = new ResponeAPI();
         ArrayList<String> dsmaLopHocPhan = new ArrayList<String>();
@@ -99,8 +99,11 @@ public class DangKyHocController {
         ArrayList<DangKyHocDTO> dsDangKyHocDTO = new ArrayList<DangKyHocDTO>();
         ArrayList<DangKyHoc> dsDangKyHoc = new ArrayList<DangKyHoc>();
         dsmaLopHocPhan.forEach(maLopHocPhan ->{
-            DangKyHoc temp =  dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoaAndLAndLopHocPhan_MaLopHocPhan(sinhVienKhoa.getMaSinhVienKhoa(), maLopHocPhan);
-            dangKyHocRepository.delete(temp);
+            DangKyHoc temp =  dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoaAndLopHocPhan_MaLopHocPhan(sinhVienKhoa.getMaSinhVienKhoa(), maLopHocPhan);
+
+                dangKyHocRepository.delete(temp);
+
+
         } );
         res.setData("Xóa đăng ký thành công!");
         return res;
