@@ -1,5 +1,6 @@
 package com.ptit.dangkytinchi.controller;
 
+import com.ptit.dangkytinchi.DTO.DangKyHocDTO;
 import com.ptit.dangkytinchi.DTO.LichHocDTO;
 import com.ptit.dangkytinchi.DTO.LopHocPhanDTO;
 import com.ptit.dangkytinchi.exception.ResponeAPI;
@@ -73,5 +74,20 @@ public class DangKyHocController {
         return res;
 
     }
+    @GetMapping("/luudangky/{maSinhVien}")
+    public ResponeAPI getDSDangKy (@PathVariable String maSinhVien){
+        ResponeAPI res = new ResponeAPI();
+        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
+        ArrayList<DangKyHocDTO> dsDangKyHocDTO = new ArrayList<DangKyHocDTO>();
+        ArrayList<DangKyHoc> dsDangKyHoc = new ArrayList<DangKyHoc>();
+        dsDangKyHoc = ( ArrayList<DangKyHoc>) dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoa(sinhVienKhoa.getMaSinhVienKhoa());
+        dsDangKyHoc.forEach(dangKyHoc -> {
+            DangKyHocDTO temp = new DangKyHocDTO(dangKyHoc.getMaDangKyHoc(), dangKyHoc.getSinhVienKhoa(), dangKyHoc.getLopHocPhan());
+            dsDangKyHocDTO.add(temp);
+        });
+        res.setData(dsDangKyHocDTO);
+        return res;
+    }
+
 
 }

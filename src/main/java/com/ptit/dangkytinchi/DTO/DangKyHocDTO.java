@@ -1,6 +1,7 @@
 package com.ptit.dangkytinchi.DTO;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.ptit.dangkytinchi.model.LopHocPhan;
 import com.ptit.dangkytinchi.model.SinhVienKhoa;
 import lombok.Data;
 
@@ -15,4 +16,11 @@ public class DangKyHocDTO implements Serializable {
 
     private String maDangKyHoc;
     private SinhVienKhoa sinhVienKhoa;
+    private LopHocPhan lopHocPhan;
+
+    public DangKyHocDTO(String maDangKyHoc, SinhVienKhoa sinhVienKhoa, LopHocPhan lopHocPhan) {
+        this.maDangKyHoc = maDangKyHoc;
+        this.sinhVienKhoa = sinhVienKhoa;
+        this.lopHocPhan = lopHocPhan;
+    }
 }
