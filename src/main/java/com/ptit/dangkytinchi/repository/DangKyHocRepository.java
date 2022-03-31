@@ -10,4 +10,5 @@ import java.util.List;
 public interface DangKyHocRepository extends JpaRepository<DangKyHoc, String> {
     List<DangKyHoc> findDangKyHocByLopHocPhan_MaLopHocPhan(String maLopHocPhan);
     List<DangKyHoc> findDangKyHocBySinhVienKhoa_MaSinhVienKhoa(String maSinhVienKhoa);
+    DangKyHoc findDangKyHocBySinhVienKhoa_MaSinhVienKhoaAndLopHocPhan_MaLopHocPhan(String maSinhVienKhoa, String maLopHocPhan);
 }
