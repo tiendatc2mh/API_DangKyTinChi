@@ -41,6 +41,7 @@ public class SinhVienController {
             svDTO.setTenSinhVien(sv.getTenSinhVien());
             svDTO.setTaiKhoan(sv.getTaiKhoan());
             svDTO.setMatKhau(sv.getMatKhau());
+            svDTO.setLop(sv.getLop());
             res.setData(svDTO);
         }
         return res;

@@ -33,6 +33,9 @@ public class SinhVien {
     @Column(name = "tensinhvien")
     private  String tenSinhVien;
 
+    @Column(name = "lop")
+    private  String lop;
+
     //@JsonBackReference(value = "sinhvien-sinhvienkhoa")
     @JsonBackReference
     @OneToMany(mappedBy = "sinhVien", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

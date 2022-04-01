@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.management.Query;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.Set;
+import java.util.*;
 
 @RestController
 @RequestMapping(path = "/dangkytinchi", produces = "application/json")
@@ -27,7 +25,7 @@ public class LopHocPhanController {
     @Autowired
     private SinhVienKhoaRepository sinhVienKhoaRepository;
     @Autowired
-    private KiHocRepository KiHocRepository;
+    private SinhVienRepository sinhVienRepository;
     @Autowired
     private LichHocRepository lichHocRepository;
     @Autowired
@@ -35,20 +33,20 @@ public class LopHocPhanController {
 
 
     public LopHocPhanController(LopHocPhanRepository lopHocPhanRepository, MonHocKiHocRepository monHocKiHocRepository,
-                                SinhVienKhoaRepository sinhVienKhoaRepository,
-                                KiHocRepository kiHocRepository, LichHocRepository lichHocRepository,
-                                DangKyHocRepository dangKyHocRepository) {
+                                SinhVienKhoaRepository sinhVienKhoaRepository, SinhVienRepository sinhVienRepository,
+                                LichHocRepository lichHocRepository, DangKyHocRepository dangKyHocRepository) {
         this.lopHocPhanRepository = lopHocPhanRepository;
         this.monHocKiHocRepository = monHocKiHocRepository;
         this.sinhVienKhoaRepository = sinhVienKhoaRepository;
-        KiHocRepository = kiHocRepository;
+        this.sinhVienRepository = sinhVienRepository;
         this.lichHocRepository = lichHocRepository;
         this.dangKyHocRepository = dangKyHocRepository;
     }
 
-    @GetMapping("/lophocphan/{maMonHoc}")
-    private ResponeAPI getLopHocPhanByMonHoc(@PathVariable("maMonHoc") String maMonHoc) {
+    @PostMapping("/lophocphan/{maMonHoc}")
+    private ResponeAPI getLopHocPhanByMonHoc(@RequestBody LinkedHashMap object,@PathVariable("maMonHoc") String maMonHoc) {
         ResponeAPI res = new ResponeAPI();
+        String maSinhVien = object.get("maSinhVien").toString().trim();
         ArrayList<LopHocPhanDTO> dsLHPDTO = new ArrayList<LopHocPhanDTO>();
         ArrayList<LichHocDTO> dsLHDTO = new ArrayList<LichHocDTO>();
         ArrayList<MonHocKiHoc> monHocKiHoc = new ArrayList<MonHocKiHoc>();
@@ -58,8 +56,7 @@ public class LopHocPhanController {
         int thang = localDate.getMonthValue();
         int nam = localDate.getYear();
 
-        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien("B18DCCN147");
-        System.out.println(sinhVienKhoa.getNienKhoa() + "");
+        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
         int nienKhoa = Integer.parseInt(sinhVienKhoa.getNienKhoa().substring(0, 4));
         String maKiHoc = "";
         if (nam - nienKhoa == 0) {
