@@ -20,6 +20,12 @@ public class MonHocDTO implements Serializable {
         this.soTc = soTc;
         this.maBoMon = maBoMon;
     }
+
+    public MonHocDTO(String maMonHoc, String tenMonHoc) {
+        this.maMonHoc = maMonHoc;
+        this.tenMonHoc = tenMonHoc;
+    }
+
     private BoMonDTO boMon;
     ArrayList<MonHocKiHocDTO> dsMonHocKiHoc;
 }
