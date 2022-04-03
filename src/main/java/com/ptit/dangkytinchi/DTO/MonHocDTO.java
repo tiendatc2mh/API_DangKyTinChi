@@ -13,13 +13,14 @@ public class MonHocDTO implements Serializable {
     private String tenMonHoc;
     private int soTc;
     private String maBoMon;
+    private BoMon boMon;
+    ArrayList<MonHocKiHoc> dsMonHocKiHoc;
 
-    public MonHocDTO(String maMonHoc, String tenMonHoc, int soTc, String maBoMon) {
+    public MonHocDTO(String maMonHoc, String tenMonHoc, int soTc, String maBoMon, BoMon boMon) {
         this.maMonHoc = maMonHoc;
         this.tenMonHoc = tenMonHoc;
         this.soTc = soTc;
         this.maBoMon = maBoMon;
+        this.boMon = boMon;
     }
-    private BoMonDTO boMon;
-    ArrayList<MonHocKiHocDTO> dsMonHocKiHoc;
 }
