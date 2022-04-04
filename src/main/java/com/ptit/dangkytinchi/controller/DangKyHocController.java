@@ -5,9 +5,11 @@ import com.ptit.dangkytinchi.DTO.LichHocDTO;
 import com.ptit.dangkytinchi.DTO.LopHocPhanDTO;
 import com.ptit.dangkytinchi.exception.ResponeAPI;
 import com.ptit.dangkytinchi.model.DangKyHoc;
+import com.ptit.dangkytinchi.model.LichHoc;
 import com.ptit.dangkytinchi.model.LopHocPhan;
 import com.ptit.dangkytinchi.model.SinhVienKhoa;
 import com.ptit.dangkytinchi.repository.DangKyHocRepository;
+import com.ptit.dangkytinchi.repository.LichHocRepository;
 import com.ptit.dangkytinchi.repository.LopHocPhanRepository;
 import com.ptit.dangkytinchi.repository.SinhVienKhoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,14 +30,16 @@ public class DangKyHocController {
     private SinhVienKhoaRepository sinhVienKhoaRepository;
     @Autowired
     private LopHocPhanRepository lopHocPhanRepository;
+    @Autowired
+    private LichHocRepository lichHocRepository;
 
     public DangKyHocController(DangKyHocRepository dangKyHocRepository, SinhVienKhoaRepository sinhVienKhoaRepository,
-                               LopHocPhanRepository lopHocPhanRepository) {
+                               LopHocPhanRepository lopHocPhanRepository, LichHocRepository lichHocRepository) {
         this.dangKyHocRepository = dangKyHocRepository;
         this.sinhVienKhoaRepository = sinhVienKhoaRepository;
         this.lopHocPhanRepository = lopHocPhanRepository;
+        this.lichHocRepository = lichHocRepository;
     }
-
     @PostMapping("/luudangky/{maSinhVien}")
     private ResponeAPI luuDangKy(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien) {
 
@@ -52,25 +56,47 @@ public class DangKyHocController {
             LopHocPhan temp = dsLopHocPhan.get(i);
             ArrayList<DangKyHoc> dsDangKy = (ArrayList<DangKyHoc>) dangKyHocRepository.findDangKyHocByLopHocPhan_MaLopHocPhan(temp.getMaLopHocPhan());
             int siSoThucTe = dsDangKy.size();
-            System.out.println(siSoThucTe);
             if (siSoThucTe + 1 > temp.getSiSoToiDa()) {
 
                 res.setError("Môn học " + temp.getMonHocKiHoc().getMonHoc().getTenMonHoc() + "đã hết số lượng đăng ký!!!");
                 return res;
             }
         }
-        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
-        for (int i = 0; i < dsLopHocPhan.size(); i++) {
-            LopHocPhan temp = dsLopHocPhan.get(i);
-            String maDangKyHoc = maSinhVien + temp.getMaLopHocPhan();
-
-            DangKyHoc tempDKH = new DangKyHoc();
-            tempDKH.setMaDangKyHoc(maDangKyHoc);
-            tempDKH.setSinhVienKhoa(sinhVienKhoa);
-            tempDKH.setLopHocPhan(temp);
-            dangKyHocRepository.save(tempDKH);
+        // check trung lich hoc
+        ArrayList<LopHocPhanDTO> listFullDataLopHopPhan = new ArrayList<>();
+        for (LopHocPhan lopHocPhan : dsLopHocPhan) {
+            ArrayList<DangKyHoc> dsDangKy = (ArrayList<DangKyHoc>) dangKyHocRepository.findDangKyHocByLopHocPhan_MaLopHocPhan(lopHocPhan.getMaLopHocPhan());
+            int siSoThucTe = dsDangKy.size();
+            ArrayList<LichHoc> listLichHoc = lichHocRepository.findLichHocByLopHocPhan_MaLopHocPhan(lopHocPhan.getMaLopHocPhan());
+            ArrayList<LichHocDTO> listLichHocDTO = new ArrayList<>();
+            listLichHoc.forEach(ls -> {
+                ls.setLopHocPhan(null);
+            });
+            LopHocPhanDTO data = new LopHocPhanDTO(lopHocPhan.getMaLopHocPhan(), lopHocPhan.getTenLopHocPhan(),
+                    lopHocPhan.getSiSoToiDa(), siSoThucTe, lopHocPhan.getMoTa(), null, listLichHoc);
+            listFullDataLopHopPhan.add(data);
         }
-        res.setData("Đăng ký thành công!");
+        for(int i = 0; i < listFullDataLopHopPhan.size(); i++){
+            for ( int j = i + 1; j < listFullDataLopHopPhan.size(); j++){
+                if(listFullDataLopHopPhan.get(i).checkTrungLich(listFullDataLopHopPhan.get(j)) == false){
+                    res.setData("Lỗi trùng lịch học");
+                    return res;
+                }
+            }
+        }
+
+//        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
+//        for (int i = 0; i < dsLopHocPhan.size(); i++) {
+//            LopHocPhan temp = dsLopHocPhan.get(i);
+//            String maDangKyHoc = maSinhVien + temp.getMaLopHocPhan();
+//
+//            DangKyHoc tempDKH = new DangKyHoc();
+//            tempDKH.setMaDangKyHoc(maDangKyHoc);
+//            tempDKH.setSinhVienKhoa(sinhVienKhoa);
+//            tempDKH.setLopHocPhan(temp);
+//            dangKyHocRepository.save(tempDKH);
+//        }
+//        res.setData("Đăng ký thành công!");
         return res;
 
     }

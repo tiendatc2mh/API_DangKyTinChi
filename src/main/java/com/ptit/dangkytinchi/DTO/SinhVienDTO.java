@@ -11,4 +11,5 @@ public class SinhVienDTO implements Serializable {
     private String taiKhoan;
     private String matKhau;
     private String matKhauMoi;
+    private  String lop;
 }

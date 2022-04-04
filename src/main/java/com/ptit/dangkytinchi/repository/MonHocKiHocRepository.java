@@ -8,4 +8,5 @@ import java.util.List;
 
 public interface MonHocKiHocRepository  extends JpaRepository<MonHocKiHoc, String> {
     List<MonHocKiHoc> findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_MaMonHoc(String maKiHoc, String MaMonHoc);
+    List<MonHocKiHoc> findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_BoMon_MaBoMonAndMonHoc_TenMonHocContains(String maKiHoc, String maBoMon, String tenMonHoc);
 }

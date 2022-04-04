@@ -28,4 +28,5 @@ public class LichHocDTO implements Serializable {
         this.ngayHoc = ngayHoc;
         this.kipHoc = kipHoc;
     }
+
 }

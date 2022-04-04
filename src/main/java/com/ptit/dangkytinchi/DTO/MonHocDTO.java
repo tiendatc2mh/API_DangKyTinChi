@@ -23,4 +23,9 @@ public class MonHocDTO implements Serializable {
         this.maBoMon = maBoMon;
         this.boMon = boMon;
     }
+
+    public MonHocDTO(String maMonHoc, String tenMonHoc) {
+        this.maMonHoc = maMonHoc;
+        this.tenMonHoc = tenMonHoc;
+    }
 }
