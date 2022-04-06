@@ -127,4 +127,21 @@ public class MonHocController {
         res.setData(dsMonHocDTO);
         return res;
     }
+
+    @PostMapping("/timkiembutton/{key}")
+    public ResponeAPI getMonHocByTenMHbutton(@RequestBody LinkedHashMap object, @PathVariable String key){
+        ResponeAPI res = new ResponeAPI();
+        ArrayList<MonHoc> dsMonHoc = (ArrayList<MonHoc>) monHocRepository.findMonHocByTenMonHocContains(key);
+        ArrayList<MonHocDTO> dsMonHocDTO = new ArrayList<MonHocDTO>();
+        dsMonHoc.forEach(monHoc -> {
+            MonHocDTO temp = new MonHocDTO(monHoc.getMaMonHoc(), monHoc.getTenMonHoc(), monHoc.getSoTc());
+            dsMonHocDTO.add(temp);
+        });
+
+        res.setData(dsMonHocDTO);
+
+        return res;
+
+    }
+
 }

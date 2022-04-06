@@ -20,4 +20,5 @@ public interface MonHocRepository  extends JpaRepository<MonHoc, String> {
     }
 
     List<MonHoc> findMonHocByDsMonHocKiHocContainsAndTenMonHocContainsAndBoMon_MaBoMon(MonHocKiHoc monHocKiHoc, String tenMonHoc, String maBoMon);
+    List<MonHoc> findMonHocByTenMonHocContains(String tenMonHoc);
 }
