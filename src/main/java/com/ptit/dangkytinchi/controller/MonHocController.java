@@ -120,7 +120,7 @@ public class MonHocController {
 
         ArrayList<MonHocDTO> dsMonHocDTO = new ArrayList<MonHocDTO>();
         monHocKiHoc.forEach(monHoc->{
-            MonHocDTO temp = new MonHocDTO(monHoc.getMonHoc().getMaMonHoc(), monHoc.getMonHoc().getTenMonHoc());
+            MonHocDTO temp = new MonHocDTO(monHoc.getMonHoc().getMaMonHoc(), monHoc.getMonHoc().getTenMonHoc(), monHoc.getMonHoc().getSoTc());
             dsMonHocDTO.add(temp);
         });
 
