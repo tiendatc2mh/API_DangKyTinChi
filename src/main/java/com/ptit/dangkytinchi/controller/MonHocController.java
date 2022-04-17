@@ -48,88 +48,101 @@ public class MonHocController {
 
         SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
         SinhVien sinhVien = sinhVienRepository.getById(maSinhVien);
-        if(sinhVien.getLop().contains("CNPM")){
-            maBoMon ="BOMON10";
-        }else if(sinhVien.getLop().contains("HTTT")){
-            maBoMon ="BOMON09";
+        if(sinhVienKhoa.isDangHoc()){
+            System.out.println(sinhVienKhoa.getNienKhoa() + "");
+            int nienKhoa = Integer.parseInt(sinhVienKhoa.getNienKhoa().substring(0, 4));
+            String maKiHoc = "";
+            if (nam - nienKhoa == 0) {
+                maKiHoc = "KYHOC01";
+
+            } else if (nam - nienKhoa == 1) {
+                //hoc ki 2
+                if (thang <= 7 && thang >= 2) {
+                    maKiHoc = "KYHOC02";
+                }
+                //hoc ki he
+                else if (thang <= 9 && thang >= 7) {
+
+                }
+                //hoc ki 1
+                else {
+                    maKiHoc = "KYHOC03";
+                }
+
+            } else if (nam - nienKhoa == 2) {
+                //hoc ki 2
+                if (thang <= 7 && thang >= 2) {
+                    maKiHoc = "KYHOC04";
+                }
+                //hoc ki he
+                else if (thang <= 9 && thang >= 7) {
+
+                }
+                //hoc ki 1
+                else {
+                    maKiHoc = "KYHOC05";
+                }
+
+            } else if (nam - nienKhoa == 3) {
+                //hoc ki 2
+                if (thang <= 7 && thang >= 2) {
+                    maKiHoc = "KYHOC06";
+                }
+                //hoc ki he
+                else if (thang <= 9 && thang >= 7) {
+
+                }
+                //hoc ki 1
+                else {
+                    maKiHoc = "KYHOC07";
+                }
+
+            } else if (nam - nienKhoa == 4) {
+                //hoc ki 2
+                if (thang <= 7 && thang >= 2) {
+                    if(sinhVien.getLop().contains("CNPM")){
+                        maBoMon ="BOMON10";
+                    }else if(sinhVien.getLop().contains("HTTT")){
+                        maBoMon ="BOMON09";
+                    }
+                    maKiHoc = "KYHOC08";
+                }
+                //hoc ki he
+                else if (thang <= 9 && thang >= 7) {
+
+                }
+                //hoc ki 1
+                else {
+
+                }
+            }
+            if(maBoMon.length()>0){
+                monHocKiHoc =(ArrayList<MonHocKiHoc>) monHocKiHocRepository.
+                        findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_BoMon_MaBoMonAndMonHoc_TenMonHocContains(maKiHoc,maBoMon,key);
+            }else{
+                monHocKiHoc =(ArrayList<MonHocKiHoc>) monHocKiHocRepository.
+                        findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_TenMonHocContains(maKiHoc,key);
+            }
+
+
+
+            ArrayList<MonHocDTO> dsMonHocDTO = new ArrayList<MonHocDTO>();
+            monHocKiHoc.forEach(monHoc->{
+                MonHocDTO temp = new MonHocDTO(monHoc.getMonHoc().getMaMonHoc(), monHoc.getMonHoc().getTenMonHoc(), monHoc.getMonHoc().getSoTc());
+                dsMonHocDTO.add(temp);
+            });
+
+            res.setData(dsMonHocDTO);
         }
-        System.out.println(sinhVienKhoa.getNienKhoa() + "");
-        int nienKhoa = Integer.parseInt(sinhVienKhoa.getNienKhoa().substring(0, 4));
-        String maKiHoc = "";
-        if (nam - nienKhoa == 0) {
-            maKiHoc = "KYHOC01";
-
-        } else if (nam - nienKhoa == 1) {
-            //hoc ki 2
-            if (thang <= 7 && thang >= 2) {
-                maKiHoc = "KYHOC02";
-            }
-            //hoc ki he
-            else if (thang <= 9 && thang >= 7) {
-
-            }
-            //hoc ki 1
-            else {
-                maKiHoc = "KYHOC03";
-            }
-
-        } else if (nam - nienKhoa == 2) {
-            //hoc ki 2
-            if (thang <= 7 && thang >= 2) {
-                maKiHoc = "KYHOC04";
-            }
-            //hoc ki he
-            else if (thang <= 9 && thang >= 7) {
-
-            }
-            //hoc ki 1
-            else {
-                maKiHoc = "KYHOC05";
-            }
-
-        } else if (nam - nienKhoa == 3) {
-            //hoc ki 2
-            if (thang <= 7 && thang >= 2) {
-                maKiHoc = "KYHOC06";
-            }
-            //hoc ki he
-            else if (thang <= 9 && thang >= 7) {
-
-            }
-            //hoc ki 1
-            else {
-                maKiHoc = "KYHOC07";
-            }
-
-        } else if (nam - nienKhoa == 4) {
-            //hoc ki 2
-            if (thang <= 7 && thang >= 2) {
-                maKiHoc = "KYHOC08";
-            }
-            //hoc ki he
-            else if (thang <= 9 && thang >= 7) {
-
-            }
-            //hoc ki 1
-            else {
-
-            }
+        else{
+            res.setData(null);
         }
-        monHocKiHoc =(ArrayList<MonHocKiHoc>) monHocKiHocRepository.findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_BoMon_MaBoMonAndMonHoc_TenMonHocContains(maKiHoc,maBoMon,key);
 
-
-        ArrayList<MonHocDTO> dsMonHocDTO = new ArrayList<MonHocDTO>();
-        monHocKiHoc.forEach(monHoc->{
-            MonHocDTO temp = new MonHocDTO(monHoc.getMonHoc().getMaMonHoc(), monHoc.getMonHoc().getTenMonHoc(), monHoc.getMonHoc().getSoTc());
-            dsMonHocDTO.add(temp);
-        });
-
-        res.setData(dsMonHocDTO);
         return res;
     }
 
     @PostMapping("/timkiembutton/{key}")
-    public ResponeAPI getMonHocByTenMHbutton(@RequestBody LinkedHashMap object, @PathVariable String key){
+    public ResponeAPI getMonHocByTenMHbutton(@PathVariable String key){
         ResponeAPI res = new ResponeAPI();
         ArrayList<MonHoc> dsMonHoc = (ArrayList<MonHoc>) monHocRepository.findMonHocByTenMonHocContains(key);
         ArrayList<MonHocDTO> dsMonHocDTO = new ArrayList<MonHocDTO>();
@@ -141,7 +154,6 @@ public class MonHocController {
         res.setData(dsMonHocDTO);
 
         return res;
-
     }
 
 }

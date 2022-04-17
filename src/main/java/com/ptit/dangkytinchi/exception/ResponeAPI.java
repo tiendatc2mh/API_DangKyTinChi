@@ -37,4 +37,13 @@ public class ResponeAPI {
     public void setError(Object error) {
         this.error = error;
     }
+
+    @Override
+    public String toString() {
+        return "ResponeAPI{" +
+                "status=" + status +
+                ", data=" + data +
+                ", error=" + error +
+                '}';
+    }
 }
