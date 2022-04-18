@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -13,6 +14,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@AllArgsConstructor
 @Table(name = "tbl_lop_hoc_phan", schema = "dangkytinchi")
 public class LopHocPhan {
 
@@ -48,5 +50,6 @@ public class LopHocPhan {
     @OneToMany(mappedBy = "lopHocPhan", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<DangKyHoc> dsDangKyHoc;
 
-
+    public LopHocPhan() {
+    }
 }

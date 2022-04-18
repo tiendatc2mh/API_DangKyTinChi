@@ -119,7 +119,7 @@ public class LopHocPhanController {
             }
         }
         monHocKiHoc = (ArrayList<MonHocKiHoc>) monHocKiHocRepository.findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_MaMonHoc(maKiHoc, maMonHoc);
-        dsLopHocPhan = (ArrayList<LopHocPhan>) lopHocPhanRepository.findLopHocPhanByMonHocKiHoc_MaMocHocKiHoc(monHocKiHoc.get(0).getMaMocHocKiHoc());
+        dsLopHocPhan = (ArrayList<LopHocPhan>) lopHocPhanRepository.findLopHocPhanByMonHocKiHoc_MaMonHocKiHoc(monHocKiHoc.get(0).getMaMonHocKiHoc());
         for(int i=0; i<dsLopHocPhan.size(); i++){
             String maLHP= dsLopHocPhan.get(i).getMaLopHocPhan();
             LopHocPhan tempLHP = dsLopHocPhan.get(i);

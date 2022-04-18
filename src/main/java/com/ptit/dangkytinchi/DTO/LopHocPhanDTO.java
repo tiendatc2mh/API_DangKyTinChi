@@ -17,6 +17,9 @@ public class LopHocPhanDTO implements Serializable {
     private MonHocKiHoc monHocKiHoc;
     ArrayList<LichHoc> dsLichHoc;
 
+    public LopHocPhanDTO() {
+    }
+
     public LopHocPhanDTO(String maLopHocPhan, String tenLopHocPhan, int siSoToiDa, int siSoThucTe,
                          String moTa, MonHocKiHoc monHocKiHoc, ArrayList<LichHoc> dsLichHoc) {
         this.maLopHocPhan = maLopHocPhan;

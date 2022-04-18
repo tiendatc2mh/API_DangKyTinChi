@@ -85,18 +85,18 @@ public class DangKyHocController {
             }
         }
 
-//        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
-//        for (int i = 0; i < dsLopHocPhan.size(); i++) {
-//            LopHocPhan temp = dsLopHocPhan.get(i);
-//            String maDangKyHoc = maSinhVien + temp.getMaLopHocPhan();
-//
-//            DangKyHoc tempDKH = new DangKyHoc();
-//            tempDKH.setMaDangKyHoc(maDangKyHoc);
-//            tempDKH.setSinhVienKhoa(sinhVienKhoa);
-//            tempDKH.setLopHocPhan(temp);
-//            dangKyHocRepository.save(tempDKH);
-//        }
-//        res.setData("Đăng ký thành công!");
+        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
+        for (int i = 0; i < dsLopHocPhan.size(); i++) {
+            LopHocPhan temp = dsLopHocPhan.get(i);
+            String maDangKyHoc = maSinhVien + temp.getMaLopHocPhan();
+
+            DangKyHoc tempDKH = new DangKyHoc();
+            tempDKH.setMaDangKyHoc(maDangKyHoc);
+            tempDKH.setSinhVienKhoa(sinhVienKhoa);
+            tempDKH.setLopHocPhan(temp);
+            dangKyHocRepository.save(tempDKH);
+        }
+        res.setData("Đăng ký thành công!");
         return res;
 
     }

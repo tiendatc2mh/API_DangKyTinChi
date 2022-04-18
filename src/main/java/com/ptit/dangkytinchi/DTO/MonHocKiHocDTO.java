@@ -15,8 +15,8 @@ import java.util.Set;
 public class MonHocKiHocDTO implements Serializable {
 
     private String maMocHocKiHoc;
-    private MonHocDTO monHoc;
-    private KiHocDTO kiHoc;
-    Set<LopHocPhanDTO> dsLopHocPhan;
+    private MonHoc monHoc;
+    private KiHoc kiHoc;
+    Set<LopHocPhan> dsLopHocPhan;
 }
 

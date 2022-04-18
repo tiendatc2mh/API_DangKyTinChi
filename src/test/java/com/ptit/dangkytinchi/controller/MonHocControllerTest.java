@@ -20,9 +20,6 @@ import java.util.List;
 
 public class MonHocControllerTest extends AbstractTest {
 
-    @Autowired
-    private SinhVienRepository sinhVienRepository;
-
     @Override
     @Before
     public void setUp() {

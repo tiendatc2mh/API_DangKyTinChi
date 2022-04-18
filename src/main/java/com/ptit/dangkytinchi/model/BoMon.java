@@ -9,6 +9,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@AllArgsConstructor
 @Table(name = "tbl_bo_mon", schema = "dangkytinchi")
 public class BoMon {
 
@@ -32,4 +33,7 @@ public class BoMon {
     @ManyToOne
     @JoinColumn(name = "makhoa", nullable = false)
     private Khoa khoa;
+
+    public BoMon() {
+    }
 }

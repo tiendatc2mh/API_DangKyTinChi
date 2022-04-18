@@ -3,12 +3,14 @@ package com.ptit.dangkytinchi.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@AllArgsConstructor
 @Table(name = "tbl_lich_hoc", schema = "dangkytinchi")
 public class LichHoc {
 
@@ -53,4 +55,6 @@ public class LichHoc {
     @JoinColumn(name = "makiphoc", nullable = false)
     private KipHoc kipHoc;
 
+    public LichHoc() {
+    }
 }
