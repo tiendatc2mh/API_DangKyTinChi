@@ -2,6 +2,7 @@ package com.ptit.dangkytinchi.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@AllArgsConstructor
 @Table(name = "tbl_phong_hoc", schema = "dangkytinchi")
 public class PhongHoc {
 
@@ -33,4 +35,7 @@ public class PhongHoc {
     @JsonBackReference
     @OneToMany(mappedBy = "phongHoc", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     Set<LichHoc> dsLichHoc;
+
+    public PhongHoc() {
+    }
 }
