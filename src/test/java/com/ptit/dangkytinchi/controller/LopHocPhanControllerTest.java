@@ -1,0 +1,87 @@
+package com.ptit.dangkytinchi.controller;
+
+import com.ptit.dangkytinchi.DTO.LopHocPhanDTO;
+import com.ptit.dangkytinchi.DTO.MonHocDTO;
+import com.ptit.dangkytinchi.DTO.SinhVienDTO;
+import com.ptit.dangkytinchi.exception.ResponeAPI;
+import com.ptit.dangkytinchi.model.*;
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+
+public class LopHocPhanControllerTest extends AbstractTest{
+
+    @Override
+    @Before
+    public void setUp() {
+        super.setUp();
+    }
+
+    @Test
+    public void LopHocPhanController_GetLopHocPhanCoKQ_D18_CNPM() throws Exception {
+        String input="INT1408";
+
+
+        //LopHocPhanDTO data1 = new LopHocPhanDTO("D18-008", "D18-008", 74,4,null,);
+        ArrayList<LopHocPhanDTO> outputData = new ArrayList<LopHocPhanDTO>();
+       // outputData.add(data1);
+
+
+
+
+        KipHoc kipHoc = new KipHoc("KIPHOC01", "KIP 01", "7h-9h",null);
+        NgayHoc ngayHoc = new NgayHoc("NGAYHOC013", "2022-02-19", "Bảy",null);
+        TuanHoc tuanHoc = new TuanHoc("TUANHOC27", "Tuần 27","14/02-20/02/2022", null );
+        ToaNha toaNha = new ToaNha("TOANHA06", "Trans", "hoc online", null);
+        PhongHoc phongHoc = new PhongHoc("1131751", "1131751", 90, toaNha, null);
+        HocKi hocKi = new HocKi("HOCKY02", "Học kỳ 2", null, null);
+        NamHoc namHoc = new NamHoc("NAMHOC2021","NĂM HỌC 2021-2022","năm học 2021-2022", null);
+        KiHoc kiHoc = new KiHoc("KYHOC08", true, true, namHoc,hocKi, null);
+        Khoa khoa = new Khoa("CNTT01", "Công nghệ thông tin 01","Khoa Công nghệ thông tin 01",null,null );
+        BoMon boMon = new BoMon("BOMON10", "Công nghệ phần mềm", null, null, khoa);
+        MonHoc monHoc = new MonHoc("INT1408", "Chuyên đề công nghệ phần mềm", 1,boMon,null);
+        MonHocKiHoc monHocKiHoc = new MonHocKiHoc("MHKH06", monHoc,kiHoc,null);
+        LopHocPhan lopHocPhan= new LopHocPhan("D18-008","D18-008",74,null,monHocKiHoc,null,null);
+        LichHoc lichHoc = new LichHoc("LICHHOC001", "Lịch học 001", "N.D.Phương",lopHocPhan,phongHoc,tuanHoc,ngayHoc,kipHoc);
+        ArrayList<LichHoc> dsLichHoc = new ArrayList<LichHoc>();
+        dsLichHoc.add(lichHoc);
+
+        LopHocPhanDTO data1 = new LopHocPhanDTO("D18-008","D18-008",74,4, null, monHocKiHoc, dsLichHoc);
+        outputData.add(data1);
+
+
+        SinhVienDTO inputBody = new SinhVienDTO();
+        inputBody.setMaSinhVien("B18DCCN147");
+        String inputJson = super.mapToJson(inputBody);
+
+        ResponeAPI outputExpect = new ResponeAPI();
+        outputExpect.setData(outputData);
+
+        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("/dangkytinchi/lophocphan/"+input)
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .content(inputJson))
+                .andReturn();
+        int status = result.getResponse().getStatus();
+        Assertions.assertNotNull(result);
+        String content =result.getResponse().getContentAsString(StandardCharsets.UTF_8);
+        ResponeAPI outputResult = super.mapFromJson(content, ResponeAPI.class);
+        ArrayList<LopHocPhanDTO> dataResultObj = new ArrayList<LopHocPhanDTO>();
+        List<LinkedHashMap<String, Object>> dataResult =(List<LinkedHashMap<String, Object>>) outputResult.getData();
+        dataResult.forEach(stringObjectLinkedHashMap ->{
+                    LopHocPhanDTO temp = toLopHocPhanDTO(stringObjectLinkedHashMap);
+                    dataResultObj.add(temp);
+                }
+        );
+        ArrayList<MonHocDTO> dataExpect =( ArrayList<MonHocDTO>) outputExpect.getData();
+        Assertions.assertEquals(dataResultObj, dataExpect);
+
+    }
+}
