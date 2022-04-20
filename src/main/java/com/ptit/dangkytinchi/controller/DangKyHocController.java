@@ -49,8 +49,10 @@ public class DangKyHocController {
             dsmaLopHocPhanDTO.add(obj.get("maLopHocPhan").toString().trim());
         });
         ArrayList<LopHocPhan> dsLopHocPhan = new ArrayList<LopHocPhan>();
+
+
         dsmaLopHocPhanDTO.forEach(list -> {
-            dsLopHocPhan.add(lopHocPhanRepository.getById(list));
+            dsLopHocPhan.add(lopHocPhanRepository.findLopHocPhanByMaLopHocPhan(list));
         });
         for (int i = 0; i < dsLopHocPhan.size(); i++) {
             LopHocPhan temp = dsLopHocPhan.get(i);
@@ -62,7 +64,7 @@ public class DangKyHocController {
                 return res;
             }
         }
-        // check trung lich hoc
+//         check trung lich hoc
         ArrayList<LopHocPhanDTO> listFullDataLopHopPhan = new ArrayList<>();
         for (LopHocPhan lopHocPhan : dsLopHocPhan) {
             ArrayList<DangKyHoc> dsDangKy = (ArrayList<DangKyHoc>) dangKyHocRepository.findDangKyHocByLopHocPhan_MaLopHocPhan(lopHocPhan.getMaLopHocPhan());
