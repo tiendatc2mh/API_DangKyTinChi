@@ -71,9 +71,9 @@ public class DangKyHocController {
             int siSoThucTe = dsDangKy.size();
             ArrayList<LichHoc> listLichHoc = lichHocRepository.findLichHocByLopHocPhan_MaLopHocPhan(lopHocPhan.getMaLopHocPhan());
             ArrayList<LichHocDTO> listLichHocDTO = new ArrayList<>();
-            listLichHoc.forEach(ls -> {
-                ls.setLopHocPhan(null);
-            });
+//            listLichHoc.forEach(ls -> {
+//                ls.setLopHocPhan(null);
+//            });
             LopHocPhanDTO data = new LopHocPhanDTO(lopHocPhan.getMaLopHocPhan(), lopHocPhan.getTenLopHocPhan(),
                     lopHocPhan.getSiSoToiDa(), siSoThucTe, lopHocPhan.getMoTa(), null, listLichHoc);
             listFullDataLopHopPhan.add(data);
@@ -136,4 +136,27 @@ public class DangKyHocController {
         res.setData("Xóa đăng ký thành công!");
         return res;
     }
+
+    @PostMapping("xemthoikhoabieu/{maSinhVien}")
+    public ResponeAPI xemThoiKhoaBieu(@RequestBody LinkedHashMap object, @PathVariable String maSinhVien){
+        ResponeAPI res = new ResponeAPI();
+        String maTuanHoc = object.get("maTuanHoc").toString().trim();
+        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
+
+        ArrayList<DangKyHoc> dsDangKyHoc = new ArrayList<DangKyHoc>();
+        dsDangKyHoc= (ArrayList<DangKyHoc>) dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoa(sinhVienKhoa.getMaSinhVienKhoa());
+        ArrayList<LichHocDTO> data = new ArrayList<LichHocDTO>();
+        dsDangKyHoc.forEach(dangKyHoc -> {
+            ArrayList<LichHoc> dsLichHoc = ( ArrayList<LichHoc>)lichHocRepository.findLichHocByLopHocPhan_MaLopHocPhanAndTuanHoc_MaTuanHoc(dangKyHoc.getLopHocPhan().getMaLopHocPhan(), maTuanHoc);
+            if(dsLichHoc.size()>0){
+                LichHoc lichHoc = dsLichHoc.get(0);
+                LichHocDTO temp = new LichHocDTO(lichHoc.getMaLichHoc(), lichHoc.getTenLichHoc(), lichHoc.getGiangvien(),
+                        lichHoc.getLopHocPhan(), lichHoc.getPhongHoc(), lichHoc.getTuanHoc(), lichHoc.getNgayHoc(), lichHoc.getKipHoc());
+                data.add(temp);
+            }
+        });
+        res.setData(data);
+        return res;
+    }
+
 }

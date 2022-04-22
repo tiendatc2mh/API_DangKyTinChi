@@ -27,7 +27,7 @@ public class LopHocPhanControllerTest extends AbstractTest{
 
     @Test
     public void LopHocPhanController_GetLopHocPhanCoKQ_D18_CNPM() throws Exception {
-        String input="INT1408";
+        String input="INT1340";
 
 
         //LopHocPhanDTO data1 = new LopHocPhanDTO("D18-008", "D18-008", 74,4,null,);
@@ -41,25 +41,25 @@ public class LopHocPhanControllerTest extends AbstractTest{
         NgayHoc ngayHoc = new NgayHoc("NGAYHOC013", "2022-02-19", "Bảy",null);
         TuanHoc tuanHoc = new TuanHoc("TUANHOC27", "Tuần 27","14/02-20/02/2022", null );
         ToaNha toaNha = new ToaNha("TOANHA06", "Trans", "hoc online", null);
-        PhongHoc phongHoc = new PhongHoc("1131751", "1131751", 90, toaNha, null);
+        PhongHoc phongHoc = new PhongHoc("70193", "70193", 90, toaNha, null);
         HocKi hocKi = new HocKi("HOCKY02", "Học kỳ 2", null, null);
         NamHoc namHoc = new NamHoc("NAMHOC2021","NĂM HỌC 2021-2022","năm học 2021-2022", null);
-        KiHoc kiHoc = new KiHoc("KYHOC08", true, true, namHoc,hocKi, null);
+        KiHoc kiHoc = new KiHoc("KYHOC06", true, true, namHoc,hocKi, null);
         Khoa khoa = new Khoa("CNTT01", "Công nghệ thông tin 01","Khoa Công nghệ thông tin 01",null,null );
         BoMon boMon = new BoMon("BOMON10", "Công nghệ phần mềm", null, null, khoa);
-        MonHoc monHoc = new MonHoc("INT1408", "Chuyên đề công nghệ phần mềm", 1,boMon,null);
-        MonHocKiHoc monHocKiHoc = new MonHocKiHoc("MHKH06", monHoc,kiHoc,null);
-        LopHocPhan lopHocPhan= new LopHocPhan("D18-008","D18-008",74,null,monHocKiHoc,null,null);
-        LichHoc lichHoc = new LichHoc("LICHHOC001", "Lịch học 001", "N.D.Phương",lopHocPhan,phongHoc,tuanHoc,ngayHoc,kipHoc);
+        MonHoc monHoc = new MonHoc("INT1340", "Nhập môn CNPM", 3,boMon,null);
+        MonHocKiHoc monHocKiHoc = new MonHocKiHoc("MHKH16", monHoc,kiHoc,null);
+        LopHocPhan lopHocPhan= new LopHocPhan("D19-0001","D19-0001",1,null,monHocKiHoc,null,null);
+        LichHoc lichHoc = new LichHoc("LICHHOC0001", "Lịch học 734", "N.M.Hùng",lopHocPhan,phongHoc,tuanHoc,ngayHoc,kipHoc);
         ArrayList<LichHoc> dsLichHoc = new ArrayList<LichHoc>();
         dsLichHoc.add(lichHoc);
 
-        LopHocPhanDTO data1 = new LopHocPhanDTO("D18-008","D18-008",74,4, null, monHocKiHoc, dsLichHoc);
+        LopHocPhanDTO data1 = new LopHocPhanDTO("D19-0001","D19-0001",1,0, null, monHocKiHoc, dsLichHoc);
         outputData.add(data1);
 
 
         SinhVienDTO inputBody = new SinhVienDTO();
-        inputBody.setMaSinhVien("B18DCCN147");
+        inputBody.setMaSinhVien("B19DCCN001");
         String inputJson = super.mapToJson(inputBody);
 
         ResponeAPI outputExpect = new ResponeAPI();
