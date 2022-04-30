@@ -4,36 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="push sau merge lan 3">
+    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="api lay tat ca tuan hoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/HocKiDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/HocKiDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/KiHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/KiHocDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/NamHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/NamHocDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/BoMon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/BoMon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/DangKyHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/DangKyHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/HocKi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/HocKi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/Khoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/Khoa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KiHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KiHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KipHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KipHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LichHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LichHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LopHocPhan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LopHocPhan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHocKiHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHocKiHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NamHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NamHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NgayHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NgayHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/PhongHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/PhongHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/SinhVien.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/SinhVien.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/SinhVienKhoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/SinhVienKhoa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/ToaNha.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/ToaNha.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/TuanHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/TuanHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/LichHocRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/LichHocRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/LopHocPhanControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/LopHocPhanControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/MonHocControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/MonHocControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/SinhVienControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/SinhVienControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +38,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,6 +81,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectId" id="26kM1YPB7X3PUfb9jT5etOHnOZI" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -117,17 +94,14 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "6e086cdebe6a385a639e6793ce01079e"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ADMIN\Documents\IntelliJ\DangKyTinChiDat" />
@@ -155,84 +129,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LopHocPhanControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DangKyTinChi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.LopHocPhanControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LopHocPhanControllerTest.LopHocPhanController_GetLopHocPhanCoKQ_D18_CNPM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DangKyTinChi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.LopHocPhanControllerTest" />
-      <option name="METHOD_NAME" value="LopHocPhanController_GetLopHocPhanCoKQ_D18_CNPM" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MonHocControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DangKyTinChi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.MonHocControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MonHocControllerTest.MonHocControllerTimKiemCoKQ_D18_CNPM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DangKyTinChi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.MonHocControllerTest" />
-      <option name="METHOD_NAME" value="MonHocControllerTimKiemCoKQ_D18_CNPM" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MonHocControllerTest.MonHocControllerTimKiemKhongKQ" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DangKyTinChi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.MonHocControllerTest" />
-      <option name="METHOD_NAME" value="MonHocControllerTimKiemKhongKQ" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="DangKyTinChiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="DangKyTinChi" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptit.dangkytinchi.DangKyTinChiApplication" />
@@ -242,22 +138,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.DangKyTinChiApplication" />
-      <item itemvalue="JUnit.LopHocPhanControllerTest" />
-      <item itemvalue="JUnit.LopHocPhanControllerTest.LopHocPhanController_GetLopHocPhanCoKQ_D18_CNPM" />
-      <item itemvalue="JUnit.MonHocControllerTest" />
-      <item itemvalue="JUnit.MonHocControllerTest.MonHocControllerTimKiemCoKQ_D18_CNPM" />
-      <item itemvalue="JUnit.MonHocControllerTest.MonHocControllerTimKiemKhongKQ" />
       <item itemvalue="Spring Boot.DangKyTinChiApplication" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="JUnit.LopHocPhanControllerTest" />
-        <item itemvalue="JUnit.LopHocPhanControllerTest.LopHocPhanController_GetLopHocPhanCoKQ_D18_CNPM" />
-        <item itemvalue="JUnit.MonHocControllerTest" />
-        <item itemvalue="JUnit.MonHocControllerTest.MonHocControllerTimKiemCoKQ_D18_CNPM" />
-        <item itemvalue="JUnit.MonHocControllerTest.MonHocControllerTimKiemKhongKQ" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -282,8 +164,6 @@
       <workItem from="1648975313338" duration="1387000" />
       <workItem from="1648977648206" duration="4023000" />
       <workItem from="1649063761948" duration="7052000" />
-      <workItem from="1651313500417" duration="238000" />
-      <workItem from="1651313749559" duration="2742000" />
     </task>
     <task id="LOCAL-00001" summary="fix model">
       <created>1647966187370</created>
@@ -299,42 +179,7 @@
       <option name="project" value="LOCAL" />
       <updated>1647966620820</updated>
     </task>
-    <task id="LOCAL-00003" summary="test">
-      <created>1651313776069</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1651313776069</updated>
-    </task>
-    <task id="LOCAL-00004" summary="test lan 2">
-      <created>1651313848135</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1651313848135</updated>
-    </task>
-    <task id="LOCAL-00005" summary="push sau merge">
-      <created>1651315347035</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1651315347035</updated>
-    </task>
-    <task id="LOCAL-00006" summary="push sau merge lan 2">
-      <created>1651315389866</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1651315389866</updated>
-    </task>
-    <task id="LOCAL-00007" summary="push sau merge lan 3">
-      <created>1651315421221</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1651315421221</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,6 +191,17 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dat" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="COLUMN_ID_WIDTH">
                 <map>
                   <entry key="Table.Default.Author.ColumnIdWidth" value="206" />
@@ -363,12 +219,7 @@
     <MESSAGE value="fix model" />
     <MESSAGE value="fix commit" />
     <MESSAGE value="fix commit(bug)" />
-    <MESSAGE value="test" />
-    <MESSAGE value="test lan 2" />
-    <MESSAGE value="push sau merge" />
-    <MESSAGE value="push sau merge lan 2" />
-    <MESSAGE value="push sau merge lan 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="push sau merge lan 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix commit(bug)" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
