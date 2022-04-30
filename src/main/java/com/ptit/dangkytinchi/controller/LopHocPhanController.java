@@ -43,6 +43,8 @@ public class LopHocPhanController {
         this.dangKyHocRepository = dangKyHocRepository;
     }
 
+
+    //lay tat ca cac lop hoc phan duoc mo cua mon hoc theo maMonHoc
     @PostMapping("/lophocphan/{maMonHoc}")
     private ResponeAPI getLopHocPhanByMonHoc(@RequestBody LinkedHashMap object,@PathVariable("maMonHoc") String maMonHoc) {
         ResponeAPI res = new ResponeAPI();
@@ -120,6 +122,7 @@ public class LopHocPhanController {
         }
         monHocKiHoc = (ArrayList<MonHocKiHoc>) monHocKiHocRepository.findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_MaMonHoc(maKiHoc, maMonHoc);
         dsLopHocPhan = (ArrayList<LopHocPhan>) lopHocPhanRepository.findLopHocPhanByMonHocKiHoc_MaMonHocKiHoc(monHocKiHoc.get(0).getMaMonHocKiHoc());
+        //lay tat ca lich hoc cua lop hoc phan theo maLopHocPhan
         for(int i=0; i<dsLopHocPhan.size(); i++){
             String maLHP= dsLopHocPhan.get(i).getMaLopHocPhan();
             LopHocPhan tempLHP = dsLopHocPhan.get(i);

@@ -9,11 +9,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-public class
-
-
-
-DangKyTinChiApplication {
+public class DangKyTinChiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DangKyTinChiApplication.class, args);

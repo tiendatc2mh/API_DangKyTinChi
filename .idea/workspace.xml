@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="api lay tat ca tuan hoc">
+    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="commit dau tien">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DangKyTinChiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DangKyTinChiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LopHocPhanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LopHocPhanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/MonHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/MonHocController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienKhoaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienKhoaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/TuanHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/TuanHocController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647966620820</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit dau tien">
+      <created>1651317249719</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651317249719</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,7 +230,8 @@
     <MESSAGE value="fix model" />
     <MESSAGE value="fix commit" />
     <MESSAGE value="fix commit(bug)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix commit(bug)" />
+    <MESSAGE value="commit dau tien" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit dau tien" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

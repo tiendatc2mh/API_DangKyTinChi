@@ -40,6 +40,8 @@ public class DangKyHocController {
         this.lopHocPhanRepository = lopHocPhanRepository;
         this.lichHocRepository = lichHocRepository;
     }
+
+    //luu dang ky
     @PostMapping("/luudangky/{maSinhVien}")
     private ResponeAPI luuDangKy(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien) {
 
@@ -54,6 +56,8 @@ public class DangKyHocController {
         dsmaLopHocPhanDTO.forEach(list -> {
             dsLopHocPhan.add(lopHocPhanRepository.findLopHocPhanByMaLopHocPhan(list));
         });
+
+        //check si so con lai cua lop hoc phan
         for (int i = 0; i < dsLopHocPhan.size(); i++) {
             LopHocPhan temp = dsLopHocPhan.get(i);
             ArrayList<DangKyHoc> dsDangKy = (ArrayList<DangKyHoc>) dangKyHocRepository.findDangKyHocByLopHocPhan_MaLopHocPhan(temp.getMaLopHocPhan());
@@ -102,6 +106,8 @@ public class DangKyHocController {
         return res;
 
     }
+
+    //lay tat ca lop hoc phan da dang ky cua sinh vien
     @GetMapping("/luudangky/{maSinhVien}")
     public ResponeAPI getDSDangKy (@PathVariable String maSinhVien){
         ResponeAPI res = new ResponeAPI();
@@ -116,6 +122,8 @@ public class DangKyHocController {
         res.setData(dsDangKyHocDTO);
         return res;
     }
+
+    //xoa dang ky
     @PostMapping("xoadangky/{maSinhVien}")
     public ResponeAPI xoaDangKyHoc(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien){
         ResponeAPI res = new ResponeAPI();
@@ -133,6 +141,8 @@ public class DangKyHocController {
         res.setData("Xóa đăng ký thành công!");
         return res;
     }
+
+    //xem thoi khoa bieu theo tuan cua sinh vien
 
     @PostMapping("xemthoikhoabieu/{maSinhVien}")
     public ResponeAPI xemThoiKhoaBieu(@RequestBody LinkedHashMap object, @PathVariable String maSinhVien){
