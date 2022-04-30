@@ -10,7 +10,6 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@AllArgsConstructor
 @Table(name = "tbl_lich_hoc", schema = "dangkytinchi")
 public class LichHoc {
 

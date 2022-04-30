@@ -11,7 +11,6 @@ import java.util.List;
 
 @Repository
 public interface LichHocRepository  extends JpaRepository<LichHoc, String> {
-    List<LichHoc> findLichHocByMaLichHoc(String maLichHoc);
     ArrayList<LichHoc> findLichHocByLopHocPhan_MaLopHocPhan(String maLopHocPhan);
     ArrayList<LichHoc> findLichHocByLopHocPhan_MaLopHocPhanAndTuanHoc_MaTuanHoc(String maLopHocPhan,String maTuanHoc);
 }
