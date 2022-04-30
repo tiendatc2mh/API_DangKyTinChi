@@ -191,7 +191,7 @@ public class MonHocControllerTest extends AbstractTest {
     @Test
     public void MonHocControllerTimKiemCoKQ_D19() throws Exception {
         String input=" ";
-        MonHocDTO data1 = new MonHocDTO("INT1340", "Nhập môn CNPM", 3,
+        MonHocDTO data1 = new MonHocDTO("INT1340", "Nhập môn CNPM", 14,
                 null,null,null);
         ArrayList<MonHocDTO> outputData = new ArrayList<MonHocDTO>();
         outputData.add(data1);
