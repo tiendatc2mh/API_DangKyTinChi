@@ -1,0 +1,546 @@
+Index: src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver\r\nspring.datasource.url=jdbc:mysql://localhost:3306/dangkytinchi?useSSL=false\r\nspring.datasource.username=root\r\nspring.datasource.password=12345678\r\n\r\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect\r\nspring.jpa.hibernate.ddl-auto=update\r\nspring.jpa.hibernate.show_sql=true\r\nspring.jpa.hibernate.format_sql=true\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+--- a/src/main/resources/application.properties	(revision dbe4f5499106411154cb84b160a17ec76bb05492)
++++ b/src/main/resources/application.properties	(date 1651241876454)
+@@ -1,7 +1,8 @@
+ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+ spring.datasource.url=jdbc:mysql://localhost:3306/dangkytinchi?useSSL=false
+ spring.datasource.username=root
+-spring.datasource.password=12345678
++spring.datasource.password=tiendatc2mh
++server.port=8081
+ 
+ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+ spring.jpa.hibernate.ddl-auto=update
+Index: src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ptit.dangkytinchi.repository;\r\n\r\nimport com.ptit.dangkytinchi.model.LichHoc;\r\nimport com.ptit.dangkytinchi.model.LopHocPhan;\r\nimport com.ptit.dangkytinchi.model.TuanHoc;\r\nimport org.springframework.data.jpa.repository.JpaRepository;\r\nimport org.springframework.stereotype.Repository;\r\n\r\nimport java.util.ArrayList;\r\nimport java.util.List;\r\n\r\n@Repository\r\npublic interface LichHocRepository  extends JpaRepository<LichHoc, String> {\r\n    List<LichHoc> findLichHocByMaLichHoc(String maLichHoc);\r\n    ArrayList<LichHoc> findLichHocByLopHocPhan_MaLopHocPhan(String maLopHocPhan);\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java b/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java
+--- a/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java	(revision dbe4f5499106411154cb84b160a17ec76bb05492)
++++ b/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java	(date 1651045127546)
+@@ -13,4 +13,5 @@
+ public interface LichHocRepository  extends JpaRepository<LichHoc, String> {
+     List<LichHoc> findLichHocByMaLichHoc(String maLichHoc);
+     ArrayList<LichHoc> findLichHocByLopHocPhan_MaLopHocPhan(String maLopHocPhan);
++    ArrayList<LichHoc> findLichHocByLopHocPhan_MaLopHocPhanAndTuanHoc_MaTuanHoc(String maLopHocPhan, String maTuanHoc);
+ }
+Index: DangKyTinChi.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule=\"true\" type=\"JAVA_MODULE\" version=\"4\">\r\n  <component name=\"FacetManager\">\r\n    <facet type=\"web\" name=\"Web\">\r\n      <configuration>\r\n        <webroots />\r\n        <sourceRoots>\r\n          <root url=\"file://$MODULE_DIR$/src/main/java\" />\r\n          <root url=\"file://$MODULE_DIR$/src/main/resources\" />\r\n        </sourceRoots>\r\n      </configuration>\r\n    </facet>\r\n    <facet type=\"jpa\" name=\"JPA\">\r\n      <configuration>\r\n        <setting name=\"validation-enabled\" value=\"true\" />\r\n        <setting name=\"provider-name\" value=\"Hibernate\" />\r\n        <datasource-mapping>\r\n          <factory-entry name=\"entityManagerFactory\" />\r\n        </datasource-mapping>\r\n        <naming-strategy-map />\r\n      </configuration>\r\n    </facet>\r\n    <facet type=\"Spring\" name=\"Spring\">\r\n      <configuration />\r\n    </facet>\r\n  </component>\r\n  <component name=\"NewModuleRootManager\" LANGUAGE_LEVEL=\"JDK_1_8\">\r\n    <output url=\"file://$MODULE_DIR$/target/classes\" />\r\n    <output-test url=\"file://$MODULE_DIR$/target/test-classes\" />\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/java\" isTestSource=\"false\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/main/resources\" type=\"java-resource\" />\r\n      <sourceFolder url=\"file://$MODULE_DIR$/src/test/java\" isTestSource=\"true\" />\r\n      <excludeFolder url=\"file://$MODULE_DIR$/target\" />\r\n    </content>\r\n    <orderEntry type=\"inheritedJdk\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-aop:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-aop:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.aspectj:aspectjweaver:1.9.7\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-jdbc:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.zaxxer:HikariCP:4.0.3\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-jdbc:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: jakarta.transaction:jakarta.transaction-api:1.3.3\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: jakarta.persistence:jakarta.persistence-api:2.2.3\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.hibernate:hibernate-core:5.6.5.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.jboss.logging:jboss-logging:3.4.3.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: net.bytebuddy:byte-buddy:1.11.22\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: antlr:antlr:2.7.7\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.jboss:jandex:2.4.2.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml:classmate:1.5.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.hibernate.common:hibernate-commons-annotations:5.1.2.Final\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.glassfish.jaxb:jaxb-runtime:2.3.6\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.glassfish.jaxb:txw2:2.3.6\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.sun.istack:istack-commons-runtime:3.0.12\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"RUNTIME\" name=\"Maven: com.sun.activation:jakarta.activation:1.2.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.data:spring-data-jpa:2.6.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.data:spring-data-commons:2.6.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-orm:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-context:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-tx:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-beans:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.slf4j:slf4j-api:1.7.36\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-aspects:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-web:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-autoconfigure:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-logging:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: ch.qos.logback:logback-classic:1.2.10\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: ch.qos.logback:logback-core:1.2.10\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.logging.log4j:log4j-to-slf4j:2.17.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.logging.log4j:log4j-api:2.17.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.slf4j:jul-to-slf4j:1.7.36\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: jakarta.annotation:jakarta.annotation-api:1.3.5\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.yaml:snakeyaml:1.29\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-json:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.core:jackson-databind:2.13.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.core:jackson-core:2.13.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.13.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.13.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework.boot:spring-boot-starter-tomcat:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.58\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.tomcat.embed:tomcat-embed-el:9.0.58\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.58\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-web:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-webmvc:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-expression:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"RUNTIME\" name=\"Maven: mysql:mysql-connector-java:8.0.28\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.projectlombok:lombok:1.18.22\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.springframework.boot:spring-boot-starter-test:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.springframework.boot:spring-boot-test:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.springframework.boot:spring-boot-test-autoconfigure:2.6.4\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: com.jayway.jsonpath:json-path:2.6.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: net.minidev:json-smart:2.4.8\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: net.minidev:accessors-smart:2.4.8\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.ow2.asm:asm:9.1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: jakarta.xml.bind:jakarta.xml.bind-api:2.3.3\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: jakarta.activation:jakarta.activation-api:1.2.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.assertj:assertj-core:3.21.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.hamcrest:hamcrest:2.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.junit.jupiter:junit-jupiter:5.8.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.junit.jupiter:junit-jupiter-api:5.8.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.opentest4j:opentest4j:1.2.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.junit.platform:junit-platform-commons:1.8.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.apiguardian:apiguardian-api:1.1.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.junit.jupiter:junit-jupiter-params:5.8.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.junit.jupiter:junit-jupiter-engine:5.8.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.junit.platform:junit-platform-engine:1.8.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.mockito:mockito-core:4.0.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: net.bytebuddy:byte-buddy-agent:1.11.22\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.objenesis:objenesis:3.2\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.mockito:mockito-junit-jupiter:4.0.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.skyscreamer:jsonassert:1.5.0\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: com.vaadin.external.google:android-json:0.0.20131108.vaadin1\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-core:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" name=\"Maven: org.springframework:spring-jcl:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.springframework:spring-test:5.3.16\" level=\"project\" />\r\n    <orderEntry type=\"library\" scope=\"TEST\" name=\"Maven: org.xmlunit:xmlunit-core:2.8.4\" level=\"project\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/DangKyTinChi.iml b/DangKyTinChi.iml
+--- a/DangKyTinChi.iml	(revision dbe4f5499106411154cb84b160a17ec76bb05492)
++++ b/DangKyTinChi.iml	(date 1650696728668)
+@@ -120,5 +120,7 @@
+     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.16" level="project" />
+     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.3.16" level="project" />
+     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.8.4" level="project" />
++    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.13.2" level="project" />
++    <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:2.2" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8b8e04eb-cdfa-418e-84f3-019072358e64\" name=\"Changes\" comment=\"fix commit\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LichHocDTO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LichHocDTO.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienDTO.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienDTO.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LopHocPhanController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LopHocPhanController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/MonHocController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/MonHocController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/SinhVien.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/SinhVien.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocKiHocRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocKiHocRepository.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocRepository.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocRepository.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <excluded-from-favorite>\r\n      <branch-storage>\r\n        <map>\r\n          <entry type=\"REMOTE\">\r\n            <value>\r\n              <list>\r\n                <branch-info repo=\"$PROJECT_DIR$\" source=\"origin/master\" />\r\n              </list>\r\n            </value>\r\n          </entry>\r\n        </map>\r\n      </branch-storage>\r\n    </excluded-from-favorite>\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"HighlightingSettingsPerFile\">\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/BoMonController.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/DangKyHocDTO.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienKhoaDTO.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/HocKiDTO.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/KhoaDTO.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/BoMonDTO.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienDTO.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n    <setting file=\"file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java\" root0=\"FORCE_HIGHLIGHTING\" />\r\n  </component>\r\n  <component name=\"JpbToolWindowState\">\r\n    <option name=\"myId2FirstActivated\">\r\n      <map>\r\n        <entry key=\"com.haulmont.jpb.jpaInspector\" value=\"true\" />\r\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"true\" />\r\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"true\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"myId2Visible\">\r\n      <map>\r\n        <entry key=\"com.haulmont.jpb.jpaInspector\" value=\"false\" />\r\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"false\" />\r\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"false\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"useMavenConfig\" value=\"true\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"26kM1YPB7X3PUfb9jT5etOHnOZI\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"1\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"showMembers\" value=\"true\" />\r\n    <option name=\"showVisibilityIcons\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RequestMappingsPanelOrder0\" value=\"0\" />\r\n    <property name=\"RequestMappingsPanelOrder1\" value=\"1\" />\r\n    <property name=\"RequestMappingsPanelWidth0\" value=\"75\" />\r\n    <property name=\"RequestMappingsPanelWidth1\" value=\"75\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.tslint\" value=\"(autodetect)\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Project\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.15\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.2\" />\r\n    <property name=\"show.run.dashboard.notification\" value=\"false\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\ADMIN\\Documents\\IntelliJ\\DangKyTinChiDat\" />\r\n      <recent name=\"C:\\Users\\ADMIN\\Documents\\IntelliJ\\DangKyTinChi\\src\\main\\java\\com\\ptit\\dangkytinchi\\DTO\" />\r\n      <recent name=\"C:\\Users\\ADMIN\\Documents\\IntelliJ\\DangKyTinChi\\src\\main\\java\\com\\ptit\\dangkytinchi\\repository\" />\r\n    </key>\r\n    <key name=\"CopyClassDialog.RECENTS_KEY\">\r\n      <recent name=\"com.ptit.dangkytinchi.controller\" />\r\n      <recent name=\"com.ptit.dangkytinchi.exception\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Spring Boot.DangKyTinChiApplication\">\r\n    <configuration name=\"DangKyTinChiApplication\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" value=\"1.8\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH_ENABLED\" value=\"true\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.ptit.dangkytinchi.DangKyTinChiApplication\" />\r\n      <module name=\"DangKyTC\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.ptit.dangkytinchi.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"DangKyTinChiApplication\" type=\"SpringBootApplicationConfigurationType\" factoryName=\"Spring Boot\">\r\n      <module name=\"DangKyTinChi\" />\r\n      <option name=\"SPRING_BOOT_MAIN_CLASS\" value=\"com.ptit.dangkytinchi.DangKyTinChiApplication\" />\r\n      <option name=\"ALTERNATIVE_JRE_PATH\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.DangKyTinChiApplication\" />\r\n      <item itemvalue=\"Spring Boot.DangKyTinChiApplication\" />\r\n    </list>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8b8e04eb-cdfa-418e-84f3-019072358e64\" name=\"Changes\" comment=\"\" />\r\n      <created>1647962916020</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1647962916020</updated>\r\n      <workItem from=\"1647962918816\" duration=\"2876000\" />\r\n      <workItem from=\"1647965832259\" duration=\"935000\" />\r\n      <workItem from=\"1648017439927\" duration=\"917000\" />\r\n      <workItem from=\"1648030875778\" duration=\"4068000\" />\r\n      <workItem from=\"1648109250232\" duration=\"31000\" />\r\n      <workItem from=\"1648111383015\" duration=\"371000\" />\r\n      <workItem from=\"1648112804255\" duration=\"1295000\" />\r\n      <workItem from=\"1648114163020\" duration=\"227000\" />\r\n      <workItem from=\"1648115530347\" duration=\"52000\" />\r\n      <workItem from=\"1648115725505\" duration=\"20000\" />\r\n      <workItem from=\"1648129624323\" duration=\"13175000\" />\r\n      <workItem from=\"1648744892990\" duration=\"1399000\" />\r\n      <workItem from=\"1648975313338\" duration=\"1387000\" />\r\n      <workItem from=\"1648977648206\" duration=\"4023000\" />\r\n      <workItem from=\"1649063761948\" duration=\"7052000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"fix model\">\r\n      <created>1647966187370</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1647966187370</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"fix commit(bug)\">\r\n      <created>1647966620820</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1647966620820</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"dat\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n              <option name=\"COLUMN_ID_WIDTH\">\r\n                <map>\r\n                  <entry key=\"Table.Default.Author.ColumnIdWidth\" value=\"206\" />\r\n                  <entry key=\"Table.Default.Date.ColumnIdWidth\" value=\"15\" />\r\n                  <entry key=\"Table.Space.CommitStatus.ColumnIdWidth\" value=\"15\" />\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"fix model\" />\r\n    <MESSAGE value=\"fix commit\" />\r\n    <MESSAGE value=\"fix commit(bug)\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"fix commit(bug)\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision dbe4f5499106411154cb84b160a17ec76bb05492)
++++ b/.idea/workspace.xml	(date 1651312760404)
+@@ -4,23 +4,40 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="fix commit">
++    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="api lay tat ca tuan hoc">
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LichHocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LichHocDTO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienDTO.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LopHocPhanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LopHocPhanController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/MonHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/MonHocController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/SinhVien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/SinhVien.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocKiHocRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocKiHocRepository.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocRepository.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/DangKyTinChi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DangKyTinChi.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/MonHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/MonHocDTO.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/MonHocKiHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/MonHocKiHocDTO.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/exception/ResponeAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/exception/ResponeAPI.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/BoMon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/BoMon.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/HocKi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/HocKi.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/Khoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/Khoa.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KiHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KiHoc.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KipHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KipHoc.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LichHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LichHoc.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LopHocPhan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LopHocPhan.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHoc.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHocKiHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHocKiHoc.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NamHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NamHoc.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NgayHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NgayHoc.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/PhongHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/PhongHoc.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/ToaNha.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/ToaNha.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/TuanHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/TuanHoc.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/DangKyHocRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/DangKyHocRepository.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/LichHocRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/LichHocRepository.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/LopHocPhanRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/LopHocPhanRepository.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/MonHocKiHocRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/MonHocKiHocRepository.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/MonHocRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/MonHocRepository.class" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -55,17 +72,25 @@
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="GitSEFilterConfiguration">
++    <file-type-list>
++      <filtered-out-file-type name="LOCAL_BRANCH" />
++      <filtered-out-file-type name="REMOTE_BRANCH" />
++      <filtered-out-file-type name="TAG" />
++      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
++    </file-type-list>
+   </component>
+   <component name="HighlightingSettingsPerFile">
+-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/BoMonController.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/BoMonDTO.java" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/DangKyHocDTO.java" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienKhoaDTO.java" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/HocKiDTO.java" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/KhoaDTO.java" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.java" root0="FORCE_HIGHLIGHTING" />
+-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/BoMonDTO.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienDTO.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienKhoaDTO.java" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/BoMonController.java" root0="FORCE_HIGHLIGHTING" />
+     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" root0="FORCE_HIGHLIGHTING" />
+   </component>
+   <component name="JpbToolWindowState">
+@@ -104,25 +129,17 @@
+     <option name="showMembers" value="true" />
+     <option name="showVisibilityIcons" value="true" />
+   </component>
+-  <component name="PropertiesComponent">
+-    <property name="RequestMappingsPanelOrder0" value="0" />
+-    <property name="RequestMappingsPanelOrder1" value="1" />
+-    <property name="RequestMappingsPanelWidth0" value="75" />
+-    <property name="RequestMappingsPanelWidth1" value="75" />
+-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+-    <property name="WebServerToolWindowFactoryState" value="false" />
+-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+-    <property name="node.js.detected.package.eslint" value="true" />
+-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+-    <property name="nodejs_package_manager_path" value="npm" />
+-    <property name="project.structure.last.edited" value="Project" />
+-    <property name="project.structure.proportion" value="0.15" />
+-    <property name="project.structure.side.proportion" value="0.2" />
+-    <property name="show.run.dashboard.notification" value="false" />
+-  </component>
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
++    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
++    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
++    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/ADMIN/Documents/IntelliJ/T9_SQA01&quot;,
++    &quot;spring.configuration.checksum&quot;: &quot;6e086cdebe6a385a639e6793ce01079e&quot;
++  }
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\ADMIN\Documents\IntelliJ\DangKyTinChiDat" />
+@@ -139,7 +156,7 @@
+       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+       <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.DangKyTinChiApplication" />
+-      <module name="DangKyTC" />
++      <module name="DangKyTinChi" />
+       <extension name="coverage">
+         <pattern>
+           <option name="PATTERN" value="com.ptit.dangkytinchi.*" />
+@@ -150,18 +167,104 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
++    <configuration name="AbstractTest and 3 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="DangKyTinChi" />
++      <option name="TEST_OBJECT" value="pattern" />
++      <patterns>
++        <pattern testClass="com.ptit.dangkytinchi.controller.AbstractTest" />
++        <pattern testClass="com.ptit.dangkytinchi.controller.LopHocPhanControllerTest" />
++        <pattern testClass="com.ptit.dangkytinchi.controller.MonHocControllerTest" />
++        <pattern testClass="com.ptit.dangkytinchi.controller.SinhVienControllerTest" />
++      </patterns>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="DangKyTinChiApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="DangKyTinChi" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="com.ptit.dangkytinchi.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi" />
++      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.DangKyTinChiApplicationTests" />
++      <option name="TEST_OBJECT" value="class" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="LopHocPhanControllerTest and 2 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="DangKyTinChi" />
++      <option name="MAIN_CLASS_NAME" value="" />
++      <option name="METHOD_NAME" value="" />
++      <option name="TEST_OBJECT" value="pattern" />
++      <patterns>
++        <pattern testClass="com.ptit.dangkytinchi.controller.LopHocPhanControllerTest" />
++        <pattern testClass="com.ptit.dangkytinchi.controller.SinhVienControllerTest" />
++        <pattern testClass="com.ptit.dangkytinchi.controller.MonHocControllerTest" />
++      </patterns>
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="LopHocPhanControllerTest.LopHocPhanController_GetLopHocPhanCoKQ_D18_CNPM" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
++      <module name="DangKyTinChi" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
++      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.LopHocPhanControllerTest" />
++      <option name="METHOD_NAME" value="LopHocPhanController_GetLopHocPhanCoKQ_D18_CNPM" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="MonHocControllerTest.MonHocControllerTimKiemButtonCoKQ" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
++      <module name="DangKyTinChi" />
++      <extension name="coverage">
++        <pattern>
++          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
++          <option name="ENABLED" value="true" />
++        </pattern>
++      </extension>
++      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
++      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.MonHocControllerTest" />
++      <option name="METHOD_NAME" value="MonHocControllerTimKiemButtonCoKQ" />
++      <option name="TEST_OBJECT" value="method" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
+     <configuration name="DangKyTinChiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+       <module name="DangKyTinChi" />
+       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptit.dangkytinchi.DangKyTinChiApplication" />
+-      <option name="ALTERNATIVE_JRE_PATH" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+     <list>
+       <item itemvalue="Application.DangKyTinChiApplication" />
++      <item itemvalue="JUnit.MonHocControllerTest.MonHocControllerTimKiemButtonCoKQ" />
++      <item itemvalue="JUnit.LopHocPhanControllerTest.LopHocPhanController_GetLopHocPhanCoKQ_D18_CNPM" />
++      <item itemvalue="JUnit.DangKyTinChiApplicationTests" />
++      <item itemvalue="JUnit.LopHocPhanControllerTest and 2 more" />
++      <item itemvalue="JUnit.AbstractTest and 3 more" />
+       <item itemvalue="Spring Boot.DangKyTinChiApplication" />
+     </list>
++    <recent_temporary>
++      <list>
++        <item itemvalue="JUnit.LopHocPhanControllerTest.LopHocPhanController_GetLopHocPhanCoKQ_D18_CNPM" />
++        <item itemvalue="JUnit.AbstractTest and 3 more" />
++        <item itemvalue="JUnit.LopHocPhanControllerTest and 2 more" />
++        <item itemvalue="JUnit.DangKyTinChiApplicationTests" />
++      </list>
++    </recent_temporary>
+   </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+@@ -186,6 +289,57 @@
+       <workItem from="1648975313338" duration="1387000" />
+       <workItem from="1648977648206" duration="4023000" />
+       <workItem from="1649063761948" duration="7052000" />
++      <workItem from="1649207996464" duration="7000" />
++      <workItem from="1649209189274" duration="2524000" />
++      <workItem from="1649244368017" duration="3437000" />
++      <workItem from="1649259125934" duration="75000" />
++      <workItem from="1649316641368" duration="267000" />
++      <workItem from="1649319677343" duration="5000" />
++      <workItem from="1649320151943" duration="36000" />
++      <workItem from="1649350226513" duration="277000" />
++      <workItem from="1649350923360" duration="595000" />
++      <workItem from="1649352539982" duration="1537000" />
++      <workItem from="1649354978048" duration="717000" />
++      <workItem from="1649381027540" duration="8000" />
++      <workItem from="1649392109671" duration="993000" />
++      <workItem from="1649399436321" duration="119000" />
++      <workItem from="1649650112586" duration="95000" />
++      <workItem from="1649727188641" duration="430000" />
++      <workItem from="1650034333915" duration="1432000" />
++      <workItem from="1650111010000" duration="21922000" />
++      <workItem from="1650165955401" duration="2295000" />
++      <workItem from="1650198619299" duration="16658000" />
++      <workItem from="1650247264954" duration="91000" />
++      <workItem from="1650249249744" duration="12929000" />
++      <workItem from="1650334285889" duration="1166000" />
++      <workItem from="1650362420238" duration="1405000" />
++      <workItem from="1650418775858" duration="8769000" />
++      <workItem from="1650465558857" duration="743000" />
++      <workItem from="1650466580964" duration="484000" />
++      <workItem from="1650467089140" duration="1139000" />
++      <workItem from="1650468251759" duration="133000" />
++      <workItem from="1650468407629" duration="438000" />
++      <workItem from="1650503100280" duration="1913000" />
++      <workItem from="1650532891765" duration="2015000" />
++      <workItem from="1650589640750" duration="3088000" />
++      <workItem from="1650597068573" duration="1466000" />
++      <workItem from="1650599026342" duration="15000" />
++      <workItem from="1650614290184" duration="422000" />
++      <workItem from="1650695929049" duration="494000" />
++      <workItem from="1650696501344" duration="226000" />
++      <workItem from="1650696740171" duration="7000" />
++      <workItem from="1650733018822" duration="2000" />
++      <workItem from="1650800142712" duration="137000" />
++      <workItem from="1650861166605" duration="603000" />
++      <workItem from="1650966896791" duration="616000" />
++      <workItem from="1651042100658" duration="4664000" />
++      <workItem from="1651116682216" duration="974000" />
++      <workItem from="1651158828933" duration="2041000" />
++      <workItem from="1651198485703" duration="2617000" />
++      <workItem from="1651204755860" duration="148000" />
++      <workItem from="1651217347445" duration="635000" />
++      <workItem from="1651241738211" duration="1506000" />
++      <workItem from="1651304430381" duration="4290000" />
+     </task>
+     <task id="LOCAL-00001" summary="fix model">
+       <created>1647966187370</created>
+@@ -201,11 +355,92 @@
+       <option name="project" value="LOCAL" />
+       <updated>1647966620820</updated>
+     </task>
+-    <option name="localTasksCounter" value="3" />
++    <task id="LOCAL-00003" summary="sua api tim kiem: them so tin chi">
++      <created>1649211003742</created>
++      <option name="number" value="00003" />
++      <option name="presentableId" value="LOCAL-00003" />
++      <option name="project" value="LOCAL" />
++      <updated>1649211003742</updated>
++    </task>
++    <task id="LOCAL-00004" summary="sua api tim kiem: api cho nut tim kiem">
++      <created>1649214621084</created>
++      <option name="number" value="00004" />
++      <option name="presentableId" value="LOCAL-00004" />
++      <option name="project" value="LOCAL" />
++      <updated>1649214621084</updated>
++    </task>
++    <task id="LOCAL-00005" summary="jnuit MonHocController, SinhVienController,">
++      <created>1650207648514</created>
++      <option name="number" value="00005" />
++      <option name="presentableId" value="LOCAL-00005" />
++      <option name="project" value="LOCAL" />
++      <updated>1650207648514</updated>
++    </task>
++    <task id="LOCAL-00006" summary="jnuit SinhVienDTO">
++      <created>1650207740109</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1650207740109</updated>
++    </task>
++    <task id="LOCAL-00007" summary="jnuit LopHocPhanControllerTest">
++      <created>1650269692008</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1650269692008</updated>
++    </task>
++    <task id="LOCAL-00008" summary="jnuit LopHocPhanControllerTest push nốt">
++      <created>1650269716029</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1650269716029</updated>
++    </task>
++    <task id="LOCAL-00009" summary="jnuit LopHocPhanControllerTest push">
++      <created>1650334418739</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1650334418739</updated>
++    </task>
++    <task id="LOCAL-00010" summary="fix luu dang ky">
++      <created>1650419410927</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1650419410927</updated>
++    </task>
++    <task id="LOCAL-00011" summary="fix test xem danh sach lich hoc">
++      <created>1650596260986</created>
++      <option name="number" value="00011" />
++      <option name="presentableId" value="LOCAL-00011" />
++      <option name="project" value="LOCAL" />
++      <updated>1650596260986</updated>
++    </task>
++    <task id="LOCAL-00012" summary="api lay tat ca tuan hoc">
++      <created>1650598396192</created>
++      <option name="number" value="00012" />
++      <option name="presentableId" value="LOCAL-00012" />
++      <option name="project" value="LOCAL" />
++      <updated>1650598396192</updated>
++    </task>
++    <option name="localTasksCounter" value="13" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
++  </component>
++  <component name="Vcs.Log.History.Properties">
++    <option name="COLUMN_ID_ORDER">
++      <list>
++        <option value="Default.Root" />
++        <option value="Default.Author" />
++        <option value="Default.Date" />
++        <option value="Default.Subject" />
++        <option value="Space.CommitStatus" />
++      </list>
++    </option>
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+     <option name="TAB_STATES">
+@@ -241,6 +476,50 @@
+     <MESSAGE value="fix model" />
+     <MESSAGE value="fix commit" />
+     <MESSAGE value="fix commit(bug)" />
+-    <option name="LAST_COMMIT_MESSAGE" value="fix commit(bug)" />
++    <MESSAGE value="sua api tim kiem: them so tin chi" />
++    <MESSAGE value="sua api tim kiem: api cho nut tim kiem" />
++    <MESSAGE value="jnuit MonHocController, SinhVienController," />
++    <MESSAGE value="jnuit SinhVienDTO" />
++    <MESSAGE value="jnuit LopHocPhanControllerTest" />
++    <MESSAGE value="jnuit LopHocPhanControllerTest push nốt" />
++    <MESSAGE value="jnuit LopHocPhanControllerTest push" />
++    <MESSAGE value="fix luu dang ky" />
++    <MESSAGE value="fix test xem danh sach lich hoc" />
++    <MESSAGE value="api lay tat ca tuan hoc" />
++    <option name="LAST_COMMIT_MESSAGE" value="api lay tat ca tuan hoc" />
++  </component>
++  <component name="XDebuggerManager">
++    <breakpoint-manager>
++      <breakpoints>
++        <line-breakpoint enabled="true" type="java-line">
++          <url>file://$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/MonHocControllerTest.java</url>
++          <line>57</line>
++          <option name="timeStamp" value="26" />
++        </line-breakpoint>
++      </breakpoints>
++    </breakpoint-manager>
++    <pin-to-top-manager>
++      <pinned-members>
++        <PinnedItemInfo parentTag="com.ptit.dangkytinchi.model.MonHocKiHoc" memberName="monHoc" />
++        <PinnedItemInfo parentTag="com.ptit.dangkytinchi.model.BoMon" memberName="tenBoMon" />
++      </pinned-members>
++    </pin-to-top-manager>
++    <watches-manager>
++      <configuration name="JUnit">
++        <watch expression="((LinkedHashMap)((LinkedHashMap.Entry)((LinkedHashMap)((LinkedHashMap.Entry)((LinkedHashMap)((LinkedHashMap.Entry)((LinkedHashMap)((ArrayList)((LinkedHashMap.Entry)((LinkedHashMap)((ArrayList)outputResult.data).get(0)).entrySet().toArray()[6]).getValue()).get(0)).entrySet().toArray()[3]).getValue()).entrySet().toArray()[4]).getValue()).entrySet().toArray()[1]).getValue()).entrySet().toArray()[3]" custom="java.util.LinkedHashMap,java.util.LinkedHashMap.Entry,java.util.ArrayList" />
++        <watch expression="dataExpect.get(0)" />
++        <watch expression="dataResultObj.get(0)" />
++      </configuration>
++    </watches-manager>
++  </component>
++  <component name="XSLT-Support.FileAssociations.UIState">
++    <expand />
++    <select />
++  </component>
++  <component name="com.intellij.coverage.CoverageDataManagerImpl">
++    <SUITE FILE_PATH="coverage/LichHoc_java$SinhVienControllerTest_sinhVienControllerDoiMatKhauDungTest.ic" NAME="SinhVienControllerTest.sinhVienControllerDoiMatKhauDungTest Coverage Results" MODIFIED="1650126913444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
++      <FILTER>com.ptit.dangkytinchi.controller.*</FILTER>
++    </SUITE>
++    <SUITE FILE_PATH="coverage/LichHoc_java$DangKyTinChiApplication.ic" NAME="DangKyTinChiApplication Coverage Results" MODIFIED="1650423182925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"MavenProjectsManager\">\r\n    <option name=\"originalFiles\">\r\n      <list>\r\n        <option value=\"$PROJECT_DIR$/pom.xml\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_1_8\" default=\"true\" project-jdk-name=\"1.8\" project-jdk-type=\"JavaSDK\" />\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"jpab\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision dbe4f5499106411154cb84b160a17ec76bb05492)
++++ b/.idea/misc.xml	(date 1651241876373)
+@@ -11,4 +11,9 @@
+   <component name="ProjectType">
+     <option name="id" value="jpab" />
+   </component>
++  <component name="SwUserDefinedSpecifications">
++    <option name="specTypeByUrl">
++      <map />
++    </option>
++  </component>
+ </project>
+\ No newline at end of file
+Index: target/classes/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver\r\nspring.datasource.url=jdbc:mysql://localhost:3306/dangkytinchi?useSSL=false\r\nspring.datasource.username=root\r\nspring.datasource.password=12345678\r\n\r\nspring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect\r\nspring.jpa.hibernate.ddl-auto=update\r\nspring.jpa.hibernate.show_sql=true\r\nspring.jpa.hibernate.format_sql=true\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>ISO-8859-1
+===================================================================
+diff --git a/target/classes/application.properties b/target/classes/application.properties
+--- a/target/classes/application.properties	(revision dbe4f5499106411154cb84b160a17ec76bb05492)
++++ b/target/classes/application.properties	(date 1651241876624)
+@@ -1,7 +1,8 @@
+ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+ spring.datasource.url=jdbc:mysql://localhost:3306/dangkytinchi?useSSL=false
+ spring.datasource.username=root
+-spring.datasource.password=12345678
++spring.datasource.password=tiendatc2mh
++server.port=8081
+ 
+ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+ spring.jpa.hibernate.ddl-auto=update
