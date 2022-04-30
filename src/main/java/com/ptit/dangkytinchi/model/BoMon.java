@@ -43,5 +43,4 @@ public class BoMon {
         this.moTa = moTa;
         this.khoa = khoa;
     }
-
 }
