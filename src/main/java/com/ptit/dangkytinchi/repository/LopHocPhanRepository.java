@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface LopHocPhanRepository extends JpaRepository<LopHocPhan, String> {
     List<LopHocPhan> findLopHocPhanByMonHocKiHoc_MaMonHocKiHoc(String maMonHocKiHoc);
-}
+    LopHocPhan findLopHocPhanByMaLopHocPhan(String maLopHocPhan);
+ }
