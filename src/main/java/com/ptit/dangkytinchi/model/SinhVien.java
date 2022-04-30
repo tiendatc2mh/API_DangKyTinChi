@@ -41,4 +41,13 @@ public class SinhVien {
     @OneToMany(mappedBy = "sinhVien", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     List<SinhVienKhoa> dsSinhVienKhoa;
 
+    public SinhVien(String maSinhVien, String taiKhoan, String matKhau, String tenSinhVien, String lop) {
+        this.maSinhVien = maSinhVien;
+        this.taiKhoan = taiKhoan;
+        this.matKhau = matKhau;
+        this.tenSinhVien = tenSinhVien;
+        this.lop = lop;
+    }
+    public  SinhVien(){}
+
 }

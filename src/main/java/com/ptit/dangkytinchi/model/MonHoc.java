@@ -36,4 +36,11 @@ public class MonHoc {
 
     public MonHoc() {
     }
+
+    public MonHoc(String maMonHoc, String tenMonHoc, int soTc, BoMon boMon) {
+        this.maMonHoc = maMonHoc;
+        this.tenMonHoc = tenMonHoc;
+        this.soTc = soTc;
+        this.boMon = boMon;
+    }
 }

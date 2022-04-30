@@ -40,4 +40,10 @@ public class MonHocKiHoc {
 
     public MonHocKiHoc() {
     }
+
+    public MonHocKiHoc(String maMonHocKiHoc, MonHoc monHoc, KiHoc kiHoc) {
+        this.maMonHocKiHoc = maMonHocKiHoc;
+        this.monHoc = monHoc;
+        this.kiHoc = kiHoc;
+    }
 }

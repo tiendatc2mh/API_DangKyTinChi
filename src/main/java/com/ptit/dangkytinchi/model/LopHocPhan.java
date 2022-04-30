@@ -52,4 +52,12 @@ public class LopHocPhan {
 
     public LopHocPhan() {
     }
+
+    public LopHocPhan(String maLopHocPhan, String tenLopHocPhan, int siSoToiDa, String moTa, MonHocKiHoc monHocKiHoc) {
+        this.maLopHocPhan = maLopHocPhan;
+        this.tenLopHocPhan = tenLopHocPhan;
+        this.siSoToiDa = siSoToiDa;
+        this.moTa = moTa;
+        this.monHocKiHoc = monHocKiHoc;
+    }
 }

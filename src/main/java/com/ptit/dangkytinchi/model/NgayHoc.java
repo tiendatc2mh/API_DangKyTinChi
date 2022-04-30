@@ -31,4 +31,10 @@ public class NgayHoc {
 
     public NgayHoc() {
     }
+
+    public NgayHoc(String maNgayHoc, String tenNgayHoc, String moTa) {
+        this.maNgayHoc = maNgayHoc;
+        this.tenNgayHoc = tenNgayHoc;
+        this.moTa = moTa;
+    }
 }

@@ -40,7 +40,7 @@ public class SinhVienKhoaController {
         return svRepo.findAll();
     }
     @PostMapping("/monhoc")
-    public ResponeAPI layKhoaTheoMaSinhVien(@RequestBody SinhVienDTO sinhVienDTO){
+    public ResponeAPI layDSMonHocTheoMaSinhVien(@RequestBody SinhVienDTO sinhVienDTO){
         ResponeAPI res = new ResponeAPI();
         ArrayList<SinhVienKhoa>  list = (ArrayList<SinhVienKhoa>) svRepo.findAll();
         Date date = new Date();

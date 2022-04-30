@@ -30,4 +30,10 @@ public class KipHoc {
 
     public KipHoc() {
     }
+
+    public KipHoc(String maKipHoc, String tenKipHoc, String moTa) {
+        this.maKipHoc = maKipHoc;
+        this.tenKipHoc = tenKipHoc;
+        this.moTa = moTa;
+    }
 }

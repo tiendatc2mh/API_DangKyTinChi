@@ -32,5 +32,11 @@ public class ToaNha {
 
     public ToaNha() {
     }
+
+    public ToaNha(String maToaNha, String tenToaNha, String moTa) {
+        this.maToaNha = maToaNha;
+        this.tenToaNha = tenToaNha;
+        this.moTa = moTa;
+    }
 }
 

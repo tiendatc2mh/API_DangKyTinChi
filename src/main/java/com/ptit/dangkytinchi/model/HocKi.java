@@ -29,4 +29,10 @@ public class HocKi {
 
     public HocKi() {
     }
+
+    public HocKi(String maHocKi, String tenHocKi, String moTa) {
+        this.maHocKi = maHocKi;
+        this.tenHocKi = tenHocKi;
+        this.moTa = moTa;
+    }
 }

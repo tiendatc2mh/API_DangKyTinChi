@@ -30,4 +30,10 @@ public class NamHoc {
 
     public NamHoc() {
     }
+
+    public NamHoc(String maNamHoc, String tenNamHoc, String moTa) {
+        this.maNamHoc = maNamHoc;
+        this.tenNamHoc = tenNamHoc;
+        this.moTa = moTa;
+    }
 }

@@ -128,10 +128,7 @@ public class DangKyHocController {
         ArrayList<DangKyHoc> dsDangKyHoc = new ArrayList<DangKyHoc>();
         dsmaLopHocPhan.forEach(maLopHocPhan ->{
             DangKyHoc temp =  dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoaAndLopHocPhan_MaLopHocPhan(sinhVienKhoa.getMaSinhVienKhoa(), maLopHocPhan);
-
                 dangKyHocRepository.delete(temp);
-
-
         } );
         res.setData("Xóa đăng ký thành công!");
         return res;

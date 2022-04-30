@@ -30,4 +30,10 @@ public class TuanHoc {
 
     public TuanHoc() {
     }
+
+    public TuanHoc(String maTuanHoc, String tenTuanHoc, String moTa) {
+        this.maTuanHoc = maTuanHoc;
+        this.tenTuanHoc = tenTuanHoc;
+        this.moTa = moTa;
+    }
 }
