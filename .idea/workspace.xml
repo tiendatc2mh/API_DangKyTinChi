@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="fix commit">
+    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="api lay tat ca tuan hoc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LichHocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LichHocDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LopHocPhanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LopHocPhanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/MonHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/MonHocController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/SinhVien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/SinhVien.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocKiHocRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocKiHocRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/MonHocRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,15 +42,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/BoMonController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/BoMonDTO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/DangKyHocDTO.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienKhoaDTO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/HocKiDTO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/KhoaDTO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/BoMonDTO.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienDTO.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienKhoaDTO.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/BoMonController.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
@@ -153,7 +138,6 @@
     <configuration name="DangKyTinChiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="DangKyTinChi" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptit.dangkytinchi.DangKyTinChiApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -186,6 +170,7 @@
       <workItem from="1648975313338" duration="1387000" />
       <workItem from="1648977648206" duration="4023000" />
       <workItem from="1649063761948" duration="7052000" />
+      <workItem from="1651313500417" duration="238000" />
     </task>
     <task id="LOCAL-00001" summary="fix model">
       <created>1647966187370</created>
@@ -213,17 +198,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="dat" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
               <option name="COLUMN_ID_WIDTH">
                 <map>
                   <entry key="Table.Default.Author.ColumnIdWidth" value="206" />
@@ -242,5 +216,19 @@
     <MESSAGE value="fix commit" />
     <MESSAGE value="fix commit(bug)" />
     <option name="LAST_COMMIT_MESSAGE" value="fix commit(bug)" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.ptit.dangkytinchi.model.MonHocKiHoc" memberName="monHoc" />
+        <PinnedItemInfo parentTag="com.ptit.dangkytinchi.model.BoMon" memberName="tenBoMon" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LichHoc_java$SinhVienControllerTest_sinhVienControllerDoiMatKhauDungTest.ic" NAME="SinhVienControllerTest.sinhVienControllerDoiMatKhauDungTest Coverage Results" MODIFIED="1650126913444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ptit.dangkytinchi.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/LichHoc_java$DangKyTinChiApplication.ic" NAME="DangKyTinChiApplication Coverage Results" MODIFIED="1650423182925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
