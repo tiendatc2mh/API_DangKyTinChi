@@ -22,18 +22,26 @@ public class BoMon {
 
     @Column(name="mota")
     private String moTa;
-
+    @JsonManagedReference
+    @ManyToOne
+    @JoinColumn(name = "makhoa", nullable = false)
+    private Khoa khoa;
 //    @JsonBackReference(value = "bomon-monhoc")
     @JsonBackReference
     @OneToMany(mappedBy = "boMon", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     Set<MonHoc> dsMonHoc;
 
 //    @JsonManagedReference(value = "khoa-bomon")
-    @JsonManagedReference
-    @ManyToOne
-    @JoinColumn(name = "makhoa", nullable = false)
-    private Khoa khoa;
+
 
     public BoMon() {
     }
+
+    public BoMon(String maBoMon, String tenBoMon, String moTa, Khoa khoa) {
+        this.maBoMon = maBoMon;
+        this.tenBoMon = tenBoMon;
+        this.moTa = moTa;
+        this.khoa = khoa;
+    }
+
 }

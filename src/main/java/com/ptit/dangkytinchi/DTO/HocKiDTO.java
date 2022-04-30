@@ -14,4 +14,10 @@ public class HocKiDTO implements Serializable {
     private String tenHocKi;
     private String moTa;
     Set<KiHoc> dsKiHoc;
+
+    public HocKiDTO(String maHocKi, String tenHocKi, String moTa) {
+        this.maHocKi = maHocKi;
+        this.tenHocKi = tenHocKi;
+        this.moTa = moTa;
+    }
 }

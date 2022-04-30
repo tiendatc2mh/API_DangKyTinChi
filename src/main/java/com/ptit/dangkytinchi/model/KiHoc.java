@@ -43,4 +43,12 @@ public class KiHoc {
 
     public KiHoc() {
     }
+
+    public KiHoc(String maKiHoc, boolean dangHoc, boolean dangDangKy, NamHoc namHoc, HocKi hocKi) {
+        this.maKiHoc = maKiHoc;
+        this.dangHoc = dangHoc;
+        this.dangDangKy = dangDangKy;
+        this.namHoc = namHoc;
+        this.hocKi = hocKi;
+    }
 }

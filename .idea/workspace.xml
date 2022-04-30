@@ -6,37 +6,32 @@
   <component name="ChangeListManager">
     <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="fix commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DangKyTinChi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/DangKyTinChi.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DangKyTinChiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DangKyTinChiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienKhoaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienKhoaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/SinhVienControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/SinhVienControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/MonHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/MonHocDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/MonHocKiHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/MonHocKiHocDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DangKyTinChiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DangKyTinChiApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/HocKiDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/HocKiDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/KiHocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/KiHocDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/NamHocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/NamHocDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/BoMon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/BoMon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/DangKyHoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/DangKyHoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/HocKi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/HocKi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/Khoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/Khoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/KiHoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/KiHoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/KipHoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/KipHoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/LichHoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/LichHoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/LopHocPhan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/LopHocPhan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/MonHoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/MonHoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/MonHocKiHoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/MonHocKiHoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/NamHoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/NamHoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/NgayHoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/NgayHoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/PhongHoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/PhongHoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/SinhVien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/SinhVien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/SinhVienKhoa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/SinhVienKhoa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/ToaNha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/ToaNha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/TuanHoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/TuanHoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/LichHocRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/LopHocPhanControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/LopHocPhanControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienKhoaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienKhoaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/exception/ResponeAPI.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/exception/ResponeAPI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/BoMon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/BoMon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/HocKi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/HocKi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/Khoa.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/Khoa.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KiHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KiHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KipHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/KipHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LichHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LichHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LopHocPhan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/LopHocPhan.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHocKiHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/MonHocKiHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NamHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NamHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NgayHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/NgayHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/PhongHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/PhongHoc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/ToaNha.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/ToaNha.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/TuanHoc.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/model/TuanHoc.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/LopHocPhanRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/LopHocPhanRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/MonHocKiHocRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/MonHocKiHocRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/MonHocRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/MonHocRepository.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +145,7 @@
       <recent name="com.ptit.dangkytinchi.exception" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.DangKyTinChiApplication">
+  <component name="RunManager" selected="JUnit.DangKyHocControllerTest.testLuuDangKiKhongThanhCong">
     <configuration name="DangKyTinChiApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -166,7 +161,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MonHocControllerTest.MonHocControllerTimKiemButtonCoKQ" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DangKyHocControllerTest.testLuuDangKiKhongThanhCong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DangKyTinChi" />
       <extension name="coverage">
         <pattern>
@@ -175,8 +170,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.MonHocControllerTest" />
-      <option name="METHOD_NAME" value="MonHocControllerTimKiemButtonCoKQ" />
+      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.DangKyHocControllerTest" />
+      <option name="METHOD_NAME" value="testLuuDangKiKhongThanhCong" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DangKyHocControllerTest.testLuuDangKiThanhCong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DangKyTinChi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.DangKyHocControllerTest" />
+      <option name="METHOD_NAME" value="testLuuDangKiThanhCong" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -193,22 +204,6 @@
       <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
       <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.MonHocControllerTest" />
       <option name="METHOD_NAME" value="MonHocControllerTimKiemCoKQ_D18_CNPM" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MonHocControllerTest.MonHocControllerTimKiemCoKQ_D19" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DangKyTinChi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.MonHocControllerTest" />
-      <option name="METHOD_NAME" value="MonHocControllerTimKiemCoKQ_D19" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -252,20 +247,20 @@
     </configuration>
     <list>
       <item itemvalue="Application.DangKyTinChiApplication" />
-      <item itemvalue="JUnit.MonHocControllerTest.MonHocControllerTimKiemCoKQ_D19" />
-      <item itemvalue="JUnit.MonHocControllerTest.MonHocControllerTimKiemButtonCoKQ" />
       <item itemvalue="JUnit.MonHocControllerTest.MonHocControllerTimKiemCoKQ_D18_CNPM" />
       <item itemvalue="JUnit.SinhVienControllerTest.sinhVienControllerDangNhapDungTest" />
       <item itemvalue="JUnit.SinhVienControllerTest and 2 more" />
       <item itemvalue="Spring Boot.DangKyTinChiApplication" />
+      <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiThanhCong" />
+      <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiKhongThanhCong" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiKhongThanhCong" />
+        <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiThanhCong" />
         <item itemvalue="JUnit.SinhVienControllerTest and 2 more" />
         <item itemvalue="JUnit.SinhVienControllerTest.sinhVienControllerDangNhapDungTest" />
         <item itemvalue="JUnit.MonHocControllerTest.MonHocControllerTimKiemCoKQ_D18_CNPM" />
-        <item itemvalue="JUnit.MonHocControllerTest.MonHocControllerTimKiemButtonCoKQ" />
-        <item itemvalue="JUnit.MonHocControllerTest.MonHocControllerTimKiemCoKQ_D19" />
       </list>
     </recent_temporary>
   </component>
@@ -303,7 +298,7 @@
       <workItem from="1650507585668" duration="6606000" />
       <workItem from="1650533349847" duration="3955000" />
       <workItem from="1651055415271" duration="657000" />
-      <workItem from="1651304769529" duration="1730000" />
+      <workItem from="1651304769529" duration="6363000" />
     </task>
     <task id="LOCAL-00001" summary="fix model">
       <created>1647966187370</created>

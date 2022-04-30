@@ -38,4 +38,10 @@ public class Khoa {
 
     public Khoa() {
     }
+
+    public Khoa(String maKhoa, String tenKhoa, String moTa) {
+        this.maKhoa = maKhoa;
+        this.tenKhoa = tenKhoa;
+        this.moTa = moTa;
+    }
 }

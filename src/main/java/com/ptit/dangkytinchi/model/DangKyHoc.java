@@ -24,10 +24,11 @@ public class DangKyHoc {
     @ManyToOne
     @JoinColumn(name = "malophocphan", nullable = false)
     private LopHocPhan lopHocPhan;
+    public  DangKyHoc(){}
 
-//    public DangKyHoc(String maDangKyHoc, SinhVienKhoa sinhVienKhoa, LopHocPhan lopHocPhan) {
-//        this.maDangKyHoc = maDangKyHoc;
-//        this.sinhVienKhoa = sinhVienKhoa;
-//        this.lopHocPhan = lopHocPhan;
-//    }
+    public DangKyHoc(String maDangKyHoc, SinhVienKhoa sinhVienKhoa, LopHocPhan lopHocPhan) {
+        this.maDangKyHoc = maDangKyHoc;
+        this.sinhVienKhoa = sinhVienKhoa;
+        this.lopHocPhan = lopHocPhan;
+    }
 }

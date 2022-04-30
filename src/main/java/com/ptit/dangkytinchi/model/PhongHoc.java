@@ -38,4 +38,11 @@ public class PhongHoc {
 
     public PhongHoc() {
     }
+
+    public PhongHoc(String maPhongHoc, String tenPhongHoc, int sucChua, ToaNha toaNha) {
+        this.maPhongHoc = maPhongHoc;
+        this.tenPhongHoc = tenPhongHoc;
+        this.sucChua = sucChua;
+        this.toaNha = toaNha;
+    }
 }
