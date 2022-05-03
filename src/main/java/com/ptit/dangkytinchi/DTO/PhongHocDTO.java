@@ -13,18 +13,8 @@ import java.util.Set;
 
 @Data
 public class PhongHocDTO implements Serializable {
-
     private String maPhongHoc;
-
-
     private String tenPhongHoc;
-
-
     private int sucChua;
-
-
     private ToaNha toaNha;
-
-
-    Set<LichHoc> dsLichHoc;
 }

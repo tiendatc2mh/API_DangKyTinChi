@@ -30,25 +30,5 @@ public class LopHocPhanDTO implements Serializable {
         this.monHocKiHoc = monHocKiHoc;
         this.dsLichHoc = dsLichHoc;
     }
-    private boolean checkTrungLich(LichHoc check1, LichHoc check2){
-        if (check1.getTuanHoc().getMaTuanHoc() == check2.getTuanHoc().getMaTuanHoc()) {
-            if(check1.getNgayHoc().getMaNgayHoc() == check2.getNgayHoc().getMaNgayHoc()){
-                if(check1.getKipHoc().getMaKipHoc() == check2.getKipHoc().getMaKipHoc()){
-                    return  false;
-                }
-            }
-        }
-        return  true;
-    }
-    public boolean checkTrungLich(LopHocPhanDTO dataCheck){
-        for (LichHoc lichHoc : this.dsLichHoc) {
-            for (LichHoc hoc : dataCheck.getDsLichHoc()) {
-                if(checkTrungLich(lichHoc, hoc) == false) {
-                    return false;
-                }
-            }
-        }
-        return  true;
-    }
 
 }

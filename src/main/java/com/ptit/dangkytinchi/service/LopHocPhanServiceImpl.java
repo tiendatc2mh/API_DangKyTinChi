@@ -21,4 +21,9 @@ public class LopHocPhanServiceImpl implements LopHocPhanService {
     public ArrayList<LopHocPhan> timKiemLopHocPhanDuocPhepDangKyCuaMonHoc(String maMonHocKiHoc) {
         return (ArrayList<LopHocPhan>) lopHocPhanRepository.findLopHocPhanByMonHocKiHoc_MaMonHocKiHoc(maMonHocKiHoc);
     }
+
+    @Override
+    public LopHocPhan timKiemLopHocPhanTheoMaLopHocPhan(String maLopHocPhan) {
+        return lopHocPhanRepository.findLopHocPhanByMaLopHocPhan(maLopHocPhan);
+    }
 }

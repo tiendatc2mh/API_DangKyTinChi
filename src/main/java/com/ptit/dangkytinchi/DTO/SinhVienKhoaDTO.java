@@ -16,7 +16,6 @@ public class SinhVienKhoaDTO implements Serializable {
     private  String nienKhoa;
     private boolean dangHoc;
     private Khoa khoa;
-    List<DangKyHoc> dsDangKyHoc;
     private SinhVien sinhVien;
 
 }

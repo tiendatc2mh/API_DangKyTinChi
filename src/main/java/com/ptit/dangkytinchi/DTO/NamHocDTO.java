@@ -13,7 +13,6 @@ public class NamHocDTO implements Serializable {
     private String maNamHoc;
     private String tenNamHoc;
     private String moTa;
-    Set<KiHoc> dsKiHoc;
 
     public NamHocDTO(String maNamHoc, String tenNamHoc, String moTa) {
         this.maNamHoc = maNamHoc;

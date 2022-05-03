@@ -3,6 +3,7 @@ package com.ptit.dangkytinchi.service;
 import com.ptit.dangkytinchi.DTO.LichHocDTO;
 import com.ptit.dangkytinchi.model.DangKyHoc;
 import com.ptit.dangkytinchi.model.LichHoc;
+import com.ptit.dangkytinchi.repository.DangKyHocRepository;
 import com.ptit.dangkytinchi.repository.LichHocRepository;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +12,12 @@ import java.util.ArrayList;
 @Service
 public class LichHocServiceImpl implements LichHocService {
     private LichHocRepository lichHocRepository;
-    private DangKyHocService dangKyHocService;
+    private DangKyHocRepository dangKyHocRepository;
 
-    public LichHocServiceImpl(LichHocRepository lichHocRepository, DangKyHocService dangKyHocService) {
+
+    public LichHocServiceImpl(LichHocRepository lichHocRepository, DangKyHocRepository dangKyHocRepository) {
         this.lichHocRepository = lichHocRepository;
-        this.dangKyHocService = dangKyHocService;
+        this.dangKyHocRepository = dangKyHocRepository;
     }
 
     @Override
@@ -24,8 +26,8 @@ public class LichHocServiceImpl implements LichHocService {
     }
 
     @Override
-    public ArrayList<LichHoc> timKiemLichHocCuaSinhVien(String maSinhVienKhoa, String maTuanHoc) {
-        ArrayList<DangKyHoc> dsDangKyHoc = dangKyHocService.timKiemDangKyHocCuaSinhVien(maSinhVienKhoa);
+    public ArrayList<LichHoc> timKiemLichHocCuaSinhVienTheoTuan(String maSinhVienKhoa, String maTuanHoc) {
+        ArrayList<DangKyHoc> dsDangKyHoc = dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoa(maSinhVienKhoa);
         ArrayList<LichHoc> ketQua = new ArrayList<LichHoc>();
         dsDangKyHoc.forEach(dangKyHoc -> {
             ArrayList<LichHoc> dsLichHoc = lichHocRepository.findLichHocByLopHocPhan_MaLopHocPhanAndTuanHoc_MaTuanHoc(dangKyHoc.getLopHocPhan().getMaLopHocPhan(), maTuanHoc);

@@ -2,25 +2,19 @@ package com.ptit.dangkytinchi.controller;
 
 import com.ptit.dangkytinchi.DTO.DangKyHocDTO;
 import com.ptit.dangkytinchi.DTO.LichHocDTO;
-import com.ptit.dangkytinchi.DTO.LopHocPhanDTO;
+import com.ptit.dangkytinchi.model.*;
 import com.ptit.dangkytinchi.response.ResponeAPI;
-import com.ptit.dangkytinchi.model.DangKyHoc;
-import com.ptit.dangkytinchi.model.LichHoc;
-import com.ptit.dangkytinchi.model.LopHocPhan;
-import com.ptit.dangkytinchi.model.SinhVienKhoa;
-import com.ptit.dangkytinchi.repository.DangKyHocRepository;
-import com.ptit.dangkytinchi.repository.LichHocRepository;
-import com.ptit.dangkytinchi.repository.LopHocPhanRepository;
-import com.ptit.dangkytinchi.repository.SinhVienKhoaRepository;
 import com.ptit.dangkytinchi.service.DangKyHocService;
 import com.ptit.dangkytinchi.service.LichHocService;
+import com.ptit.dangkytinchi.service.LopHocPhanService;
 import com.ptit.dangkytinchi.service.SinhVienKhoaService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Data;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping(path = "/dangkytinchi", produces = "application/json")
@@ -30,14 +24,16 @@ public class DangKyHocController {
     private SinhVienKhoaService sinhVienKhoaService;
     private LichHocService lichHocService;
     private DangKyHocService dangKyHocService;
+    private LopHocPhanService lopHocPhanService;
 
-    public DangKyHocController(SinhVienKhoaService sinhVienKhoaService,
-                               LichHocService lichHocService, DangKyHocService dangKyHocService) {
+    public DangKyHocController(SinhVienKhoaService sinhVienKhoaService, LichHocService lichHocService, DangKyHocService dangKyHocService, LopHocPhanService lopHocPhanService) {
         this.sinhVienKhoaService = sinhVienKhoaService;
         this.lichHocService = lichHocService;
         this.dangKyHocService = dangKyHocService;
+        this.lopHocPhanService = lopHocPhanService;
     }
-//    @Autowired
+
+    //    @Autowired
 //    private DangKyHocRepository dangKyHocRepository;
 //    @Autowired
 //    private SinhVienKhoaRepository sinhVienKhoaRepository;
@@ -55,70 +51,68 @@ public class DangKyHocController {
 //    }
 
     //luu dang ky
-//    @PostMapping("/luudangky/{maSinhVien}")
-//    private ResponeAPI luuDangKy(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien) {
-//
-//        ResponeAPI res = new ResponeAPI();
-//        ArrayList<String> dsmaLopHocPhanDTO = new ArrayList<String>();
-//        object.forEach(obj -> {
-//            dsmaLopHocPhanDTO.add(obj.get("maLopHocPhan").toString().trim());
-//        });
-//        ArrayList<LopHocPhan> dsLopHocPhan = new ArrayList<LopHocPhan>();
-//
-//
-//        dsmaLopHocPhanDTO.forEach(list -> {
-//            dsLopHocPhan.add(lopHocPhanRepository.findLopHocPhanByMaLopHocPhan(list));
-//        });
-//
-//        //check si so con lai cua lop hoc phan
-//        for (int i = 0; i < dsLopHocPhan.size(); i++) {
-//            LopHocPhan temp = dsLopHocPhan.get(i);
-//            ArrayList<DangKyHoc> dsDangKy = (ArrayList<DangKyHoc>) dangKyHocRepository.findDangKyHocByLopHocPhan_MaLopHocPhan(temp.getMaLopHocPhan());
-//            int siSoThucTe = dsDangKy.size();
-//            if (siSoThucTe + 1 > temp.getSiSoToiDa()) {
-//                res.setError("Môn học " + temp.getMonHocKiHoc().getMonHoc().getTenMonHoc() + "đã hết số lượng đăng ký!!!");
-//                return res;
-//            }
-//        }
-////         check trung lich hoc
-//        ArrayList<LopHocPhanDTO> listFullDataLopHopPhan = new ArrayList<>();
-//        for (LopHocPhan lopHocPhan : dsLopHocPhan) {
-//            ArrayList<DangKyHoc> dsDangKy = (ArrayList<DangKyHoc>) dangKyHocRepository.findDangKyHocByLopHocPhan_MaLopHocPhan(lopHocPhan.getMaLopHocPhan());
-//            int siSoThucTe = dsDangKy.size();
-//            ArrayList<LichHoc> listLichHoc = lichHocRepository.findLichHocByLopHocPhan_MaLopHocPhan(lopHocPhan.getMaLopHocPhan());
-//            ArrayList<LichHocDTO> listLichHocDTO = new ArrayList<>();
-////            listLichHoc.forEach(ls -> {
-////                ls.setLopHocPhan(null);
-////            });
-//            LopHocPhanDTO data = new LopHocPhanDTO(lopHocPhan.getMaLopHocPhan(), lopHocPhan.getTenLopHocPhan(),
-//                    lopHocPhan.getSiSoToiDa(), siSoThucTe, lopHocPhan.getMoTa(), null, listLichHoc);
-//            listFullDataLopHopPhan.add(data);
-//        }
-//        for(int i = 0; i < listFullDataLopHopPhan.size(); i++){
-//            for ( int j = i + 1; j < listFullDataLopHopPhan.size(); j++){
-//                if(listFullDataLopHopPhan.get(i).checkTrungLich(listFullDataLopHopPhan.get(j)) == false){
-//                    res.setData("Lỗi trùng lịch học");
-//                    return res;
-//                }
-//            }
-//        }
-//
-//        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
-//        for (int i = 0; i < dsLopHocPhan.size(); i++) {
-//            LopHocPhan temp = dsLopHocPhan.get(i);
-//            String maDangKyHoc = maSinhVien + temp.getMaLopHocPhan();
-//
-//            DangKyHoc tempDKH = new DangKyHoc();
-//            tempDKH.setMaDangKyHoc(maDangKyHoc);
-//            tempDKH.setSinhVienKhoa(sinhVienKhoa);
-//            tempDKH.setLopHocPhan(temp);
-//            dangKyHocRepository.save(tempDKH);
-//        }
-//        res.setData("Đăng ký thành công!");
-//        return res;
-//
-//    }
-//
+    @PostMapping("/luudangky/{maSinhVien}")
+    private ResponeAPI luuDangKy(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien) {
+
+        ResponeAPI res = new ResponeAPI();
+        ArrayList<String> dsMaLopHocPhan = new ArrayList<String>();
+        object.forEach(obj -> {
+            dsMaLopHocPhan.add(obj.get("maLopHocPhan").toString().trim());
+        });
+        ArrayList<LopHocPhan> dsLopHocPhanChuaDangKy = new ArrayList<LopHocPhan>();
+        SinhVienKhoa sinhVienKhoa = sinhVienKhoaService.timKiemSinhVienKhoaTheoMaSinhVien(maSinhVien);
+        dsMaLopHocPhan.forEach(list -> {
+            dsLopHocPhanChuaDangKy.add(lopHocPhanService.timKiemLopHocPhanTheoMaLopHocPhan(list));
+        });
+
+        //check si so con lai cua lop hoc phan
+        for (int i = 0; i < dsLopHocPhanChuaDangKy.size(); i++) {
+            LopHocPhan temp = dsLopHocPhanChuaDangKy.get(i);
+            int siSoThucTe = dangKyHocService.laySiSoThucTeCuaLopHocPhan(temp.getMaLopHocPhan());
+            if (siSoThucTe + 1 > temp.getSiSoToiDa()) {
+                res.setError("Môn học " + temp.getMonHocKiHoc().getMonHoc().getTenMonHoc() + " đã hết số lượng đăng ký!!!");
+                return res;
+            }
+        }
+        //check trung thoi khoa bieu
+        ArrayList<LichHocSoSanh> dsLichHocSoSanhDaDangKy = new ArrayList<>();
+        ArrayList<DangKyHoc> dsDangKyHocDaDangKy = dangKyHocService.timKiemDangKyHocCuaSinhVien(sinhVienKhoa.getMaSinhVienKhoa());
+        dsDangKyHocDaDangKy.forEach(dangKyHoc -> {
+            ArrayList<LichHoc> dsLichHocDaDangKy = lichHocService.timKiemLichHocCuaLopHocPhan(dangKyHoc.getLopHocPhan().getMaLopHocPhan());
+            dsLichHocDaDangKy.forEach(lichHoc -> {
+                dsLichHocSoSanhDaDangKy.add(new LichHocSoSanh(lichHoc.getTuanHoc().getMaTuanHoc(),
+                        lichHoc.getNgayHoc().getMaNgayHoc(),
+                        lichHoc.getKipHoc().getMaKipHoc()));
+            });
+        });
+        ArrayList<LichHocSoSanh> dsLichHocSoSanhChuaDangKy = new ArrayList<>();
+        dsMaLopHocPhan.forEach(maLopHocPhan -> {
+            ArrayList<LichHoc> dsLichHocChuaDangKy = lichHocService.timKiemLichHocCuaLopHocPhan(maLopHocPhan);
+            dsLichHocChuaDangKy.forEach(lichHoc -> {
+                dsLichHocSoSanhChuaDangKy.add(new LichHocSoSanh(lichHoc.getTuanHoc().getMaTuanHoc(),
+                        lichHoc.getNgayHoc().getMaNgayHoc(),
+                        lichHoc.getKipHoc().getMaKipHoc()));
+            });
+        });
+        dsLichHocSoSanhChuaDangKy.retainAll(dsLichHocSoSanhDaDangKy);
+        if (dsLichHocSoSanhChuaDangKy.size() > 0) {
+            res.setData("Lỗi trùng lịch học");
+            return res;
+
+        }
+        dsLopHocPhanChuaDangKy.forEach(lopHocPhan -> {
+            String maDangKyHoc = maSinhVien + lopHocPhan.getMaLopHocPhan();
+            DangKyHoc tempDKH = new DangKyHoc();
+            tempDKH.setMaDangKyHoc(maDangKyHoc);
+            tempDKH.setSinhVienKhoa(sinhVienKhoa);
+            tempDKH.setLopHocPhan(lopHocPhan);
+            dangKyHocService.luuDangKy(tempDKH);
+        });
+        res.setData("Đăng ký thành công!");
+        return res;
+
+    }
+
     //lay tat ca lop hoc phan da dang ky cua sinh vien
     @GetMapping("/luudangky/{maSinhVien}")
     public ResponeAPI getDSDangKy(@PathVariable String maSinhVien) {
@@ -160,16 +154,44 @@ public class DangKyHocController {
         ResponeAPI res = new ResponeAPI();
         String maTuanHoc = object.get("maTuanHoc").toString().trim();
         SinhVienKhoa sinhVienKhoa = sinhVienKhoaService.timKiemSinhVienKhoaTheoMaSinhVien(maSinhVien);
-        ArrayList<LichHoc> dsLichHoc = lichHocService.timKiemLichHocCuaSinhVien(sinhVienKhoa.getMaSinhVienKhoa(), maTuanHoc);
+        ArrayList<LichHoc> dsLichHoc = lichHocService.timKiemLichHocCuaSinhVienTheoTuan(sinhVienKhoa.getMaSinhVienKhoa(), maTuanHoc);
         ArrayList<LichHocDTO> ketQua = new ArrayList<>();
         dsLichHoc.forEach(lichHoc -> {
-            LichHocDTO temp = new LichHocDTO(lichHoc.getMaLichHoc(), lichHoc.getTenLichHoc(), lichHoc.getGiangvien(),
-                    lichHoc.getLopHocPhan(), lichHoc.getPhongHoc(), lichHoc.getTuanHoc(), lichHoc.getNgayHoc(), lichHoc.getKipHoc());
+            LichHocDTO temp = new LichHocDTO(lichHoc.getMaLichHoc(), lichHoc.getTenLichHoc(), lichHoc.getGiangvien(), lichHoc.getLopHocPhan(), lichHoc.getPhongHoc(), lichHoc.getTuanHoc(), lichHoc.getNgayHoc(), lichHoc.getKipHoc());
             ketQua.add(temp);
         });
 
 
         res.setData(ketQua);
         return res;
+    }
+
+    @Data
+    public class LichHocSoSanh {
+        private String maTuanHoc;
+        private String maNgayHoc;
+        private String maKipHoc;
+
+        public LichHocSoSanh() {
+        }
+
+        public LichHocSoSanh(String maTuanHoc, String maNgayHoc, String maKipHoc) {
+            this.maTuanHoc = maTuanHoc;
+            this.maNgayHoc = maNgayHoc;
+            this.maKipHoc = maKipHoc;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+//            if (this == o) return true;
+//            if (o == null || getClass() != o.getClass()) return false;
+            LichHocSoSanh that = (LichHocSoSanh) o;
+            return maTuanHoc.equals(that.maTuanHoc) && maNgayHoc.equals(that.maNgayHoc) && maKipHoc.equals(that.maKipHoc);
+        }
+
+//        @Override
+//        public int hashCode() {
+//            return Objects.hash(maTuanHoc, maNgayHoc, maKipHoc);
+//        }
     }
 }

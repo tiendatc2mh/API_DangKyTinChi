@@ -37,9 +37,9 @@ public class SinhVien {
     private  String lop;
 
     //@JsonBackReference(value = "sinhvien-sinhvienkhoa")
-    @JsonBackReference
-    @OneToMany(mappedBy = "sinhVien", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    List<SinhVienKhoa> dsSinhVienKhoa;
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "sinhVien", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+//    List<SinhVienKhoa> dsSinhVienKhoa;
 
     public SinhVien(String maSinhVien, String taiKhoan, String matKhau, String tenSinhVien, String lop) {
         this.maSinhVien = maSinhVien;

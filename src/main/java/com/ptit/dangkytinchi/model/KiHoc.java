@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Entity
 @Data
-@AllArgsConstructor
+//@AllArgsConstructor
 @Table(name = "tbl_ki_hoc", schema = "dangkytinchi")
 public class KiHoc {
 
@@ -37,9 +37,9 @@ public class KiHoc {
     private HocKi hocKi;
 
 //    @JsonBackReference(value = "kihoc-monhockihoc")
-    @JsonBackReference
-    @OneToMany(mappedBy = "kiHoc", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    Set<MonHocKiHoc> dsMonHocKiHoc;
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "kiHoc", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    Set<MonHocKiHoc> dsMonHocKiHoc;
 
     public KiHoc() {
     }

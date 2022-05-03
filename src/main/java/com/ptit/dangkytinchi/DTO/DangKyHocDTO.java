@@ -13,11 +13,9 @@ import java.io.Serializable;
 
 @Data
 public class DangKyHocDTO implements Serializable {
-
     private String maDangKyHoc;
     private SinhVienKhoa sinhVienKhoa;
     private LopHocPhan lopHocPhan;
-
     public DangKyHocDTO(String maDangKyHoc, SinhVienKhoa sinhVienKhoa, LopHocPhan lopHocPhan) {
         this.maDangKyHoc = maDangKyHoc;
         this.sinhVienKhoa = sinhVienKhoa;

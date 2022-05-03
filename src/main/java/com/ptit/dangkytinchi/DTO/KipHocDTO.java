@@ -13,5 +13,4 @@ public class KipHocDTO implements Serializable {
     private String maKipHoc;
     private String tenKipHoc;
     private String moTa;
-    Set<LichHoc> dsLichHoc;
 }

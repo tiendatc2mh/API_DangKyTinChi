@@ -7,5 +7,6 @@ import java.util.ArrayList;
 
 public interface LopHocPhanService {
     ArrayList<LopHocPhan> timKiemLopHocPhanDuocPhepDangKyCuaMonHoc(String maMonHocKiHoc);
+    LopHocPhan timKiemLopHocPhanTheoMaLopHocPhan(String maLopHocPhan);
 
 }

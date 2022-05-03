@@ -14,7 +14,7 @@ import java.util.Set;
 
 @Entity
 @Data
-@AllArgsConstructor
+//@AllArgsConstructor
 @Table(name = "tbl_lop_hoc_phan", schema = "dangkytinchi")
 public class LopHocPhan {
 
@@ -40,15 +40,15 @@ public class LopHocPhan {
 
 
 //    @JsonBackReference(value = "lophocphan-lichhoc")
-    @JsonBackReference
-    @OneToMany(mappedBy = "lopHocPhan", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<LichHoc> dsLichHoc;
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "lopHocPhan", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    private List<LichHoc> dsLichHoc;
 
 
 //    @JsonBackReference(value = "lophocphan-dangkyhoc")
-    @JsonBackReference
-    @OneToMany(mappedBy = "lopHocPhan", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<DangKyHoc> dsDangKyHoc;
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "lopHocPhan", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    private List<DangKyHoc> dsDangKyHoc;
 
     public LopHocPhan() {
     }

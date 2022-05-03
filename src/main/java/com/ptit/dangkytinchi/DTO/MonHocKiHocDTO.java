@@ -17,6 +17,5 @@ public class MonHocKiHocDTO implements Serializable {
     private String maMocHocKiHoc;
     private MonHoc monHoc;
     private KiHoc kiHoc;
-    Set<LopHocPhan> dsLopHocPhan;
 }
 

@@ -11,10 +11,8 @@ import java.util.Set;
 
 @Data
 public class KhoaDTO implements Serializable {
-
     private String maKhoa;
     private String tenKhoa;
     private String moTa;
-    Set<BoMon> dsBoMon;
-    Set<SinhVienKhoa> dsSinhVienKhoa;
+
 }

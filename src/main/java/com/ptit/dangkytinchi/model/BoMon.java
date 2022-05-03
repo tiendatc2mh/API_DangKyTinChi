@@ -9,7 +9,6 @@ import java.util.Set;
 
 @Entity
 @Data
-@AllArgsConstructor
 @Table(name = "tbl_bo_mon", schema = "dangkytinchi")
 public class BoMon {
 
@@ -26,12 +25,7 @@ public class BoMon {
     @ManyToOne
     @JoinColumn(name = "makhoa", nullable = false)
     private Khoa khoa;
-//    @JsonBackReference(value = "bomon-monhoc")
-    @JsonBackReference
-    @OneToMany(mappedBy = "boMon", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    Set<MonHoc> dsMonHoc;
 
-//    @JsonManagedReference(value = "khoa-bomon")
 
 
     public BoMon() {

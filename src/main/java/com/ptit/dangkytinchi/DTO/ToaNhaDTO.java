@@ -10,13 +10,7 @@ import java.util.Set;
 
 @Data
 public class ToaNhaDTO implements Serializable {
-
     private String maToaNha;
-
     private String tenToaNha;
-
     private String moTa;
-
-
-    Set<PhongHoc> dsPhongHoc;
 }

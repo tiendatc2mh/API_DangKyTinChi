@@ -14,6 +14,5 @@ public class BoMonDTO implements Serializable {
     private String maBoMon;
     private String tenBoMon;
     private String moTa;
-    Set<MonHoc> dsMonHoc;
     private Khoa khoa;
 }

@@ -10,14 +10,8 @@ import java.util.Set;
 
 @Data
 public class NgayHocDTO implements Serializable {
-
     private String maNgayHoc;
-
     private String tenNgayHoc;
-
-
     private String moTa;
 
-
-    Set<LichHoc> dsLichHoc;
 }

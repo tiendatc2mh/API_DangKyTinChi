@@ -19,7 +19,6 @@ public class KiHocDTO implements Serializable {
     private boolean dangDangKy;
     private NamHoc namHoc;
     private HocKi hocKi;
-    Set<MonHocKiHoc> dsMonHocKiHoc;
 
     public KiHocDTO(String maKiHoc, boolean dangHoc, boolean dangDangKy, NamHoc namHoc, HocKi hocKi) {
         this.maKiHoc = maKiHoc;

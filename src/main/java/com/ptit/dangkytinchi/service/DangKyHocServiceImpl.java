@@ -24,4 +24,9 @@ public class DangKyHocServiceImpl implements DangKyHocService {
     public ArrayList<DangKyHoc> timKiemDangKyHocCuaSinhVien(String maSinhVienKhoa) {
         return dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoa(maSinhVienKhoa);
     }
+
+    @Override
+    public void luuDangKy(DangKyHoc dangKyHoc) {
+        dangKyHocRepository.save(dangKyHoc);
+    }
 }

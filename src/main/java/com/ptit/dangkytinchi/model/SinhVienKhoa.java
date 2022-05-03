@@ -43,9 +43,9 @@ public class SinhVienKhoa {
     @JoinColumn(name = "masinhvien", nullable = false)
     private SinhVien sinhVien;
     //    @JsonBackReference(value = "sinhvienkhoa-dangkyhoc")
-    @JsonBackReference
-    @OneToMany(mappedBy = "sinhVienKhoa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    Set<DangKyHoc> dsDangKyHoc;
+//    @JsonBackReference
+//    @OneToMany(mappedBy = "sinhVienKhoa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    Set<DangKyHoc> dsDangKyHoc;
 
     public SinhVienKhoa() {
 

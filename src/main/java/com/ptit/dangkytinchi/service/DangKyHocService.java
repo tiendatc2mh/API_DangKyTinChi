@@ -9,4 +9,6 @@ public interface DangKyHocService {
     int laySiSoThucTeCuaLopHocPhan(String maLopHocPhan);
     ArrayList<DangKyHoc> timKiemDangKyHocCuaSinhVien(String maSinhVienKhoa);
 
+    void luuDangKy(DangKyHoc dangKyHoc);
+
 }

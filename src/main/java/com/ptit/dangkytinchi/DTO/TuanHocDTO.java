@@ -13,8 +13,6 @@ public class TuanHocDTO implements Serializable {
     private String maTuanHoc;
     private String tenTuanHoc;
     private String moTa;
-    Set<LichHoc> dsLichHoc;
-
     public TuanHocDTO(String maTuanHoc, String tenTuanHoc, String moTa) {
         this.maTuanHoc = maTuanHoc;
         this.tenTuanHoc = tenTuanHoc;
