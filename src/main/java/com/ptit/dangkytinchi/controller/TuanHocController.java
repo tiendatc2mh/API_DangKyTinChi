@@ -3,6 +3,7 @@ package com.ptit.dangkytinchi.controller;
 import com.ptit.dangkytinchi.response.ResponeAPI;
 import com.ptit.dangkytinchi.model.TuanHoc;
 import com.ptit.dangkytinchi.repository.TuanHocRepository;
+import com.ptit.dangkytinchi.service.TuanHocService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,19 +15,17 @@ import java.util.ArrayList;
 public class TuanHocController {
 
     @Autowired
-    private TuanHocRepository tuanHocRepository;
+    private TuanHocService tuanHocService;
 
-    public TuanHocController(TuanHocRepository tuanHocRepository) {
-        this.tuanHocRepository = tuanHocRepository;
+    public TuanHocController(TuanHocService tuanHocService) {
+        this.tuanHocService = tuanHocService;
     }
 
     //lay tat ca tuan hoc trong ky
     @GetMapping("/dstuanhoc")
     public ResponeAPI layDanhSachTuanHoc(){
         ResponeAPI res = new ResponeAPI();
-        ArrayList<TuanHoc> dsTuanHoc = new ArrayList<TuanHoc>();
-        dsTuanHoc  = (ArrayList<TuanHoc>) tuanHocRepository.findAll();
-        res.setData(dsTuanHoc);
+        res.setData(tuanHocService.timKiemTatCaTuanHoc());
         return res;
     }
 }

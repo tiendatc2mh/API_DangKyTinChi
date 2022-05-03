@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="push 03/05/2022 unit test api xem thoi khoa bieu">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/SinhVienService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/SinhVienService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/SinhVienServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/SinhVienServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/BoMonController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/KhoaController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LichHocController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/TuanHocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/TuanHocDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/TuanHocRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/repository/TuanHocRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
