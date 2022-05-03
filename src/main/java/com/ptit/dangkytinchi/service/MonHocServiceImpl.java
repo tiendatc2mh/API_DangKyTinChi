@@ -32,7 +32,7 @@ public class MonHocServiceImpl implements MonHocService {
     }
 
     @Override
-    public ArrayList<MonHocDTO> timKiemMonHocCuaSinhVienTheoChuongTrinhDaoTaoVaTheoTen(String maBoMon, String maKiHoc, String key) {
+    public ArrayList<MonHocDTO> timKiemMonHocTheoTenVaChuongTrinhDaoTaoCuaSinhVien(String maBoMon, String maKiHoc, String key) {
         ArrayList<MonHocKiHoc> dsMonHocKiHoc = new ArrayList<MonHocKiHoc>();
         if (maBoMon.length() > 0) {
             dsMonHocKiHoc = (ArrayList<MonHocKiHoc>) monHocKiHocRepository.
