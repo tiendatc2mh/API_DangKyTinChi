@@ -13,13 +13,11 @@ public class DangKyHoc {
     @Column(name="madangkyhoc")
     private String maDangKyHoc;
 
-//    @JsonManagedReference(value = "sinhvienkhoa-dangkyhoc")
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "masinhvienkhoa", nullable = false)
     private SinhVienKhoa sinhVienKhoa;
 
-//    @JsonManagedReference(value = "lophocphan-dangkyhoc")
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "malophocphan", nullable = false)

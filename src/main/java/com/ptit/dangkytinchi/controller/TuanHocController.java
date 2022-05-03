@@ -14,10 +14,8 @@ import java.util.ArrayList;
 @RequestMapping(path = "/tuanhoc", produces = "application/json")
 @CrossOrigin(origins = "*")
 public class TuanHocController {
-
     @Autowired
     private TuanHocService tuanHocService;
-
     public TuanHocController(TuanHocService tuanHocService) {
         this.tuanHocService = tuanHocService;
     }

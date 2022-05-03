@@ -10,7 +10,6 @@ import java.util.Set;
 
 @Entity
 @Data
-//@AllArgsConstructor
 @Table(name = "tbl_mon_hoc", schema = "dangkytinchi")
 public class MonHoc {
     @Id
@@ -23,16 +22,10 @@ public class MonHoc {
     @Column(name="sotc")
     private int soTc;
 
-//    @JsonManagedReference(value = "bomon-monhoc")
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name="mabomon", nullable = false)
     private BoMon boMon;
-
-   // @JsonBackReference(value = "monhoc-monhockihoc")
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "monHoc", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    Set<MonHocKiHoc> dsMonHocKiHoc;
 
     public MonHoc() {
     }

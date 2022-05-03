@@ -15,28 +15,20 @@ import java.util.Set;
 //@AllArgsConstructor
 @Table(name = "tbl_mon_hoc_ki_hoc", schema = "dangkytinchi")
 public class MonHocKiHoc {
-
     @Id
     @Column(name = "mamonhockihoc")
     private String maMonHocKiHoc;
 
-//    @JsonManagedReference(value = "monhoc-monhockihoc")
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "mamonhoc", nullable = false)
     //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private MonHoc monHoc;
 
-//    @JsonManagedReference(value = "kihoc-monhockihoc")
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "makihoc", nullable = false)
     private KiHoc kiHoc;
-
-//    @JsonBackReference(value = "monhockihoc-lophocphan")
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "monHocKiHoc", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-//    Set<LopHocPhan> dsLopHocPhan;
 
     public MonHocKiHoc() {
     }

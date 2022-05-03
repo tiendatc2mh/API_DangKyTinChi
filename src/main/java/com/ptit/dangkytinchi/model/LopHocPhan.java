@@ -14,7 +14,6 @@ import java.util.Set;
 
 @Entity
 @Data
-//@AllArgsConstructor
 @Table(name = "tbl_lop_hoc_phan", schema = "dangkytinchi")
 public class LopHocPhan {
 
@@ -31,24 +30,10 @@ public class LopHocPhan {
     @Column(name="mota")
     private String moTa;
 
-   // @JsonManagedReference(value = "monhockihoc-lophocphan")
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "mamonhockihoc", nullable = false)
-    //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private MonHocKiHoc monHocKiHoc;
-
-
-//    @JsonBackReference(value = "lophocphan-lichhoc")
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "lopHocPhan", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    private List<LichHoc> dsLichHoc;
-
-
-//    @JsonBackReference(value = "lophocphan-dangkyhoc")
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "lopHocPhan", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    private List<DangKyHoc> dsDangKyHoc;
 
     public LopHocPhan() {
     }

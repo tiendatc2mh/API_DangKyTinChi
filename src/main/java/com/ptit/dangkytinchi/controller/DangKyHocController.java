@@ -33,23 +33,6 @@ public class DangKyHocController {
         this.lopHocPhanService = lopHocPhanService;
     }
 
-    //    @Autowired
-//    private DangKyHocRepository dangKyHocRepository;
-//    @Autowired
-//    private SinhVienKhoaRepository sinhVienKhoaRepository;
-//    @Autowired
-//    private LopHocPhanRepository lopHocPhanRepository;
-//    @Autowired
-//    private LichHocRepository lichHocRepository;
-//
-//    public DangKyHocController(DangKyHocRepository dangKyHocRepository, SinhVienKhoaRepository sinhVienKhoaRepository,
-//                               LopHocPhanRepository lopHocPhanRepository, LichHocRepository lichHocRepository) {
-//        this.dangKyHocRepository = dangKyHocRepository;
-//        this.sinhVienKhoaRepository = sinhVienKhoaRepository;
-//        this.lopHocPhanRepository = lopHocPhanRepository;
-//        this.lichHocRepository = lichHocRepository;
-//    }
-
     //luu dang ky
     @PostMapping("/luudangky/{maSinhVien}")
     private ResponeAPI luuDangKy(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien) {
@@ -85,21 +68,23 @@ public class DangKyHocController {
                         lichHoc.getKipHoc().getMaKipHoc()));
             });
         });
-        ArrayList<LichHocSoSanh> dsLichHocSoSanhChuaDangKy = new ArrayList<>();
-        dsMaLopHocPhan.forEach(maLopHocPhan -> {
-            ArrayList<LichHoc> dsLichHocChuaDangKy = lichHocService.timKiemLichHocCuaLopHocPhan(maLopHocPhan);
-            dsLichHocChuaDangKy.forEach(lichHoc -> {
-                dsLichHocSoSanhChuaDangKy.add(new LichHocSoSanh(lichHoc.getTuanHoc().getMaTuanHoc(),
-                        lichHoc.getNgayHoc().getMaNgayHoc(),
-                        lichHoc.getKipHoc().getMaKipHoc()));
+        if (dsLichHocSoSanhDaDangKy.size() > 0) {
+            ArrayList<LichHocSoSanh> dsLichHocSoSanhChuaDangKy = new ArrayList<>();
+            dsMaLopHocPhan.forEach(maLopHocPhan -> {
+                ArrayList<LichHoc> dsLichHocChuaDangKy = lichHocService.timKiemLichHocCuaLopHocPhan(maLopHocPhan);
+                dsLichHocChuaDangKy.forEach(lichHoc -> {
+                    dsLichHocSoSanhChuaDangKy.add(new LichHocSoSanh(lichHoc.getTuanHoc().getMaTuanHoc(),
+                            lichHoc.getNgayHoc().getMaNgayHoc(),
+                            lichHoc.getKipHoc().getMaKipHoc()));
+                });
             });
-        });
-        dsLichHocSoSanhChuaDangKy.retainAll(dsLichHocSoSanhDaDangKy);
-        if (dsLichHocSoSanhChuaDangKy.size() > 0) {
-            res.setData("Lỗi trùng lịch học");
-            return res;
-
+            dsLichHocSoSanhChuaDangKy.retainAll(dsLichHocSoSanhDaDangKy);
+            if (dsLichHocSoSanhChuaDangKy.size() > 0) {
+                res.setData("Lỗi trùng lịch học");
+                return res;
+            }
         }
+
         dsLopHocPhanChuaDangKy.forEach(lopHocPhan -> {
             String maDangKyHoc = maSinhVien + lopHocPhan.getMaLopHocPhan();
             DangKyHoc tempDKH = new DangKyHoc();
@@ -129,21 +114,19 @@ public class DangKyHocController {
         return res;
     }
 
-//    //xoa dang ky
+    //    //xoa dang ky
     @PostMapping("xoadangky/{maSinhVien}")
-    public ResponeAPI xoaDangKyHoc(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien){
+    public ResponeAPI xoaDangKyHoc(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien) {
         ResponeAPI res = new ResponeAPI();
         ArrayList<String> dsMaLopHocPhan = new ArrayList<String>();
         object.forEach(obj -> {
             dsMaLopHocPhan.add(obj.get("maLopHocPhan").toString().trim());
         });
         SinhVienKhoa sinhVienKhoa = sinhVienKhoaService.timKiemSinhVienKhoaTheoMaSinhVien(maSinhVien);
-        ArrayList<DangKyHocDTO> dsDangKyHocDTO = new ArrayList<DangKyHocDTO>();
-        ArrayList<DangKyHoc> dsDangKyHoc = new ArrayList<DangKyHoc>();
-        dsMaLopHocPhan.forEach(maLopHocPhan ->{
-            DangKyHoc temp =  dangKyHocService.timKiemDangKyHocTheoSinhVienKhoaVaMaLopHocPhan(sinhVienKhoa.getMaSinhVienKhoa(), maLopHocPhan);
+        dsMaLopHocPhan.forEach(maLopHocPhan -> {
+            DangKyHoc temp = dangKyHocService.timKiemDangKyHocTheoSinhVienKhoaVaMaLopHocPhan(sinhVienKhoa.getMaSinhVienKhoa(), maLopHocPhan);
             dangKyHocService.xoaDangKy(temp);
-        } );
+        });
         res.setData("Xóa đăng ký thành công!");
         return res;
     }
@@ -189,9 +172,5 @@ public class DangKyHocController {
             return maTuanHoc.equals(that.maTuanHoc) && maNgayHoc.equals(that.maNgayHoc) && maKipHoc.equals(that.maKipHoc);
         }
 
-//        @Override
-//        public int hashCode() {
-//            return Objects.hash(maTuanHoc, maNgayHoc, maKipHoc);
-//        }
     }
 }

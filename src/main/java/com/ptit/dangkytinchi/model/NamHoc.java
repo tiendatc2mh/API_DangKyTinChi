@@ -9,10 +9,8 @@ import java.util.Set;
 
 @Entity
 @Data
-//@AllArgsConstructor
 @Table(name = "tbl_nam_hoc", schema = "dangkytinchi")
 public class NamHoc {
-
     @Id
     @Column(name = "manamhoc")
     private String maNamHoc;
@@ -22,11 +20,6 @@ public class NamHoc {
 
     @Column(name="mota")
     private String moTa;
-
-    //@JsonBackReference(value = "namhoc-kihoc")
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "namHoc", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    Set<KiHoc> dsKiHoc;
 
     public NamHoc() {
     }

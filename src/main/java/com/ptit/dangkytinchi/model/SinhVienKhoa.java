@@ -29,23 +29,16 @@ public class SinhVienKhoa {
     @Column(name = "danghoc")
     private boolean dangHoc;
 
-//    @JsonManagedReference(value = "khoa-sinhvienkhoa")
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name="makhoa", nullable = false)
     private Khoa khoa;
 
-
-
-//    @JsonManagedReference(value = "sinhvien-sinhvienkhoa")
     @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "masinhvien", nullable = false)
     private SinhVien sinhVien;
-    //    @JsonBackReference(value = "sinhvienkhoa-dangkyhoc")
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "sinhVienKhoa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    Set<DangKyHoc> dsDangKyHoc;
+
 
     public SinhVienKhoa() {
 

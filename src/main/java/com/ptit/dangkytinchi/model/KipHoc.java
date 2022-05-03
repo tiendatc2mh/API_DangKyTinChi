@@ -22,11 +22,6 @@ public class KipHoc {
     @Column(name="mota")
     private String moTa;
 
-//    @JsonBackReference(value = "kiphoc-lichhoc")
-//    @JsonBackReference
-//    @OneToMany(mappedBy = "kipHoc", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    Set<LichHoc> dsLichHoc;
-
     public KipHoc() {
     }
 

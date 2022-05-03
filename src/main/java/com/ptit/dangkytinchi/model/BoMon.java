@@ -26,8 +26,6 @@ public class BoMon {
     @JoinColumn(name = "makhoa", nullable = false)
     private Khoa khoa;
 
-
-
     public BoMon() {
     }
 
