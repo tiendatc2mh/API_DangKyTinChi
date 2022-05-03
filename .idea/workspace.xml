@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="push 04/05/2022 fix api luu dang ky, fix model-hibernate, fix DTO SOC">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/DangKyHocService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/DangKyHocService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/DangKyHocServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/DangKyHocServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/BoMonDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/BoMonDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/DangKyHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/DangKyHocDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/KhoaDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/KhoaDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/KipHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/KipHocDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/NgayHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/NgayHocDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/PhongHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/PhongHocDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/SinhVienKhoaDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/SinhVienKhoaDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/ToaNhaDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/ToaNhaDTO.class" afterDir="false" />
-    </list>
+    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="push 04/05/2022 them check null neu chua dang ky mon hoc nao - format lai code cho dep SOC" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -127,7 +114,7 @@
       <recent name="com.ptit.dangkytinchi.exception" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.DangKyTinChiApplication">
+  <component name="RunManager" selected="JUnit.SinhVienControllerTest.sinhVienControllerDangNhapDungTest">
     <configuration name="DangKyTinChiApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -139,6 +126,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DangKyHocControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DangKyTinChi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.DangKyHocControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -189,21 +191,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SinhVienControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DangKyTinChi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.SinhVienControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SinhVienControllerTest.sinhVienControllerDangNhapDungTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DangKyTinChi" />
       <extension name="coverage">
@@ -229,20 +216,20 @@
     </configuration>
     <list>
       <item itemvalue="Application.DangKyTinChiApplication" />
+      <item itemvalue="JUnit.DangKyHocControllerTest" />
       <item itemvalue="JUnit.DangKyHocControllerTest.testXemThoiKhoaBieuThanhCong" />
       <item itemvalue="JUnit.LopHocPhanControllerTest" />
       <item itemvalue="JUnit.MonHocControllerTest" />
-      <item itemvalue="JUnit.SinhVienControllerTest" />
       <item itemvalue="JUnit.SinhVienControllerTest.sinhVienControllerDangNhapDungTest" />
       <item itemvalue="Spring Boot.DangKyTinChiApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SinhVienControllerTest.sinhVienControllerDangNhapDungTest" />
+        <item itemvalue="JUnit.DangKyHocControllerTest" />
         <item itemvalue="JUnit.DangKyHocControllerTest.testXemThoiKhoaBieuThanhCong" />
         <item itemvalue="JUnit.LopHocPhanControllerTest" />
         <item itemvalue="JUnit.MonHocControllerTest" />
-        <item itemvalue="JUnit.SinhVienControllerTest" />
-        <item itemvalue="JUnit.SinhVienControllerTest.sinhVienControllerDangNhapDungTest" />
       </list>
     </recent_temporary>
   </component>
@@ -335,7 +322,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651596930919</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="push 04/05/2022 fix api xoa dang ky SOC">
+      <created>1651597638860</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1651597638860</updated>
+    </task>
+    <task id="LOCAL-00011" summary="push 04/05/2022 them check null neu chua dang ky mon hoc nao - format lai code cho dep SOC">
+      <created>1651597996371</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1651597996371</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +383,10 @@
     <MESSAGE value="push 04/05/2022 xong api lay tat ca lop hoc phan theo am mon hoc - xong LopHocPhanController SOC" />
     <MESSAGE value="push 04/05/2022 fix controller xu ly khoi tao lop DTO SOC" />
     <MESSAGE value="push 04/05/2022 fix api luu dang ky, fix model-hibernate, fix DTO SOC" />
-    <option name="LAST_COMMIT_MESSAGE" value="push 04/05/2022 fix api luu dang ky, fix model-hibernate, fix DTO SOC" />
+    <MESSAGE value="push 04/05/2022 fix api xoa dang ky SOC" />
+    <MESSAGE value="push 04/05/2022 format lai code cho dep SOC" />
+    <MESSAGE value="push 04/05/2022 them check null neu chua dang ky mon hoc nao - format lai code cho dep SOC" />
+    <option name="LAST_COMMIT_MESSAGE" value="push 04/05/2022 them check null neu chua dang ky mon hoc nao - format lai code cho dep SOC" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
