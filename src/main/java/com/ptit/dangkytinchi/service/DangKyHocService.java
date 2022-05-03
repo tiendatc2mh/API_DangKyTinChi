@@ -8,7 +8,8 @@ import java.util.ArrayList;
 public interface DangKyHocService {
     int laySiSoThucTeCuaLopHocPhan(String maLopHocPhan);
     ArrayList<DangKyHoc> timKiemDangKyHocCuaSinhVien(String maSinhVienKhoa);
-
     void luuDangKy(DangKyHoc dangKyHoc);
+    void xoaDangKy(DangKyHoc dangKyHoc);
+    DangKyHoc timKiemDangKyHocTheoSinhVienKhoaVaMaLopHocPhan(String maSinhVienKhoa, String maLopHocPhan);
 
 }

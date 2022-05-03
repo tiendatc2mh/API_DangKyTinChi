@@ -29,4 +29,14 @@ public class DangKyHocServiceImpl implements DangKyHocService {
     public void luuDangKy(DangKyHoc dangKyHoc) {
         dangKyHocRepository.save(dangKyHoc);
     }
+
+    @Override
+    public void xoaDangKy(DangKyHoc dangKyHoc) {
+        dangKyHocRepository.delete(dangKyHoc);
+    }
+
+    @Override
+    public DangKyHoc timKiemDangKyHocTheoSinhVienKhoaVaMaLopHocPhan(String maSinhVienKhoa, String maLopHocPhan) {
+        return dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoaAndLopHocPhan_MaLopHocPhan(maSinhVienKhoa, maLopHocPhan);
+    }
 }

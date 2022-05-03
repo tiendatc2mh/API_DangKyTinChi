@@ -128,25 +128,25 @@ public class DangKyHocController {
         res.setData(dsDangKyHocDTO);
         return res;
     }
-//
+
 //    //xoa dang ky
-//    @PostMapping("xoadangky/{maSinhVien}")
-//    public ResponeAPI xoaDangKyHoc(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien){
-//        ResponeAPI res = new ResponeAPI();
-//        ArrayList<String> dsmaLopHocPhan = new ArrayList<String>();
-//        object.forEach(obj -> {
-//            dsmaLopHocPhan.add(obj.get("maLopHocPhan").toString().trim());
-//        });
-//        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
-//        ArrayList<DangKyHocDTO> dsDangKyHocDTO = new ArrayList<DangKyHocDTO>();
-//        ArrayList<DangKyHoc> dsDangKyHoc = new ArrayList<DangKyHoc>();
-//        dsmaLopHocPhan.forEach(maLopHocPhan ->{
-//            DangKyHoc temp =  dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoaAndLopHocPhan_MaLopHocPhan(sinhVienKhoa.getMaSinhVienKhoa(), maLopHocPhan);
-//                dangKyHocRepository.delete(temp);
-//        } );
-//        res.setData("Xóa đăng ký thành công!");
-//        return res;
-//    }
+    @PostMapping("xoadangky/{maSinhVien}")
+    public ResponeAPI xoaDangKyHoc(@RequestBody List<LinkedHashMap> object, @PathVariable String maSinhVien){
+        ResponeAPI res = new ResponeAPI();
+        ArrayList<String> dsMaLopHocPhan = new ArrayList<String>();
+        object.forEach(obj -> {
+            dsMaLopHocPhan.add(obj.get("maLopHocPhan").toString().trim());
+        });
+        SinhVienKhoa sinhVienKhoa = sinhVienKhoaService.timKiemSinhVienKhoaTheoMaSinhVien(maSinhVien);
+        ArrayList<DangKyHocDTO> dsDangKyHocDTO = new ArrayList<DangKyHocDTO>();
+        ArrayList<DangKyHoc> dsDangKyHoc = new ArrayList<DangKyHoc>();
+        dsMaLopHocPhan.forEach(maLopHocPhan ->{
+            DangKyHoc temp =  dangKyHocService.timKiemDangKyHocTheoSinhVienKhoaVaMaLopHocPhan(sinhVienKhoa.getMaSinhVienKhoa(), maLopHocPhan);
+            dangKyHocService.xoaDangKy(temp);
+        } );
+        res.setData("Xóa đăng ký thành công!");
+        return res;
+    }
 
     //xem thoi khoa bieu theo tuan cua sinh vien
     @PostMapping("xemthoikhoabieu/{maSinhVien}")
