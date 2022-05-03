@@ -58,14 +58,14 @@ public class LichHoc {
     public LichHoc() {
     }
 
-    public LichHoc(String maLichHoc, String tenLichHoc, String giangvien, LopHocPhan lopHocPhan, PhongHoc phongHoc, TuanHoc tuanHoc, NgayHoc ngayHoc, KipHoc kipHoc) {
-        this.maLichHoc = maLichHoc;
-        this.tenLichHoc = tenLichHoc;
-        this.giangvien = giangvien;
-        this.lopHocPhan = lopHocPhan;
-        this.phongHoc = phongHoc;
-        this.tuanHoc = tuanHoc;
-        this.ngayHoc = ngayHoc;
-        this.kipHoc = kipHoc;
-    }
+//    public LichHoc(String maLichHoc, String tenLichHoc, String giangvien, LopHocPhan lopHocPhan, PhongHoc phongHoc, TuanHoc tuanHoc, NgayHoc ngayHoc, KipHoc kipHoc) {
+//        this.maLichHoc = maLichHoc;
+//        this.tenLichHoc = tenLichHoc;
+//        this.giangvien = giangvien;
+//        this.lopHocPhan = lopHocPhan;
+//        this.phongHoc = phongHoc;
+//        this.tuanHoc = tuanHoc;
+//        this.ngayHoc = ngayHoc;
+//        this.kipHoc = kipHoc;
+//    }
 }

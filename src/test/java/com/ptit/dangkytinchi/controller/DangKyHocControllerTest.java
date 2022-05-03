@@ -82,6 +82,7 @@ public abstract class DangKyHocControllerTest extends AbstractTest{
         ArrayList<MonHocDTO> dataExpect =( ArrayList<MonHocDTO>) outputExpect.getData();
         Assertions.assertEquals(outputResult.getData(), outputExpect.getData());
     }
+
     @Test
     public void testGetDangKiThanhCong() throws Exception{
         HocKi hocKi = new HocKi("HOCKY02", "Học kỳ 2", null);
