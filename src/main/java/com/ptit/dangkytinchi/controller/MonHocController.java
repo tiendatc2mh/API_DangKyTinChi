@@ -10,6 +10,8 @@ import com.ptit.dangkytinchi.repository.MonHocRepository;
 import com.ptit.dangkytinchi.repository.SinhVienKhoaRepository;
 import com.ptit.dangkytinchi.repository.SinhVienRepository;
 import com.ptit.dangkytinchi.service.MonHocService;
+import com.ptit.dangkytinchi.service.SinhVienKhoaService;
+import com.ptit.dangkytinchi.service.SinhVienService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,30 +27,33 @@ import java.util.LinkedHashMap;
 public class MonHocController {
 
     private MonHocService monHocService;
+    private SinhVienService sinhVienService;
+    private SinhVienKhoaService sinhVienKhoaService;
 
-    public MonHocController(MonHocService monHocService) {
+
+    public MonHocController(MonHocService monHocService, SinhVienService sinhVienService, SinhVienKhoaService sinhVienKhoaService) {
         this.monHocService = monHocService;
+        this.sinhVienService = sinhVienService;
+        this.sinhVienKhoaService = sinhVienKhoaService;
     }
 
     //tim kiem mon hoc theo chuong trinh dao tao
-//    @PostMapping("/timkiem/{key}")
-//    public ResponeAPI getMonHocByTenMH(@RequestBody LinkedHashMap object, @PathVariable String key){
-//        ResponeAPI res = new ResponeAPI();
-//        String maSinhVien = object.get("maSinhVien").toString().trim();
-//        ArrayList<LopHocPhanDTO> dsLHPDTO = new ArrayList<LopHocPhanDTO>();
-//        ArrayList<LichHocDTO> dsLHDTO = new ArrayList<LichHocDTO>();
-//        ArrayList<MonHocKiHoc>  monHocKiHoc;
-//        ArrayList<LopHocPhan> dsLopHocPhan = new ArrayList<LopHocPhan>();
-//        String maBoMon ="";
+    @PostMapping("/timkiem/{key}")
+    public ResponeAPI getMonHocByTenMH(@RequestBody LinkedHashMap object, @PathVariable String key) {
+        ResponeAPI res = new ResponeAPI();
+        String maSinhVien = object.get("maSinhVien").toString().trim();
+        ArrayList<MonHocKiHoc> monHocKiHoc;
 //        Date date = new Date();
 //        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 //        int thang = localDate.getMonthValue();
 //        int nam = localDate.getYear();
-//
-//        SinhVienKhoa sinhVienKhoa = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
-//        SinhVien sinhVien = sinhVienRepository.getById(maSinhVien);
-//        if(sinhVienKhoa.isDangHoc()){
-//            System.out.println(sinhVienKhoa.getNienKhoa() + "");
+
+        SinhVienKhoa sinhVienKhoa = sinhVienKhoaService.timKiemSinhVienKhoaTheoMaSinhVien(maSinhVien);
+        SinhVien sinhVien = sinhVienService.timKiemTheoMaSinhVien(maSinhVien);
+        if (sinhVienKhoa.isDangHoc()) {
+            String maKiHoc = sinhVienKhoaService.layMaKiHocCuaSinhVienKhoa(sinhVienKhoa);
+            String maBoMon=sinhVienService.layMaBoMonCuaSinhVien(sinhVien);
+
 //            int nienKhoa = Integer.parseInt(sinhVienKhoa.getNienKhoa().substring(0, 4));
 //            String maKiHoc = "";
 //            if (nam - nienKhoa == 0) {
@@ -99,51 +104,36 @@ public class MonHocController {
 //            } else if (nam - nienKhoa == 4) {
 //                //hoc ki 2
 //                if (thang <= 7 && thang >= 2) {
-//                    if(sinhVien.getLop().contains("CNPM")){
-//                        maBoMon ="BOMON10";
-//                    }else if(sinhVien.getLop().contains("HTTT")){
-//                        maBoMon ="BOMON09";
-//                    }
 //                    maKiHoc = "KYHOC08";
 //                }
-//                //hoc ki he
-//                else if (thang <= 9 && thang >= 7) {
 //
-//                }
-//                //hoc ki 1
-//                else {
-//
-//                }
 //            }
-//            if(maBoMon.length()>0){
-//                monHocKiHoc =(ArrayList<MonHocKiHoc>) monHocKiHocRepository.
-//                        findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_BoMon_MaBoMonAndMonHoc_TenMonHocContains(maKiHoc,maBoMon,key);
-//            }else{
-//                monHocKiHoc =(ArrayList<MonHocKiHoc>) monHocKiHocRepository.
-//                        findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_TenMonHocContains(maKiHoc,key);
+//            if (maBoMon.length() > 0) {
+//                monHocKiHoc = (ArrayList<MonHocKiHoc>) monHocKiHocRepository.
+//                        findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_BoMon_MaBoMonAndMonHoc_TenMonHocContains(maKiHoc, maBoMon, key);
+//            } else {
+//                monHocKiHoc = (ArrayList<MonHocKiHoc>) monHocKiHocRepository.
+//                        findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_TenMonHocContains(maKiHoc, key);
 //            }
-//
 //
 //
 //            ArrayList<MonHocDTO> dsMonHocDTO = new ArrayList<MonHocDTO>();
-//            monHocKiHoc.forEach(monHoc->{
+//            monHocKiHoc.forEach(monHoc -> {
 //                MonHocDTO temp = new MonHocDTO(monHoc.getMonHoc().getMaMonHoc(), monHoc.getMonHoc().getTenMonHoc(), monHoc.getMonHoc().getSoTc());
 //                dsMonHocDTO.add(temp);
 //            });
-//
-//            res.setData(dsMonHocDTO);
-//        }
-//        else{
-//            res.setData(null);
-//        }
-//
-//        return res;
-//    }
+
+            res.setData(monHocService.timKiemMonHocCuaSinhVienTheoChuongTrinhDaoTaoVaTheoTen(maBoMon,maKiHoc,key));
+        } else {
+            res.setData(null);
+        }
+        return res;
+    }
 
 
     //chuc nang tim kiem tat ca cac mon hoc duoc giang day
     @PostMapping("/timkiembutton/{key}")
-    public ResponeAPI getMonHocByTenMHbutton(@PathVariable String key){
+    public ResponeAPI getMonHocByTenMHbutton(@PathVariable String key) {
         ResponeAPI res = new ResponeAPI();
         res.setData(monHocService.timKiemMonHocTheoTenMonHoc(key));
         return res;

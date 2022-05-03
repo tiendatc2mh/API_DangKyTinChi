@@ -6,4 +6,8 @@ import com.ptit.dangkytinchi.model.SinhVien;
 public interface SinhVienService {
     SinhVienDTO timKiemTheoTaiKhoanVaMatKhau(SinhVienDTO sinhVienDTO);
     boolean doiMatKhau(SinhVienDTO sinhVienDTO);
+
+    SinhVien timKiemTheoMaSinhVien(String maSinhVien);
+
+    String layMaBoMonCuaSinhVien(SinhVien sinhVien);
 }

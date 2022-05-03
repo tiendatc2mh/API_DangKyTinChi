@@ -42,4 +42,20 @@ public class SinhVienServiceImpl implements SinhVienService {
         }
     }
 
+    @Override
+    public SinhVien timKiemTheoMaSinhVien(String maSinhVien) {
+        return  sinhVienRepository.getById(maSinhVien);
+    }
+
+    @Override
+    public String layMaBoMonCuaSinhVien(SinhVien sinhVien) {
+        String maBoMon="";
+        if (sinhVien.getLop().contains("CNPM")) {
+            maBoMon= "BOMON10";
+        } else if (sinhVien.getLop().contains("HTTT")) {
+            maBoMon= "BOMON09";
+        }
+        return maBoMon;
+    }
+
 }
