@@ -3,7 +3,7 @@ package com.ptit.dangkytinchi.controller;
 import com.ptit.dangkytinchi.DTO.LichHocDTO;
 import com.ptit.dangkytinchi.DTO.LopHocPhanDTO;
 import com.ptit.dangkytinchi.DTO.MonHocDTO;
-import com.ptit.dangkytinchi.exception.ResponeAPI;
+import com.ptit.dangkytinchi.response.ResponeAPI;
 import com.ptit.dangkytinchi.model.*;
 import com.ptit.dangkytinchi.repository.MonHocKiHocRepository;
 import com.ptit.dangkytinchi.repository.MonHocRepository;

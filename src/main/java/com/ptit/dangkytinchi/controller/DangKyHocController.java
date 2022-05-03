@@ -3,7 +3,7 @@ package com.ptit.dangkytinchi.controller;
 import com.ptit.dangkytinchi.DTO.DangKyHocDTO;
 import com.ptit.dangkytinchi.DTO.LichHocDTO;
 import com.ptit.dangkytinchi.DTO.LopHocPhanDTO;
-import com.ptit.dangkytinchi.exception.ResponeAPI;
+import com.ptit.dangkytinchi.response.ResponeAPI;
 import com.ptit.dangkytinchi.model.DangKyHoc;
 import com.ptit.dangkytinchi.model.LichHoc;
 import com.ptit.dangkytinchi.model.LopHocPhan;
@@ -13,7 +13,6 @@ import com.ptit.dangkytinchi.repository.LichHocRepository;
 import com.ptit.dangkytinchi.repository.LopHocPhanRepository;
 import com.ptit.dangkytinchi.repository.SinhVienKhoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -63,7 +62,6 @@ public class DangKyHocController {
             ArrayList<DangKyHoc> dsDangKy = (ArrayList<DangKyHoc>) dangKyHocRepository.findDangKyHocByLopHocPhan_MaLopHocPhan(temp.getMaLopHocPhan());
             int siSoThucTe = dsDangKy.size();
             if (siSoThucTe + 1 > temp.getSiSoToiDa()) {
-
                 res.setError("Môn học " + temp.getMonHocKiHoc().getMonHoc().getTenMonHoc() + "đã hết số lượng đăng ký!!!");
                 return res;
             }

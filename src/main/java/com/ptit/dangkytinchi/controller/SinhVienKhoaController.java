@@ -2,7 +2,7 @@ package com.ptit.dangkytinchi.controller;
 
 import com.ptit.dangkytinchi.DTO.MonHocDTO;
 import com.ptit.dangkytinchi.DTO.SinhVienDTO;
-import com.ptit.dangkytinchi.exception.ResponeAPI;
+import com.ptit.dangkytinchi.response.ResponeAPI;
 import com.ptit.dangkytinchi.model.*;
 import com.ptit.dangkytinchi.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;

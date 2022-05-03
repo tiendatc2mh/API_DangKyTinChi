@@ -1,4 +1,4 @@
-package com.ptit.dangkytinchi.exception;
+package com.ptit.dangkytinchi.response;
 
 import org.springframework.http.HttpStatus;
 

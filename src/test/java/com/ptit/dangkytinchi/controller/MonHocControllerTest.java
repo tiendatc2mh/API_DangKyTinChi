@@ -1,14 +1,11 @@
 package com.ptit.dangkytinchi.controller;
 
-import com.ptit.dangkytinchi.DTO.BoMonDTO;
 import com.ptit.dangkytinchi.DTO.MonHocDTO;
 import com.ptit.dangkytinchi.DTO.SinhVienDTO;
-import com.ptit.dangkytinchi.exception.ResponeAPI;
-import com.ptit.dangkytinchi.repository.SinhVienRepository;
+import com.ptit.dangkytinchi.response.ResponeAPI;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
