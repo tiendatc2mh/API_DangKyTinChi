@@ -32,6 +32,8 @@ public class MonHocController {
     private SinhVienRepository sinhVienRepository;
 
 
+
+    //tim kiem mon hoc theo chuong trinh dao tao
     @PostMapping("/timkiem/{key}")
     public ResponeAPI getMonHocByTenMH(@RequestBody LinkedHashMap object, @PathVariable String key){
         ResponeAPI res = new ResponeAPI();
@@ -141,6 +143,8 @@ public class MonHocController {
         return res;
     }
 
+
+    //chuc nang tim kiem tat ca cac mon hoc duoc giang day
     @PostMapping("/timkiembutton/{key}")
     public ResponeAPI getMonHocByTenMHbutton(@PathVariable String key){
         ResponeAPI res = new ResponeAPI();

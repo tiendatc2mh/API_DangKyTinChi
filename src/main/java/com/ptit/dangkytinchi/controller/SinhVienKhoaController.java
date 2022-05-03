@@ -39,6 +39,8 @@ public class SinhVienKhoaController {
     public List<SinhVienKhoa> danhSachSinhVienKhoa() {
         return svRepo.findAll();
     }
+
+    //lay tat ca mon hoc trong ky hoc cua sinh vien
     @PostMapping("/monhoc")
     public ResponeAPI layDSMonHocTheoMaSinhVien(@RequestBody SinhVienDTO sinhVienDTO){
         ResponeAPI res = new ResponeAPI();
@@ -51,6 +53,7 @@ public class SinhVienKhoaController {
         SinhVienKhoa sinhVienKhoa = svRepo.findSinhVienKhoaBySinhVien_MaSinhVien(sinhVienDTO.getMaSinhVien());
         int nienKhoa = Integer.parseInt(sinhVienKhoa.getNienKhoa().substring(0, 4));
         String maKiHoc = "";
+        //lay ki hoc theo chuong trinh dao tao
         if (nam - nienKhoa == 0) {
             maKiHoc = "KYHOC01";
 

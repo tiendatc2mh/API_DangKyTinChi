@@ -29,4 +29,7 @@ public class LichHocDTO implements Serializable {
         this.kipHoc = kipHoc;
     }
 
+    public LichHocDTO() {
+
+    }
 }
