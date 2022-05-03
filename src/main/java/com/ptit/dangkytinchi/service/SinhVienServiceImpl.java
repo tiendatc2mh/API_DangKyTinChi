@@ -14,18 +14,8 @@ public class SinhVienServiceImpl implements SinhVienService {
     }
 
     @Override
-    public SinhVienDTO timKiemTheoTaiKhoanVaMatKhau(SinhVienDTO sinhVienDTO) {
-        SinhVien sv = sinhVienRepository.findOneByTaiKhoanAndMatKhau(sinhVienDTO.getTaiKhoan(), sinhVienDTO.getMatKhau());
-        SinhVienDTO svDTO = null;
-        if (sv != null) {
-            svDTO = new SinhVienDTO();
-            svDTO.setMaSinhVien(sv.getMaSinhVien());
-            svDTO.setTenSinhVien(sv.getTenSinhVien());
-            svDTO.setTaiKhoan(sv.getTaiKhoan());
-            svDTO.setMatKhau(sv.getMatKhau());
-            svDTO.setLop(sv.getLop());
-        }
-        return svDTO;
+    public SinhVien timKiemTheoTaiKhoanVaMatKhau(SinhVienDTO sinhVienDTO) {
+        return sinhVienRepository.findOneByTaiKhoanAndMatKhau(sinhVienDTO.getTaiKhoan(), sinhVienDTO.getMatKhau());
     }
 
     //true: doi mat khau thanh cong

@@ -19,4 +19,9 @@ public class DangKyHocServiceImpl implements DangKyHocService {
     public int laySiSoThucTeCuaLopHocPhan(String maLopHocPhan) {
         return (dangKyHocRepository.findDangKyHocByLopHocPhan_MaLopHocPhan(maLopHocPhan)).size();
     }
+
+    @Override
+    public ArrayList<DangKyHoc> timKiemDangKyHocCuaSinhVien(String maSinhVienKhoa) {
+        return dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoa(maSinhVienKhoa);
+    }
 }

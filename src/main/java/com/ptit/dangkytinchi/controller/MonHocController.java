@@ -1,5 +1,6 @@
 package com.ptit.dangkytinchi.controller;
 
+import com.ptit.dangkytinchi.DTO.MonHocDTO;
 import com.ptit.dangkytinchi.response.ResponeAPI;
 import com.ptit.dangkytinchi.model.*;
 import com.ptit.dangkytinchi.service.MonHocService;
@@ -7,6 +8,7 @@ import com.ptit.dangkytinchi.service.SinhVienKhoaService;
 import com.ptit.dangkytinchi.service.SinhVienService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 @RestController
@@ -33,8 +35,14 @@ public class MonHocController {
         SinhVien sinhVien = sinhVienService.timKiemTheoMaSinhVien(maSinhVien);
         if (sinhVienKhoa.isDangHoc()) {
             String maKiHoc = sinhVienKhoaService.layMaKiHocCuaSinhVienKhoa(sinhVienKhoa);
-            String maBoMon=sinhVienService.layMaBoMonCuaSinhVien(sinhVien);
-            res.setData(monHocService.timKiemMonHocTheoTenVaChuongTrinhDaoTaoCuaSinhVien(maBoMon,maKiHoc,key));
+            String maBoMon = sinhVienService.layMaBoMonCuaSinhVien(sinhVien);
+            ArrayList<MonHoc> dsMonHoc = monHocService.timKiemMonHocTheoTenVaChuongTrinhDaoTaoCuaSinhVien(maBoMon, maKiHoc, key);
+            ArrayList<MonHocDTO> ketQua = new ArrayList<MonHocDTO>();
+            dsMonHoc.forEach(monHoc -> {
+                MonHocDTO temp = new MonHocDTO(monHoc.getMaMonHoc(), monHoc.getTenMonHoc(), monHoc.getSoTc());
+                ketQua.add(temp);
+            });
+            res.setData(ketQua);
         } else {
             res.setData(null);
         }
@@ -45,7 +53,13 @@ public class MonHocController {
     @PostMapping("/timkiembutton/{key}")
     public ResponeAPI getMonHocByTenMHbutton(@PathVariable String key) {
         ResponeAPI res = new ResponeAPI();
-        res.setData(monHocService.timKiemMonHocTheoTenMonHoc(key));
+        ArrayList<MonHoc> dsMonHoc = monHocService.timKiemMonHocTheoTenMonHoc(key);
+        ArrayList<MonHocDTO> ketQua = new ArrayList<MonHocDTO>();
+        dsMonHoc.forEach(monHoc -> {
+            MonHocDTO temp = new MonHocDTO(monHoc.getMaMonHoc(), monHoc.getTenMonHoc(), monHoc.getSoTc());
+            ketQua.add(temp);
+        });
+        res.setData(ketQua);
         return res;
     }
 

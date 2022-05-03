@@ -5,7 +5,6 @@ import com.ptit.dangkytinchi.DTO.SinhVienDTO;
 import com.ptit.dangkytinchi.response.ResponeAPI;
 
 
-
 import com.ptit.dangkytinchi.model.SinhVien;
 import com.ptit.dangkytinchi.repository.SinhVienRepository;
 import com.ptit.dangkytinchi.service.SinhVienService;
@@ -29,10 +28,16 @@ public class SinhVienController {
     @PostMapping("/dangnhap")
     public ResponeAPI dangNhap(@RequestBody SinhVienDTO sinhVienDTO) throws Exception {
         ResponeAPI res = new ResponeAPI();
-        SinhVienDTO svDTO = sinhVienService.timKiemTheoTaiKhoanVaMatKhau(sinhVienDTO);
-        if (svDTO == null) {
+        SinhVien sv = sinhVienService.timKiemTheoTaiKhoanVaMatKhau(sinhVienDTO);
+        if (sv == null) {
             res.setError("Sai tài khoản, mật khẩu.Vui lòng nhập lại!");
         } else {
+            SinhVienDTO svDTO = new SinhVienDTO();
+            svDTO.setMaSinhVien(sv.getMaSinhVien());
+            svDTO.setTenSinhVien(sv.getTenSinhVien());
+            svDTO.setTaiKhoan(sv.getTaiKhoan());
+            svDTO.setMatKhau(sv.getMatKhau());
+            svDTO.setLop(sv.getLop());
             res.setData(svDTO);
         }
         return res;

@@ -1,5 +1,6 @@
 package com.ptit.dangkytinchi.controller;
 
+import com.ptit.dangkytinchi.DTO.TuanHocDTO;
 import com.ptit.dangkytinchi.response.ResponeAPI;
 import com.ptit.dangkytinchi.model.TuanHoc;
 import com.ptit.dangkytinchi.repository.TuanHocRepository;
@@ -25,7 +26,12 @@ public class TuanHocController {
     @GetMapping("/dstuanhoc")
     public ResponeAPI layDanhSachTuanHoc(){
         ResponeAPI res = new ResponeAPI();
-        res.setData(tuanHocService.timKiemTatCaTuanHoc());
+        ArrayList<TuanHoc> dsTuanHoc = tuanHocService.timKiemTatCaTuanHoc();
+        ArrayList<TuanHocDTO> ketQua = new ArrayList<>();
+        dsTuanHoc.forEach(tuanHoc -> {
+            ketQua.add(new TuanHocDTO(tuanHoc.getMaTuanHoc(), tuanHoc.getTenTuanHoc(), tuanHoc.getMoTa()));
+        });
+        res.setData(ketQua);
         return res;
     }
 }

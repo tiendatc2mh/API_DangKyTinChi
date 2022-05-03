@@ -17,12 +17,9 @@ public class TuanHocServiceImpl implements TuanHocService {
     }
 
     @Override
-    public ArrayList<TuanHocDTO> timKiemTatCaTuanHoc() {
+    public ArrayList<TuanHoc> timKiemTatCaTuanHoc() {
         ArrayList<TuanHocDTO> ketQua = new ArrayList<TuanHocDTO>();
         ArrayList<TuanHoc> dsTuanHoc = (ArrayList<TuanHoc>) tuanHocRepository.findAll();
-        dsTuanHoc.forEach(tuanHoc -> {
-            ketQua.add(new TuanHocDTO(tuanHoc.getMaTuanHoc(), tuanHoc.getTenTuanHoc(), tuanHoc.getMoTa()));
-        });
-        return ketQua;
+        return dsTuanHoc;
     }
 }
