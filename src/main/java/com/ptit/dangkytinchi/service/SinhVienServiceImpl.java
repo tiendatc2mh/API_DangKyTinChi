@@ -14,8 +14,8 @@ public class SinhVienServiceImpl implements SinhVienService {
     }
 
     @Override
-    public SinhVienDTO timKiemTheoTaiKhoanVaMatKhau(String taiKhoan, String matKhau) {
-        SinhVien sv = sinhVienRepository.findOneByTaiKhoanAndMatKhau(taiKhoan, matKhau);
+    public SinhVienDTO timKiemTheoTaiKhoanVaMatKhau(SinhVienDTO sinhVienDTO) {
+        SinhVien sv = sinhVienRepository.findOneByTaiKhoanAndMatKhau(sinhVienDTO.getTaiKhoan(), sinhVienDTO.getMatKhau());
         SinhVienDTO svDTO = null;
         if (sv != null) {
             svDTO = new SinhVienDTO();
@@ -28,8 +28,18 @@ public class SinhVienServiceImpl implements SinhVienService {
         return svDTO;
     }
 
+    //true: doi mat khau thanh cong
+    //false: sai mat khau cu
     @Override
-    public void doiMatKhau(SinhVien sinhVien) {
-        sinhVienRepository.save(sinhVien);
+    public boolean doiMatKhau(SinhVienDTO sinhVienDTO) {
+        SinhVien sv = sinhVienRepository.findOneByTaiKhoanAndMatKhau(sinhVienDTO.getTaiKhoan(), sinhVienDTO.getMatKhau());
+        if (sv == null) {
+            return false;
+        } else {
+            sv.setMatKhau(sinhVienDTO.getMatKhauMoi());
+            sinhVienRepository.save(sv);
+            return true;
+        }
     }
+
 }

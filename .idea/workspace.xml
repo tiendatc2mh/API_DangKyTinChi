@@ -6,31 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="push 03/05/2022 unit test api xem thoi khoa bieu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/BoMonController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/KhoaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LichHocController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LopHocPhanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LopHocPhanController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/MonHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/MonHocController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienKhoaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/SinhVienKhoaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/TuanHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/TuanHocController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/exception/ResponeAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/response/ResponeAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/LopHocPhanControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/LopHocPhanControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/MonHocControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/MonHocControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/SinhVienControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/SinhVienControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/SinhVienKhoaControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/SinhVienKhoaControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/LichHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/LichHocDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DangKyTinChiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DangKyTinChiApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/SinhVienService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/SinhVienService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/SinhVienServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/service/SinhVienServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/BoMonController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/KhoaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LichHocController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienKhoaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienKhoaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/TuanHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/TuanHocController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/exception/ResponeAPI.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/AbstractTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/AbstractTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +43,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="theanh" />
+        <entry key="$PROJECT_DIR$" value="dat_SQA" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

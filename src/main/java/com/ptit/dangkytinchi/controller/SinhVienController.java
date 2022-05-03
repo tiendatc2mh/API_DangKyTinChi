@@ -29,7 +29,7 @@ public class SinhVienController {
     @PostMapping("/dangnhap")
     public ResponeAPI dangNhap(@RequestBody SinhVienDTO sinhVienDTO) throws Exception {
         ResponeAPI res = new ResponeAPI();
-        SinhVienDTO svDTO = sinhVienService.timKiemTheoTaiKhoanVaMatKhau(sinhVienDTO.getTaiKhoan(), sinhVienDTO.getMatKhau());
+        SinhVienDTO svDTO = sinhVienService.timKiemTheoTaiKhoanVaMatKhau(sinhVienDTO);
         if (svDTO == null) {
             res.setError("Sai tài khoản, mật khẩu.Vui lòng nhập lại!");
         } else {
@@ -40,23 +40,16 @@ public class SinhVienController {
 
 
     //doi mat khau
-//    @PostMapping("/doimatkhau")
-//    public ResponeAPI doiMatKhau(@RequestBody SinhVienDTO sinhVienDTO) throws Exception {
-//        ResponeAPI res = new ResponeAPI();
-//        SinhVien sv = svRepo.findOneByTaiKhoanAndMatKhau(sinhVienDTO.getTaiKhoan(), sinhVienDTO.getMatKhau());
-//        if (sv == null) {
-//            res.setError("Sai mật khẩu cũ.Vui lòng nhập lại!");
-//        } else {
-//            SinhVien svMoi = new SinhVien();
-//            svMoi.setMaSinhVien(sv.getMaSinhVien());
-//            svMoi.setTenSinhVien(sv.getTenSinhVien());
-//            svMoi.setTaiKhoan(sv.getTaiKhoan());
-//            svMoi.setMatKhau(sinhVienDTO.getMatKhauMoi());
-//            svMoi.setLop(sv.getLop());
-//            svRepo.save(svMoi);
-//            res.setData("ok");
-//        }
-//        return res;
-//    }
+    @PostMapping("/doimatkhau")
+    public ResponeAPI doiMatKhau(@RequestBody SinhVienDTO sinhVienDTO) throws Exception {
+        ResponeAPI res = new ResponeAPI();
+        boolean ketQua = sinhVienService.doiMatKhau(sinhVienDTO);
+        if (!ketQua) {
+            res.setError("Sai mật khẩu cũ.Vui lòng nhập lại!");
+        } else {
+            res.setData("ok");
+        }
+        return res;
+    }
 
 }
