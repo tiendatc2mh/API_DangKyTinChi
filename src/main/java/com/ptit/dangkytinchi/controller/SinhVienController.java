@@ -29,6 +29,8 @@ public class SinhVienController {
         return svRepo.findAll();
     }
 
+
+    //dang nhap
     @PostMapping("/dangnhap")
     public ResponeAPI dangNhap(@RequestBody SinhVienDTO sinhVienDTO) throws Exception {
         ResponeAPI res = new ResponeAPI();
@@ -47,6 +49,8 @@ public class SinhVienController {
         return res;
     }
 
+
+    //doi mat khau
     @PostMapping("/doimatkhau")
     public ResponeAPI doiMatKhau(@RequestBody SinhVienDTO sinhVienDTO) throws Exception {
         ResponeAPI res = new ResponeAPI();

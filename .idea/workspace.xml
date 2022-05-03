@@ -4,10 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="fix commit">
+    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="commit dau tien">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_22_2022_11_07_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_22_2022_11_07_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_05_2022_10_37_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_05_2022_10_37_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_30_2022_05_03_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_30_2022_05_03_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_30_2022_05_13_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_04_30_2022_05_13_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/LichHoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/model/LichHoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LichHocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LichHocDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/AbstractTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/AbstractTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/LopHocPhanController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/MonHocController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/SinhVienController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/LichHocRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/repository/LichHocRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +50,7 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="theanh" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,7 +79,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
       </map>
     </option>
   </component>
@@ -80,6 +92,9 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="26kM1YPB7X3PUfb9jT5etOHnOZI" />
   <component name="ProjectLevelVcsManager">
@@ -96,19 +111,7 @@
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="show.run.dashboard.notification" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -126,7 +129,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.DangKyTinChiApplication" />
-      <module name="DangKyTC" />
+      <module name="DangKyTinChi" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.ptit.dangkytinchi.*" />
@@ -185,19 +188,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SinhVienControllerTest and 2 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DangKyTinChi" />
-      <option name="TEST_OBJECT" value="pattern" />
-      <patterns>
-        <pattern testClass="com.ptit.dangkytinchi.controller.SinhVienControllerTest" />
-        <pattern testClass="com.ptit.dangkytinchi.controller.MonHocControllerTest" />
-        <pattern testClass="com.ptit.dangkytinchi.controller.LopHocPhanControllerTest" />
-      </patterns>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SinhVienControllerTest.sinhVienControllerDangNhapDungTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DangKyHocControllerTest.testXemThoiKhoaBieuThanhCong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DangKyTinChi" />
       <extension name="coverage">
         <pattern>
@@ -206,8 +197,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.SinhVienControllerTest" />
-      <option name="METHOD_NAME" value="sinhVienControllerDangNhapDungTest" />
+      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.DangKyHocControllerTest" />
+      <option name="METHOD_NAME" value="testXemThoiKhoaBieuThanhCong" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DangKyHocControllerTest.testXoaDangKiThanhCong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DangKyTinChi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ptit.dangkytinchi.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.DangKyHocControllerTest" />
+      <option name="METHOD_NAME" value="testXoaDangKiThanhCong" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -216,27 +223,26 @@
     <configuration name="DangKyTinChiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="DangKyTinChi" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptit.dangkytinchi.DangKyTinChiApplication" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.DangKyTinChiApplication" />
-      <item itemvalue="JUnit.SinhVienControllerTest.sinhVienControllerDangNhapDungTest" />
-      <item itemvalue="JUnit.SinhVienControllerTest and 2 more" />
+      <item itemvalue="JUnit.DangKyHocControllerTest.testXemThoiKhoaBieuThanhCong" />
+      <item itemvalue="Spring Boot.DangKyTinChiApplication" />
       <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiThanhCong" />
       <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiKhongThanhCong" />
-      <item itemvalue="Spring Boot.DangKyTinChiApplication" />
       <item itemvalue="JUnit.DangKyHocControllerTest.testGetDangKiThanhCong" />
+      <item itemvalue="JUnit.DangKyHocControllerTest.testXoaDangKiThanhCong" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.DangKyHocControllerTest.testGetDangKiThanhCong" />
+        <item itemvalue="JUnit.DangKyHocControllerTest.testXemThoiKhoaBieuThanhCong" />
+        <item itemvalue="JUnit.DangKyHocControllerTest.testXoaDangKiThanhCong" />
         <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiKhongThanhCong" />
         <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiThanhCong" />
-        <item itemvalue="JUnit.SinhVienControllerTest and 2 more" />
-        <item itemvalue="JUnit.SinhVienControllerTest.sinhVienControllerDangNhapDungTest" />
       </list>
     </recent_temporary>
   </component>
@@ -263,19 +269,6 @@
       <workItem from="1648975313338" duration="1387000" />
       <workItem from="1648977648206" duration="4023000" />
       <workItem from="1649063761948" duration="7052000" />
-      <workItem from="1650342204643" duration="597000" />
-      <workItem from="1650354578755" duration="148000" />
-      <workItem from="1650354882639" duration="3788000" />
-      <workItem from="1650378479894" duration="1577000" />
-      <workItem from="1650422069415" duration="260000" />
-      <workItem from="1650426569701" duration="1116000" />
-      <workItem from="1650464824139" duration="313000" />
-      <workItem from="1650471351252" duration="1305000" />
-      <workItem from="1650507585668" duration="6606000" />
-      <workItem from="1650533349847" duration="3955000" />
-      <workItem from="1651055415271" duration="657000" />
-      <workItem from="1651304769529" duration="6407000" />
-      <workItem from="1651561039581" duration="1650000" />
     </task>
     <task id="LOCAL-00001" summary="fix model">
       <created>1647966187370</created>
@@ -291,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647966620820</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit dau tien">
+      <created>1651317249719</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1651317249719</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,17 +331,24 @@
     <MESSAGE value="fix model" />
     <MESSAGE value="fix commit" />
     <MESSAGE value="fix commit(bug)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix commit(bug)" />
+    <MESSAGE value="commit dau tien" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit dau tien" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.java</url>
-          <line>101</line>
-          <option name="timeStamp" value="1" />
+          <line>106</line>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LichHoc_java$SinhVienControllerTest_sinhVienControllerDoiMatKhauDungTest.ic" NAME="SinhVienControllerTest.sinhVienControllerDoiMatKhauDungTest Coverage Results" MODIFIED="1650126913444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.ptit.dangkytinchi.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/LichHoc_java$DangKyTinChiApplication.ic" NAME="DangKyTinChiApplication Coverage Results" MODIFIED="1650423182925" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

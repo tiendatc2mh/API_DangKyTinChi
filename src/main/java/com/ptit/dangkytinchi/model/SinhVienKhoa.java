@@ -47,6 +47,10 @@ public class SinhVienKhoa {
     @OneToMany(mappedBy = "sinhVienKhoa", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     Set<DangKyHoc> dsDangKyHoc;
 
+    public SinhVienKhoa() {
+
+    }
+
     public SinhVienKhoa(String maSinhVienKhoa, String nienKhoa, boolean dangHoc, Khoa khoa, SinhVien sinhVien) {
         this.maSinhVienKhoa = maSinhVienKhoa;
         this.nienKhoa = nienKhoa;

@@ -21,6 +21,7 @@ public class TuanHocController {
         this.tuanHocRepository = tuanHocRepository;
     }
 
+    //lay tat ca tuan hoc trong ky
     @GetMapping("/dstuanhoc")
     public ResponeAPI layDanhSachTuanHoc(){
         ResponeAPI res = new ResponeAPI();

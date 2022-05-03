@@ -46,8 +46,8 @@ public class LopHocPhanControllerTest extends AbstractTest{
         NamHoc namHoc = new NamHoc("NAMHOC2021","NĂM HỌC 2021-2022","năm học 2021-2022", null);
         KiHoc kiHoc = new KiHoc("KYHOC06", true, true, namHoc,hocKi, null);
         Khoa khoa = new Khoa("CNTT01", "Công nghệ thông tin 01","Khoa Công nghệ thông tin 01",null,null );
-        BoMon boMon = new BoMon("BOMON10", "Công nghệ phần mềm", null,  khoa);
-        MonHoc monHoc = new MonHoc("INT1340", "Nhập môn CNPM", 3,boMon,null);
+        BoMon boMon = new BoMon("BOMON10", "Công nghệ phần mềm", null,  khoa,null);
+        MonHoc monHoc = new MonHoc("INT1340", "Nhập môn CNPM", 14,boMon,null);
         MonHocKiHoc monHocKiHoc = new MonHocKiHoc("MHKH16", monHoc,kiHoc,null);
         LopHocPhan lopHocPhan= new LopHocPhan("D19-0001","D19-0001",1,null,monHocKiHoc,null,null);
         LichHoc lichHoc = new LichHoc("LICHHOC0001", "Lịch học 734", "N.M.Hùng",lopHocPhan,phongHoc,tuanHoc,ngayHoc,kipHoc);
@@ -73,7 +73,6 @@ public class LopHocPhanControllerTest extends AbstractTest{
         Assertions.assertNotNull(result);
         String content =result.getResponse().getContentAsString(StandardCharsets.UTF_8);
         ResponeAPI outputResult = super.mapFromJson(content, ResponeAPI.class);
-
         ArrayList<LopHocPhanDTO> dataResultObj = new ArrayList<LopHocPhanDTO>();
         List<LinkedHashMap<String, Object>> dataResult =(List<LinkedHashMap<String, Object>>) outputResult.getData();
         dataResult.forEach(stringObjectLinkedHashMap ->{

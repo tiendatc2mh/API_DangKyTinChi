@@ -22,10 +22,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = DangKyTinChiApplication.class)
-@WebAppConfiguration
-public abstract class DangKyHocControllerTest extends AbstractTest{
+public class DangKyHocControllerTest extends AbstractTest{
     @Override
     @Before
     public void setUp() {
@@ -38,24 +35,23 @@ public abstract class DangKyHocControllerTest extends AbstractTest{
     @Rollback
     public void testLuuDangKiThanhCong() throws Exception{
         String input="[\n" +
-                "    {\"maLopHocPhan\" : \"D18-023\"} " +
+                "    {\"maLopHocPhan\" : \"D18-008\"} " +
                 "]";
         String maSV = "B18DCCN026";
-        String inputJson = super.mapToJson(input);
 
         ResponeAPI outputExpect = new ResponeAPI();
         outputExpect.setData("Đăng ký thành công!");
 
-        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("dangkytinchi/luudangky" +maSV)
+        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("/dangkytinchi/luudangky/" +maSV)
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .content(inputJson))
+                        .content(input))
                 .andReturn();
         int status = result.getResponse().getStatus();
         Assertions.assertNotNull(result);
         String content =result.getResponse().getContentAsString(StandardCharsets.UTF_8);
         ResponeAPI outputResult = super.mapFromJson(content, ResponeAPI.class);
 
-        ArrayList<MonHocDTO> dataExpect =( ArrayList<MonHocDTO>) outputExpect.getData();
+        String dataExpect =(String) outputExpect.getData();
         Assertions.assertEquals(outputResult.getData(), outputExpect.getData());
     }
     @Test
@@ -65,26 +61,26 @@ public abstract class DangKyHocControllerTest extends AbstractTest{
                 "    {\"maLopHocPhan\" : \"D18-038\"}\n" +
                 "]";
         String maSV = "B18DCCN026";
-        String inputJson = super.mapToJson(input);
 
         ResponeAPI outputExpect = new ResponeAPI();
         outputExpect.setData("Lỗi trùng lịch học");
 
-        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("dangkytinchi/luudangky" +maSV)
+        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("/dangkytinchi/luudangky/" +maSV)
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .content(inputJson))
+                        .content(input))
                 .andReturn();
         int status = result.getResponse().getStatus();
         Assertions.assertNotNull(result);
         String content =result.getResponse().getContentAsString(StandardCharsets.UTF_8);
         ResponeAPI outputResult = super.mapFromJson(content, ResponeAPI.class);
 
-        ArrayList<MonHocDTO> dataExpect =( ArrayList<MonHocDTO>) outputExpect.getData();
+        String dataExpect =(String) outputExpect.getData();
         Assertions.assertEquals(outputResult.getData(), outputExpect.getData());
     }
 
     @Test
     public void testGetDangKiThanhCong() throws Exception{
+        this.testLuuDangKiThanhCong();
         HocKi hocKi = new HocKi("HOCKY02", "Học kỳ 2", null);
         NamHoc namHoc  = new NamHoc("NAMHOC2021","NĂM HỌC 2021-2022", "năm học 2021-2022" );
         KiHoc kiHoc = new KiHoc("KYHOC08", true, true, namHoc, hocKi);
@@ -99,9 +95,8 @@ public abstract class DangKyHocControllerTest extends AbstractTest{
         ArrayList<DangKyHoc> list = new ArrayList<>();
         list.add(dangKyHoc);
 
-        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("/dangkytinchi/lophocphan/B18DCCN026")
-                        .contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .content(""))
+        MvcResult result = mvc.perform(MockMvcRequestBuilders.get("/dangkytinchi/luudangky/B18DCCN026")
+                        .contentType(MediaType.APPLICATION_JSON_VALUE))
                 .andReturn();
         int status = result.getResponse().getStatus();
         Assertions.assertNotNull(result);
@@ -122,25 +117,69 @@ public abstract class DangKyHocControllerTest extends AbstractTest{
     @Transactional
     @Rollback
     public void testXoaDangKiThanhCong() throws Exception{
+        this.testLuuDangKiThanhCong();
         String input="[\n" +
-                "    {\"maLopHocPhan\" : \"D18-008\"},\n" +
+                "    {\"maLopHocPhan\" : \"D18-008\"} " +
                 "]";
         String maSV = "B18DCCN026";
-        String inputJson = super.mapToJson(input);
-
         ResponeAPI outputExpect = new ResponeAPI();
         outputExpect.setData("Xóa đăng ký thành công!");
 
-        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("dangkytinchi/xoadangky" +maSV)
+        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("/dangkytinchi/xoadangky/" +maSV)
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .content(inputJson))
+                        .content(input))
                 .andReturn();
         int status = result.getResponse().getStatus();
         Assertions.assertNotNull(result);
         String content =result.getResponse().getContentAsString(StandardCharsets.UTF_8);
         ResponeAPI outputResult = super.mapFromJson(content, ResponeAPI.class);
-
-        ArrayList<MonHocDTO> dataExpect =( ArrayList<MonHocDTO>) outputExpect.getData();
+        String dataExpect =(String) outputExpect.getData();
         Assertions.assertEquals(outputResult.getData(), outputExpect.getData());
+    }
+
+    @Test
+    public void testXemThoiKhoaBieuThanhCong() throws Exception{
+        String input="{\n" +
+                "    \"maTuanHoc\": \"TUANHOC27\"\n" +
+                "}";
+        String maSinhVien ="B19DCCN001";
+        String inputJson = super.mapToJson(input);
+
+        KipHoc kipHoc = new KipHoc("KIPHOC01", "KIP 01", "7h-9h",null);
+        NgayHoc ngayHoc = new NgayHoc("NGAYHOC013", "2022-02-19", "Bảy",null);
+        TuanHoc tuanHoc = new TuanHoc("TUANHOC27", "Tuần 27","14/02-20/02/2022", null );
+        ToaNha toaNha = new ToaNha("TOANHA06", "Trans", "hoc online", null);
+        PhongHoc phongHoc = new PhongHoc("70193", "70193", 90, toaNha, null);
+        HocKi hocKi = new HocKi("HOCKY02", "Học kỳ 2", null, null);
+        NamHoc namHoc = new NamHoc("NAMHOC2021","NĂM HỌC 2021-2022","năm học 2021-2022", null);
+        KiHoc kiHoc = new KiHoc("KYHOC06", true, true, namHoc,hocKi, null);
+        Khoa khoa = new Khoa("CNTT01", "Công nghệ thông tin 01","Khoa Công nghệ thông tin 01",null,null );
+        BoMon boMon = new BoMon("BOMON10", "Công nghệ phần mềm", null,  khoa,null);
+        MonHoc monHoc = new MonHoc("INT1340", "Nhập môn CNPM", 14,boMon,null);
+        MonHocKiHoc monHocKiHoc = new MonHocKiHoc("MHKH16", monHoc,kiHoc,null);
+        LopHocPhan lopHocPhan= new LopHocPhan("D19-0001","D19-0001",1,null,monHocKiHoc,null,null);
+        LichHoc lichHoc = new LichHoc("LICHHOC0001", "Lịch học 734", "N.M.Hùng",lopHocPhan,phongHoc,tuanHoc,ngayHoc,kipHoc);
+        ArrayList<LichHoc> dsLichHoc = new ArrayList<LichHoc>();
+        dsLichHoc.add(lichHoc);
+        ResponeAPI outputExpect = new ResponeAPI();
+        outputExpect.setData(dsLichHoc);
+
+        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("/dangkytinchi/xemthoikhoabieu/" + maSinhVien)
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .content(input))
+                .andReturn();
+        int status = result.getResponse().getStatus();
+        Assertions.assertNotNull(result);
+        String content =result.getResponse().getContentAsString(StandardCharsets.UTF_8);
+        ResponeAPI outputResult = super.mapFromJson(content, ResponeAPI.class);
+        ArrayList<LichHoc> dataResultObj = new ArrayList<LichHoc>();
+        List<LinkedHashMap<String, Object>> dataResult =(List<LinkedHashMap<String, Object>>) outputResult.getData();
+        dataResult.forEach(stringObjectLinkedHashMap ->{
+            LichHoc temp = toLichHoc(stringObjectLinkedHashMap);
+                    dataResultObj.add(temp);
+                }
+        );
+        ArrayList<LichHoc> dataExpect = (ArrayList<LichHoc>) outputExpect.getData();
+        Assertions.assertEquals(dataResultObj, dsLichHoc);
     }
 }

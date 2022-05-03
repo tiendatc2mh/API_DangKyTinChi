@@ -35,7 +35,7 @@ public class SinhVienControllerTest extends AbstractTest {
     public void sinhVienControllerDangNhapDungTest() throws Exception {
         String inputTaiKhoan = "B18DCCN147";
         String inputMatKhau = "123456";
-        SinhVienDTO outputData = new SinhVienDTO("B18DCCN147", "Trịnh Tiến Đạt", "B18DCCN147", "123456", null, null);
+        SinhVienDTO outputData = new SinhVienDTO("B18DCCN147", "Trịnh Tiến Đạt", "B18DCCN147", "123456", null, "D18CNPM02");
 
         ResponeAPI outputExpext = new ResponeAPI();
         outputExpext.setData(outputData);
@@ -89,7 +89,7 @@ public class SinhVienControllerTest extends AbstractTest {
         outputExpext.setData("ok");
         SinhVienDTO svDTO = new SinhVienDTO(inputTaiKhoan,inputMatKhau, inputMatKhauMoi);
         String inputJson = super.mapToJson(svDTO);
-        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("/sin hvien/doimatkhau")
+        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("/sinhvien/doimatkhau")
                 .contentType(MediaType.APPLICATION_JSON_VALUE)
                 .content(inputJson)).andReturn();
         int status = result.getResponse().getStatus();

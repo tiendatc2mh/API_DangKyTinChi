@@ -205,6 +205,19 @@ public abstract class AbstractTest {
         return dataout;
     }
 
+    public LichHocDTO toLichHocDTO(LinkedHashMap<String, Object> data){
+        LichHocDTO dataout = new LichHocDTO();
+        dataout.setMaLichHoc((String) data.get("maLichHoc"));
+        dataout.setTenLichHoc((String) data.get("tenLichHoc"));
+        dataout.setGiangvien((String) data.get("giangvien"));
+        dataout.setLopHocPhan(toLopHocPhan((LinkedHashMap<String, Object>) data.get("lopHocPhan")));
+        dataout.setPhongHoc(toPhongHoc((LinkedHashMap<String, Object>) data.get("phongHoc")));
+        dataout.setTuanHoc(toTuanHoc((LinkedHashMap<String, String>) data.get("tuanHoc")));
+        dataout.setNgayHoc(toNgayHoc((LinkedHashMap<String, String>) data.get("ngayHoc")));
+        dataout.setKipHoc(toKipHoc((LinkedHashMap<String, String>) data.get("kipHoc")));
+        return dataout;
+    }
+
 
 
 
