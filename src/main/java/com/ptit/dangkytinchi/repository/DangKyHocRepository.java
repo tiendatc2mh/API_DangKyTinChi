@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface DangKyHocRepository extends JpaRepository<DangKyHoc, String> {
-    List<DangKyHoc> findDangKyHocByLopHocPhan_MaLopHocPhan(String maLopHocPhan);
+    ArrayList<DangKyHoc> findDangKyHocByLopHocPhan_MaLopHocPhan(String maLopHocPhan);
     ArrayList<DangKyHoc> findDangKyHocBySinhVienKhoa_MaSinhVienKhoa(String maSinhVienKhoa);
     DangKyHoc findDangKyHocBySinhVienKhoa_MaSinhVienKhoaAndLopHocPhan_MaLopHocPhan(String maSinhVienKhoa, String maLopHocPhan);
 }

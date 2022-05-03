@@ -12,11 +12,11 @@ import java.util.ArrayList;
 @Service
 public class MonHocServiceImpl implements MonHocService {
     private MonHocRepository monHocRepository;
-    private MonHocKiHocRepository monHocKiHocRepository;
+    private MonHocKiHocService monHocKiHocService;
 
-    public MonHocServiceImpl(MonHocRepository monHocRepository, MonHocKiHocRepository monHocKiHocRepository) {
+    public MonHocServiceImpl(MonHocRepository monHocRepository, MonHocKiHocService monHocKiHocService) {
         this.monHocRepository = monHocRepository;
-        this.monHocKiHocRepository = monHocKiHocRepository;
+        this.monHocKiHocService = monHocKiHocService;
     }
 
     @Override
@@ -35,14 +35,10 @@ public class MonHocServiceImpl implements MonHocService {
     public ArrayList<MonHocDTO> timKiemMonHocTheoTenVaChuongTrinhDaoTaoCuaSinhVien(String maBoMon, String maKiHoc, String key) {
         ArrayList<MonHocKiHoc> dsMonHocKiHoc = new ArrayList<MonHocKiHoc>();
         if (maBoMon.length() > 0) {
-            dsMonHocKiHoc = (ArrayList<MonHocKiHoc>) monHocKiHocRepository.
-                    findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_BoMon_MaBoMonAndMonHoc_TenMonHocContains(maKiHoc, maBoMon, key);
+            dsMonHocKiHoc = monHocKiHocService.timKiemMonHocKiHocTheoTenMonHocVaMaKiHocVaMaBoMon(maKiHoc,maBoMon,key);
         } else {
-            dsMonHocKiHoc = (ArrayList<MonHocKiHoc>) monHocKiHocRepository.
-                    findMonHocKiHocByKiHoc_MaKiHocAndMonHoc_TenMonHocContains(maKiHoc, key);
+            dsMonHocKiHoc = monHocKiHocService.timKiemMonHocKiHocTheoTenMonHocVaMaKiHoc(maKiHoc,key);
         }
-
-
         ArrayList<MonHocDTO> dsMonHocDTO = new ArrayList<MonHocDTO>();
         dsMonHocKiHoc.forEach(monHoc -> {
             MonHocDTO temp = new MonHocDTO(monHoc.getMonHoc().getMaMonHoc(), monHoc.getMonHoc().getTenMonHoc(), monHoc.getMonHoc().getSoTc());
