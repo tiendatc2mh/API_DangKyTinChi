@@ -54,7 +54,7 @@ public class LopHocPhanControllerTest extends AbstractTest{
         ArrayList<LichHoc> dsLichHoc = new ArrayList<LichHoc>();
         dsLichHoc.add(lichHoc);
 
-        LopHocPhanDTO data1 = new LopHocPhanDTO("D19-0001","D19-0001",1,0, null, monHocKiHoc, dsLichHoc);
+        LopHocPhanDTO data1 = new LopHocPhanDTO("D19-0001","D19-0001",1,1, null, monHocKiHoc, dsLichHoc);
         outputData.add(data1);
 
 

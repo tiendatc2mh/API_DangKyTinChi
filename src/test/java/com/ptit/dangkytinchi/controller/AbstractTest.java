@@ -53,6 +53,24 @@ public abstract class AbstractTest {
         return dataout;
     }
 
+    public SinhVien toSinhVien(LinkedHashMap<String, String> data){
+        SinhVien dataout = new SinhVien();
+        dataout.setMaSinhVien(data.get("maSinhVien"));
+        dataout.setTenSinhVien(data.get("tenSinhVien"));
+        dataout.setTaiKhoan(data.get("taiKhoan"));
+        dataout.setMatKhau(data.get("matKhau"));
+        dataout.setLop(data.get("lop"));
+        return dataout;
+    }
+    public SinhVienKhoa toSinhVienKhoa(LinkedHashMap<String, Object> data){
+        SinhVienKhoa dataout = new SinhVienKhoa();
+        dataout.setMaSinhVienKhoa((String) data.get("maSinhVienKhoa"));
+        dataout.setNienKhoa((String) data.get("nienKhoa"));
+        dataout.setDangHoc((Boolean) data.get("dangHoc"));
+        dataout.setKhoa(toKhoa((LinkedHashMap<String, String>)  data.get("khoa")));
+        dataout.setSinhVien(toSinhVien((LinkedHashMap<String, String>) data.get("sinhVien")));
+        return dataout;
+    }
     public MonHocDTO toMonHocDTO(LinkedHashMap<String, Object> data){
         MonHocDTO dataout = new MonHocDTO();
         dataout.setMaMonHoc((String)(data.get("maMonHoc")));
@@ -216,6 +234,14 @@ public abstract class AbstractTest {
         dataout.setNgayHoc(toNgayHoc((LinkedHashMap<String, String>) data.get("ngayHoc")));
         dataout.setKipHoc(toKipHoc((LinkedHashMap<String, String>) data.get("kipHoc")));
         return dataout;
+    }
+
+    public DangKyHocDTO toDangKyHocDTO(LinkedHashMap<String, Object> data){
+        DangKyHocDTO dataout = new DangKyHocDTO();
+        dataout.setMaDangKyHoc((String) data.get("maDangKyHoc"));
+        dataout.setLopHocPhan(toLopHocPhan((LinkedHashMap<String, Object>) data.get("lopHocPhan")));
+        dataout.setSinhVienKhoa(toSinhVienKhoa((LinkedHashMap<String, Object>) data.get("sinhVienKhoa")));
+        return  dataout;
     }
 
 
