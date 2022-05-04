@@ -191,7 +191,6 @@ public abstract class AbstractTest {
         LopHocPhanDTO dataout = new LopHocPhanDTO();
         dataout.setMaLopHocPhan((String) data.get("maLopHocPhan"));
         dataout.setTenLopHocPhan((String) data.get("tenLopHocPhan"));
-        dataout.setSiSoToiDa((Integer) data.get("siSoToiDa"));
         dataout.setSiSoThucTe((Integer) data.get("siSoThucTe"));
         dataout.setMoTa((String) data.get("moTa"));
         dataout.setMonHocKiHoc(toMonHocKiHoc((LinkedHashMap<String, Object>) data.get("monHocKiHoc")));

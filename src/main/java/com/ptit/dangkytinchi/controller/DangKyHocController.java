@@ -69,8 +69,21 @@ public class DangKyHocController {
             }
         }
 //         check trung lich hoc
+        SinhVienKhoa sinhVienKhoa1 = sinhVienKhoaRepository.findSinhVienKhoaBySinhVien_MaSinhVien(maSinhVien);
+        ArrayList<DangKyHocDTO> dsDangKyHocDTO = new ArrayList<DangKyHocDTO>();
+        ArrayList<DangKyHoc> dsDangKyHoc = new ArrayList<DangKyHoc>();
+        dsDangKyHoc = ( ArrayList<DangKyHoc>) dangKyHocRepository.findDangKyHocBySinhVienKhoa_MaSinhVienKhoa(sinhVienKhoa1.getMaSinhVienKhoa());
+        dsDangKyHoc.forEach(dangKyHoc -> {
+            DangKyHocDTO temp = new DangKyHocDTO(dangKyHoc.getMaDangKyHoc(), dangKyHoc.getSinhVienKhoa(), dangKyHoc.getLopHocPhan());
+            dsDangKyHocDTO.add(temp);
+        });
+        ArrayList<LopHocPhan> dataCheckLHP = dsLopHocPhan;
+        ArrayList<LopHocPhan> finalDataCheckLHP = dataCheckLHP;
+        dsDangKyHoc.forEach(data -> {
+            finalDataCheckLHP.add(data.getLopHocPhan());
+        });
         ArrayList<LopHocPhanDTO> listFullDataLopHopPhan = new ArrayList<>();
-        for (LopHocPhan lopHocPhan : dsLopHocPhan) {
+        for (LopHocPhan lopHocPhan : finalDataCheckLHP) {
             ArrayList<DangKyHoc> dsDangKy = (ArrayList<DangKyHoc>) dangKyHocRepository.findDangKyHocByLopHocPhan_MaLopHocPhan(lopHocPhan.getMaLopHocPhan());
             int siSoThucTe = dsDangKy.size();
             ArrayList<LichHoc> listLichHoc = lichHocRepository.findLichHocByLopHocPhan_MaLopHocPhan(lopHocPhan.getMaLopHocPhan());
