@@ -26,4 +26,8 @@ public class DangKyHocDTO implements Serializable {
         this.sinhVienKhoa = sinhVienKhoa;
         this.lopHocPhan = lopHocPhan;
     }
+
+    public LopHocPhan getLopHocPhan() {
+        return lopHocPhan;
+    }
 }
