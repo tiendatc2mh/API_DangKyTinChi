@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="commit dau tien">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/DangKyHocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/DangKyHocDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/AbstractTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/AbstractTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/LopHocPhanControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/LopHocPhanControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/DangKyHocDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/DTO/DangKyHocDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/AbstractTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/AbstractTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/LopHocPhanControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/LopHocPhanControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,14 +95,14 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ADMIN\Documents\IntelliJ\DangKyTinChiDat" />
@@ -121,7 +114,7 @@
       <recent name="com.ptit.dangkytinchi.exception" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TuanHocControllerTest.testLayTuanHocThanhCong">
+  <component name="RunManager" selected="Spring Boot.DangKyTinChiApplication">
     <configuration name="DangKyTinChiApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
