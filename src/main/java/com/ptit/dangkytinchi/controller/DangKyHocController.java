@@ -64,7 +64,7 @@ public class DangKyHocController {
             int siSoThucTe = dsDangKy.size();
             if (siSoThucTe + 1 > temp.getSiSoToiDa()) {
 
-                res.setError("Môn học " + temp.getMonHocKiHoc().getMonHoc().getTenMonHoc() + "đã hết số lượng đăng ký!!!");
+                res.setError("Môn học " + temp.getMonHocKiHoc().getMonHoc().getTenMonHoc() + " đã hết số lượng đăng ký!!!");
                 return res;
             }
         }
