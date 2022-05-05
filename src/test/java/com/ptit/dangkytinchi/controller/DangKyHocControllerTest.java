@@ -80,20 +80,19 @@ public class DangKyHocControllerTest extends AbstractTest{
 
     @Test
     public void testGetDangKiThanhCong() throws Exception{
-        this.testLuuDangKiThanhCong();
         HocKi hocKi = new HocKi("HOCKY02", "Học kỳ 2", null);
         NamHoc namHoc  = new NamHoc("NAMHOC2021","NĂM HỌC 2021-2022", "năm học 2021-2022" );
         KiHoc kiHoc = new KiHoc("KYHOC08", true, true, namHoc, hocKi);
         Khoa khoa = new Khoa("CNTT01","Công nghệ thông tin 01" ,  "Khoa Công nghệ thông tin 01");
         BoMon boMon = new BoMon("BOMON10", "Công nghệ phần mềm", null, khoa);
         MonHoc monHoc = new MonHoc( "INT1408","Chuyên đề công nghệ phần mềm",1, boMon);
-        MonHocKiHoc monHocKiHoc = new MonHocKiHoc("INT1408", monHoc, kiHoc);
+        MonHocKiHoc monHocKiHoc = new MonHocKiHoc("MHKH06", monHoc, kiHoc, null);
         LopHocPhan lopHocPhan = new LopHocPhan("D18-008","D18-008",74, null, monHocKiHoc);
-        SinhVien sinhVien = new SinhVien("B18DCCN026","B18DCCN026","123456","123456","D18CNPM02");
+        SinhVien sinhVien = new SinhVien("B18DCCN026","B18DCCN026","123456","Nguyễn Thế Anh","D18CNPM02");
         SinhVienKhoa sinhVienKhoa = new SinhVienKhoa("B18CN026","2018-2023",true, khoa, sinhVien);
-        DangKyHoc dangKyHoc = new DangKyHoc("B18DCCN026D18-008",sinhVienKhoa,lopHocPhan );
-        ArrayList<DangKyHoc> list = new ArrayList<>();
-        list.add(dangKyHoc);
+        DangKyHocDTO dangKyHocDTO = new DangKyHocDTO("B18DCCN026D18-008",sinhVienKhoa,lopHocPhan );
+        ArrayList<DangKyHocDTO> list = new ArrayList<>();
+        list.add(dangKyHocDTO);
 
         MvcResult result = mvc.perform(MockMvcRequestBuilders.get("/dangkytinchi/luudangky/B18DCCN026")
                         .contentType(MediaType.APPLICATION_JSON_VALUE))
@@ -103,15 +102,14 @@ public class DangKyHocControllerTest extends AbstractTest{
         String content =result.getResponse().getContentAsString(StandardCharsets.UTF_8);
         ResponeAPI outputResult = super.mapFromJson(content, ResponeAPI.class);
 
-        ArrayList<LopHocPhanDTO> dataResultObj = new ArrayList<>();
+        ArrayList<DangKyHocDTO> dataResultObj = new ArrayList<>();
         List<LinkedHashMap<String, Object>> dataResult =(List<LinkedHashMap<String, Object>>) outputResult.getData();
         dataResult.forEach(stringObjectLinkedHashMap ->{
-                    LopHocPhanDTO temp = toLopHocPhanDTO(stringObjectLinkedHashMap);
+            DangKyHocDTO temp = toDangKyHocDTO(stringObjectLinkedHashMap);
                     dataResultObj.add(temp);
                 }
         );
-        ArrayList<DangKyHoc> dataExpect =( ArrayList<DangKyHoc>) list;
-        Assertions.assertEquals(dataResultObj, dataExpect);
+        Assertions.assertEquals(dataResultObj, list);
     }
     @Test
     @Transactional

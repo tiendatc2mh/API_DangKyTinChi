@@ -18,6 +18,9 @@ public class DangKyHocDTO implements Serializable {
     private SinhVienKhoa sinhVienKhoa;
     private LopHocPhan lopHocPhan;
 
+    public DangKyHocDTO() {
+    }
+
     public DangKyHocDTO(String maDangKyHoc, SinhVienKhoa sinhVienKhoa, LopHocPhan lopHocPhan) {
         this.maDangKyHoc = maDangKyHoc;
         this.sinhVienKhoa = sinhVienKhoa;
