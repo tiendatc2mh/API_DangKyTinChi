@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="commit dau tien">
+    <list default="true" id="8b8e04eb-cdfa-418e-84f3-019072358e64" name="Changes" comment="push 04/05/2022 fix xem thoi khoa bieu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/DangKyHocDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/DangKyHocDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/AbstractTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/AbstractTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ptit/dangkytinchi/controller/DangKyHocController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/AbstractTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/AbstractTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/ptit/dangkytinchi/controller/DangKyHocControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,21 +41,20 @@
     </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="theanh" />
+        <entry key="$PROJECT_DIR$" value="dat" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/BoMonController.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/BoMonDTO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/DangKyHocDTO.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienKhoaDTO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/HocKiDTO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/KhoaDTO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/LopHocPhanDTO.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/BoMonDTO.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/MonHocDTO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienDTO.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/DTO/SinhVienKhoaDTO.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/DangKyHocController.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
@@ -69,7 +69,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -96,14 +96,15 @@
     <option name="showMembers" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RequestMappingsPanelOrder0" value="0" />
-    <property name="RequestMappingsPanelOrder1" value="1" />
-    <property name="RequestMappingsPanelWidth0" value="75" />
-    <property name="RequestMappingsPanelWidth1" value="75" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "nodejs_package_manager_path": "npm"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ADMIN\Documents\IntelliJ\DangKyTinChiDat" />
@@ -163,7 +164,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DangKyHocControllerTest.testLuuDangKiThanhCong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DangKyHocControllerTest.testLuuDangKiKhongThanhCong_HetSoLuong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DangKyTinChi" />
       <extension name="coverage">
         <pattern>
@@ -173,7 +174,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.ptit.dangkytinchi.controller" />
       <option name="MAIN_CLASS_NAME" value="com.ptit.dangkytinchi.controller.DangKyHocControllerTest" />
-      <option name="METHOD_NAME" value="testLuuDangKiThanhCong" />
+      <option name="METHOD_NAME" value="testLuuDangKiKhongThanhCong_HetSoLuong" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -220,8 +221,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.DangKyTinChiApplication" />
+      <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiKhongThanhCong_HetSoLuong" />
       <item itemvalue="JUnit.DangKyHocControllerTest.testXemThoiKhoaBieuThanhCong" />
-      <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiThanhCong" />
       <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiKhongThanhCong" />
       <item itemvalue="JUnit.DangKyHocControllerTest.testGetDangKiThanhCong" />
       <item itemvalue="JUnit.DangKyHocControllerTest.testXoaDangKiThanhCong" />
@@ -229,11 +230,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DangKyHocControllerTest.testGetDangKiThanhCong" />
-        <item itemvalue="JUnit.DangKyHocControllerTest.testXemThoiKhoaBieuThanhCong" />
-        <item itemvalue="JUnit.DangKyHocControllerTest.testXoaDangKiThanhCong" />
+        <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiKhongThanhCong_HetSoLuong" />
         <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiKhongThanhCong" />
-        <item itemvalue="JUnit.DangKyHocControllerTest.testLuuDangKiThanhCong" />
+        <item itemvalue="JUnit.DangKyHocControllerTest.testXoaDangKiThanhCong" />
+        <item itemvalue="JUnit.DangKyHocControllerTest.testXemThoiKhoaBieuThanhCong" />
+        <item itemvalue="JUnit.DangKyHocControllerTest.testGetDangKiThanhCong" />
       </list>
     </recent_temporary>
   </component>
@@ -283,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1651317249719</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="push 04/05/2022 fix xem thoi khoa bieu">
+      <created>1651760021220</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1651760021220</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,9 +332,26 @@
     <MESSAGE value="fix commit" />
     <MESSAGE value="fix commit(bug)" />
     <MESSAGE value="commit dau tien" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit dau tien" />
+    <MESSAGE value="push 04/05/2022 fix xem thoi khoa bieu" />
+    <option name="LAST_COMMIT_MESSAGE" value="push 04/05/2022 fix xem thoi khoa bieu" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/ptit/dangkytinchi/controller/LopHocPhanController.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="com.ptit.dangkytinchi.model.MonHocKiHoc" memberName="kiHoc" />
+        <PinnedItemInfo parentTag="com.ptit.dangkytinchi.model.MonHocKiHoc" memberName="monHoc" />
+        <PinnedItemInfo parentTag="com.ptit.dangkytinchi.model.BoMon" memberName="tenBoMon" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="content" />

@@ -55,7 +55,7 @@ public class DangKyHocControllerTest extends AbstractTest{
         Assertions.assertEquals(outputResult.getData(), outputExpect.getData());
     }
     @Test
-    public void testLuuDangKiKhongThanhCong() throws Exception{
+    public void testLuuDangKiKhongThanhCong_TrungLichHoc() throws Exception{
         String input="[\n" +
                 "    {\"maLopHocPhan\" : \"D18-051\"},\n" +
                 "    {\"maLopHocPhan\" : \"D18-038\"}\n" +
@@ -76,6 +76,29 @@ public class DangKyHocControllerTest extends AbstractTest{
 
         String dataExpect =(String) outputExpect.getData();
         Assertions.assertEquals(outputResult.getData(), outputExpect.getData());
+    }
+
+    @Test
+    public void testLuuDangKiKhongThanhCong_HetSoLuong() throws Exception{
+        String input="[\n" +
+                "    {\"maLopHocPhan\": \"D19-0001\"}\n" +
+                "]";
+        String maSV = "B19DCCN001";
+
+        ResponeAPI outputExpect = new ResponeAPI();
+        outputExpect.setError("Môn học Nhập môn CNPM đã hết số lượng đăng ký!!!");
+
+        MvcResult result = mvc.perform(MockMvcRequestBuilders.post("/dangkytinchi/luudangky/" +maSV)
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .content(input))
+                .andReturn();
+        int status = result.getResponse().getStatus();
+        Assertions.assertNotNull(result);
+        String content =result.getResponse().getContentAsString(StandardCharsets.UTF_8);
+        ResponeAPI outputResult = super.mapFromJson(content, ResponeAPI.class);
+
+        String dataExpect =(String) outputExpect.getData();
+        Assertions.assertEquals(outputResult.getError(), outputExpect.getError());
     }
 
     @Test
