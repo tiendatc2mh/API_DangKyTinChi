@@ -168,12 +168,11 @@ public class DangKyHocController {
         ArrayList<LichHocDTO> data = new ArrayList<LichHocDTO>();
         dsDangKyHoc.forEach(dangKyHoc -> {
             ArrayList<LichHoc> dsLichHoc = ( ArrayList<LichHoc>)lichHocRepository.findLichHocByLopHocPhan_MaLopHocPhanAndTuanHoc_MaTuanHoc(dangKyHoc.getLopHocPhan().getMaLopHocPhan(), maTuanHoc);
-            if(dsLichHoc.size()>0){
-                LichHoc lichHoc = dsLichHoc.get(0);
-                LichHocDTO temp = new LichHocDTO(lichHoc.getMaLichHoc(), lichHoc.getTenLichHoc(), lichHoc.getGiangvien(),
-                        lichHoc.getLopHocPhan(), lichHoc.getPhongHoc(), lichHoc.getTuanHoc(), lichHoc.getNgayHoc(), lichHoc.getKipHoc());
-                data.add(temp);
-            }
+           dsLichHoc.forEach(lichHoc -> {
+               LichHocDTO temp = new LichHocDTO(lichHoc.getMaLichHoc(), lichHoc.getTenLichHoc(), lichHoc.getGiangvien(),
+                       lichHoc.getLopHocPhan(), lichHoc.getPhongHoc(), lichHoc.getTuanHoc(), lichHoc.getNgayHoc(), lichHoc.getKipHoc());
+               data.add(temp);
+           });
         });
         res.setData(data);
         return res;
